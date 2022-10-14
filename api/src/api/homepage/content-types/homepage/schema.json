@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,16 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.work-program-component",
+        "shared-components.collaborators-swiper",
+        "shared-components.gallery-swiper",
+        "shared-components.trending-articles",
+        "homepage-components.event-table-swiper"
+      ]
     }
   }
 }

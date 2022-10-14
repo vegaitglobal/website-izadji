@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "blog_news_pages",
+  "collectionName": "documentation_pages",
   "info": {
-    "singularName": "blog-news-page",
-    "pluralName": "blog-news-pages",
-    "displayName": "Blog news page",
+    "singularName": "documentation-page",
+    "pluralName": "documentation-pages",
+    "displayName": "Documentation page",
     "description": ""
   },
   "options": {
@@ -18,7 +18,7 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.trending-articles",
+        "documentation-components.documentation-components",
         "shared-components.donate-section"
       ]
     }
