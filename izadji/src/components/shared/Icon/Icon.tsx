@@ -5,7 +5,12 @@ type IconProps = {
   height?: string;
 };
 
-const Icon = ({ src, altText, width, height = 'auto' }: IconProps) => (
+const Icon = ({
+  src,
+  altText,
+  width,
+  height = 'auto',
+}: IconProps): JSX.Element => (
   <img src={src} alt={altText} style={{ width: width, height: height }} />
 );
 
