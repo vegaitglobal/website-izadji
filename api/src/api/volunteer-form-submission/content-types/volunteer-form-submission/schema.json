@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_form_submissions",
+  "info": {
+    "singularName": "volunteer-form-submission",
+    "pluralName": "volunteer-form-submissions",
+    "displayName": "Volunteer form submission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "text": {
+      "type": "text"
+    },
+    "project_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::projects-page.projects-page"
+    }
+  }
+}

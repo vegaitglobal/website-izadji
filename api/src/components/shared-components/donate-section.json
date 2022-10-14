@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_components_donate_sections",
+  "info": {
+    "displayName": "Donate section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}
