@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_program_pages",
+  "info": {
+    "singularName": "work-program-page",
+    "pluralName": "work-program-pages",
+    "displayName": "Work program page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.banner",
+        "shared-components.collaborators-swiper",
+        "shared-components.donate-section",
+        "shared-components.gallery-swiper",
+        "shared-components.rich-text-component",
+        "shared-components.trending-articles",
+        "shared-components.newsletter",
+        "shared-components.rich-text-with-image"
+      ]
+    }
+  }
+}

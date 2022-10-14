@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_components_trending_articles",
+  "info": {
+    "displayName": "Trending articles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blog_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-page.blog-page"
+    }
+  }
+}

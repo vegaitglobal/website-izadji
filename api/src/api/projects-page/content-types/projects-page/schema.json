@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects_pages",
+  "info": {
+    "singularName": "projects-page",
+    "pluralName": "projects-pages",
+    "displayName": "Project page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-components.banner"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "project-page-components.volunteer-form",
+        "shared-components.banner",
+        "shared-components.rich-text-component",
+        "shared-components.collaborators-swiper",
+        "shared-components.donate-section",
+        "shared-components.gallery-swiper",
+        "shared-components.trending-articles"
+      ]
+    }
+  }
+}
