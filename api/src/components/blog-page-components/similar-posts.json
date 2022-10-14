@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blog_page_components_similar_posts",
+  "info": {
+    "displayName": "Similar posts",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "similar_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog-page.blog-page"
+    }
+  }
+}
