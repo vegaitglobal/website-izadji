@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "donate_pages",
+  "info": {
+    "singularName": "donate-page",
+    "pluralName": "donate-pages",
+    "displayName": "Donate page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

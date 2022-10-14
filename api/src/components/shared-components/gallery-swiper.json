@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_components_gallery_swipers",
+  "info": {
+    "displayName": "Gallery swiper"
+  },
+  "options": {},
+  "attributes": {
+    "imageSwiper": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

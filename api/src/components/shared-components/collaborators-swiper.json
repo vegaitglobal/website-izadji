@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_components_collaborators_swipers",
+  "info": {
+    "displayName": "Collaborators swiper"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

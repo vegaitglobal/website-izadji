@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_project_page_components_volunteer_forms",
+  "info": {
+    "displayName": "Volunteer form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

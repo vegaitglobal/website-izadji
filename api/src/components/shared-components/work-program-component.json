@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_components_work_program_components",
+  "info": {
+    "displayName": "Work program component"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
