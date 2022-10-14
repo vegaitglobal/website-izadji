@@ -1,1 +1,20 @@
 $colorPink: #df0a8c;
+$white: #fff;
+$black: #000;
+$orange: #ffa756;
+$site-colors: (
+  'black': $black,
+  'white': $white,
+  'orange': $orange,
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+$font-default: 'Inter', sans-serif;
+$poppins: 'Poppins', sans-serif;

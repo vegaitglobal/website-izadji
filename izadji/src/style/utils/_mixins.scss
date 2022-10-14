@@ -1,0 +1,289 @@
+// ----------  responsive breakpoints
+// ------------------------------------------------------------------------------
+// @mixin breakpoint ($value) {
+// 	@if $value == 'phone' {
+// 		@media only screen and (min-width: 120px) and (max-width: 767px) { @content; }
+// 	} @else if $value == 'tablet' {
+// 		@media only screen and (min-width: 768px) and (max-width: 1024px) { @content; }
+// 	} @else if $value == 'touch' {
+// 		@media only screen and (min-width: 120px) and (max-width: 1024px) { @content; }
+// 	} @else if $value == 'desktop' {
+// 		@media only screen and (min-width: 1025px) { @content; }
+// 	} @else {
+// 		@media only screen and (max-width: $value) { @content; }
+// 	}
+// }
+
+// ----------  input placeholder
+// ------------------------------------------------------------------------------
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// ----------  Text Overflow
+// ------------------------------------------------------------------------------
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ----------  Vertical / horizontal alignment
+// ------------------------------------------------------------------------------
+@mixin align($position: relative, $direction: x) {
+  position: $position;
+  @if ($direction == 'y') {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if ($direction == 'xy') {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// example: @include align(absolute, xy); for centering both axis'
+// default @include align(); will be relative on x axis
+
+//	Visually hidden mixin for accessibility
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Hover mixin only for desktop devices
+// to include use @include hover {your hover styles} can also include elements
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    .no-touch &:hover {
+      @content;
+    }
+  }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .no-touch &:hover {
+      @content;
+    }
+  }
+}
+
+// ----------  Fonts import
+// ------------------------------------------------------------------------------
+
+// usage: @include webFont(Helvetica, HelveticaNeueLTStd-Th, 100);
+// in mixin call add three parameters (font name, font file name, font-weight, [font-style])
+$path: '../assets/fonts' !default;
+
+@mixin webFont($name, $file, $weight, $style: 'normal') {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('#{$path}/#{$file}.woff2') format('woff2'),
+      url('#{$path}/#{$file}.woff') format('woff'),
+      url('#{$path}/#{$file}.ttf') format('truetype');
+    font-weight: #{$weight};
+    font-style: normal;
+    @if ($style != 'normal') {
+      font-style: #{$style};
+    } @else {
+      font-style: normal;
+    }
+  }
+}
+
+// ----------  Aspect ratio
+// ------------------------------------------------------------------------------
+
+// mixin for proportion background-image scaling
+// @include aspect-ratio(321, 133, abs, image__inner);
+// in mixin call add @include aspect-ratio(img width, img height, position(rel/abs), child selector WITHOUT dot);
+
+// <div class="image">
+//	<div class="image__inner" style="background-image: url('../image.png')"></div>
+// </div>
+@mixin aspect-ratio($width, $height, $position: 'rel', $child: 'img') {
+  @if ($position == 'abs') {
+    position: relative;
+    padding-bottom: (math.div($height, $width)) * 100%;
+    .#{$child} {
+      @content;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  } @else {
+    .#{$child} {
+      @content;
+      position: relative;
+      padding-bottom: (math.div($height, $width)) * 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+}
+
+// ----------  Animation mixin
+// ------------------------------------------------------------------------------
+
+// @include animation {transition: color 3s ease;}
+@mixin animation {
+  .loaded & {
+    @content;
+  }
+}
+
+// ----------  iconfont mixin
+// ------------------------------------------------------------------------------
+
+// usage @include icon(tv, after) {your css properties}
+// in a mixin call add only icon name WITHOUT ico prefix and add before/after for pseudo element
+@mixin icon($name: download, $pseudo: before) {
+  &::#{$pseudo} {
+    @include font-styles;
+    content: font-char('ico-#{$name}');
+    @content;
+  }
+}
+
+// usage:
+// single: font-size: fluid(20px, 30px);
+// multiple: padding: fluid(40px, 60px) fluid(20px, 30px);
+
+// the first value represents the minimum value, the size from the tablet design
+// the second one is a value from desktop design
+
+// exaple of using fluid grid
+
+// .rte h1,
+// .h1 {
+// 	margin-bottom: 30px;
+// 	@include media-breakpoint-up(xl) {
+// 		font-size: fluid(52px, 72px);
+// 		margin-bottom: fluid(30px, 40px);
+// 	}
+// 	@include media-breakpoint-between(md, lg) {
+// 		font-size: 52px;
+// 	}
+// 	@include media-breakpoint-down(sm) {
+// 		font-size: 36px;
+// 	}
+// }
+
+$window-width: 1920px;
+
+@function remove-whitespace($str) {
+  @while str-index($str, ' ') != null {
+    $index: str-index($str, ' ');
+    $str: #{str-slice($str, 0, $index - 1)}#{str-slice($str, $index + 1)};
+  }
+  @return $str;
+}
+
+@function min-size($min, $val) {
+  @if $min > $val {
+    @return $val;
+  }
+  @return $min;
+}
+
+@function max-size($val) {
+  @return math.floor($val * 1.4);
+}
+
+@function relative-size($val) {
+  @return math.div(($val * 100vw), $window-width);
+}
+
+@function fluid-grid($min, $value) {
+  @return #{(
+      'clamp(' min-size($min, $value) ',' relative-size($value) ','
+        max-size($value) ')'
+    )};
+}
+
+@function fluid($min, $value: $min) {
+  @return remove-whitespace(fluid-grid($min, $value));
+}
+
+// ----------  px to viewport mixin
+// ------------------------------------------------------------------------------
+
+// usage - single: width: vp(250px) or multiple args: padding: vp(20px 10px 30px)
+// with built-in method calc(#{vp(250px)} + 50%);
+
+$unitValue: 'vw';
+$lg: 1920px;
+$md: 768px;
+$sm: 360px;
+
+@function unit($num, $unit, $screen: $lg) {
+  $vw-context: ($screen * 0.01);
+  @if $num == 0 {
+    $num: 0px;
+  }
+  $size: math.div($num, $vw-context) * 1 + #{$unit};
+  @return $size;
+}
+
+@function vp($numbers) {
+  $numberArray: ();
+  @each $num in $numbers {
+    $numberArray: append(
+      $numberArray,
+      unquote(unit($num, $unitValue)),
+      'space'
+    );
+  }
+  @return $numberArray;
+}
+
+@function vpm($numbers) {
+  $numberArray: ();
+  @each $num in $numbers {
+    $numberArray: append(
+      $numberArray,
+      unquote(unit($num, $unitValue, $md)),
+      'space'
+    );
+  }
+  @return $numberArray;
+}
+
+@function vps($numbers) {
+  $numberArray: ();
+  @each $num in $numbers {
+    $numberArray: append(
+      $numberArray,
+      unquote(unit($num, $unitValue, $sm)),
+      'space'
+    );
+  }
+  @return $numberArray;
+}
