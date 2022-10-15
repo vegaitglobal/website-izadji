@@ -12,7 +12,7 @@ type ProjectSliderProps = {
 };
 const TrendingArticles = ({ slides }: ProjectSliderProps): JSX.Element => {
   return (
-    <div className={styles.feed}>
+    <div className={`${styles.feed} ${styles.feed__white}`}>
       <div className={styles.wrap}>
         <h2 className={`${styles.feed__title} ${styles.section__title}`}>
           Naslov
