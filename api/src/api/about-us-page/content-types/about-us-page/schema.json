@@ -18,13 +18,18 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.banner",
         "shared-components.rich-text-with-image",
         "shared-components.work-program-component",
         "shared-components.rich-text-component",
         "shared-components.donate-section",
-        "shared-components.newsletter"
+        "shared-components.newsletter",
+        "about-us-page-components.our-team"
       ]
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-components.banner"
     }
   }
 }

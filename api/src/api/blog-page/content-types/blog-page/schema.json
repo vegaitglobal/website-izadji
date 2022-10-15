@@ -23,6 +23,11 @@
         "shared-components.donate-section",
         "blog-page-components.similar-posts"
       ]
+    },
+    "work_program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-program-page.work-program-page"
     }
   }
 }
