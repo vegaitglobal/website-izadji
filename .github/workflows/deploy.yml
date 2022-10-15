@@ -38,15 +38,5 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            echo instal and deploy izadji website
-            cd C:\Sites\website-izadji\
-            echo moved to directory izadji
-            git pull
-            echo git pull
-            cd C:\Sites\website-izadji\izadji
-            nssm stop izadji-site
-            npm install cross-env
-            npm run build:win
-            nssm start izadji-site
-            echo npm run build done
+            cd C:\Sites\website-izadji\;git pull;cd C:\Sites\website-izadji\izadji;nssm stop izadji-site;npm install cross-env;npm run build:win;nssm start izadji-site
             
