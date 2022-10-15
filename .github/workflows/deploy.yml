@@ -21,7 +21,7 @@ jobs:
       - run: CI=false npm run build
         working-directory: izadji
         
-      - run: yarn install react-scripts
+      - run: yarn install 
         working-directory: api
       - run: yarn build
         working-directory: api
