@@ -3,12 +3,16 @@ on:
   push:
     branches:
       - main
+      - feature/fix-deployment
  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout files
+        uses: Bhacaz/checkout-files@v2
+        with:
+          files: package.json
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
