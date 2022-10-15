@@ -20,7 +20,8 @@
         "page-link-components.blog",
         "page-link-components.documentation-page",
         "page-link-components.about-us",
-        "page-link-components.contact-page"
+        "page-link-components.contact-page",
+        "page-link-components.pride-page"
       ],
       "required": true,
       "min": 1,
