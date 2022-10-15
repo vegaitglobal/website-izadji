@@ -84,6 +84,6 @@
     "prop-types": "^15.8.1",
     "webpack": "^5.74.0",
     "postcss": "^8.2.4",
-    "postcss-import": "^14.0.0",
+    "postcss-import": "^14.0.0"
   }
 }
