@@ -1,0 +1,50 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Main_branch:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@main
+      - name: Building docker image api
+        run: docker build ./api/ -t codeforacause/website-izadji:api-${{ github.run_number }}
+      - name: Building docker image izadji
+        run: docker build ./izadji/ -t codeforacause/website-izadji:web-${{ github.run_number }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Pushing docker image to CR api
+        run: docker push codeforacause/website-izadji:api-${{ github.run_number }}
+      - name: Pushing docker image to CR izadji
+        run: docker push codeforacause/website-izadji:web-${{ github.run_number }}
+      - name: Replace tokens
+        uses: cschleiden/replace-tokens@v1.1
+        with:
+          tokenPrefix: '#{'
+          tokenSuffix: '}#'
+          files: '["**/docker-compose.website-izadji.yaml"]'
+        env:
+          TAG_NUMBER: "${{ github.run_number }}"
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "./backend/docker-compose.website-izadji.yaml"
+          target: "./Projects/website-izadji/"
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: docker-compose -f ./Projects/website-izadji/docker-compose.website-izadji.yaml up -d

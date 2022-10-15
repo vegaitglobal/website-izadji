@@ -1,0 +1,43 @@
+version: "3.4"
+
+services:
+  web:
+    build:
+      context: ./izadji/.
+      dockerfile: Dockerfile.dev
+    container_name: website-izadji-web
+    ports:
+      - "80:1337"
+  
+  api:
+    build:
+      context: ./api/.
+      dockerfile: Dockerfile.dev
+    container_name: website-izadji-api
+    ports:
+      - "1337:1337"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 1337
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_SSL: false
+    env_file:
+      - ./api/.env
+
+  db:
+    image: postgres:13.5-alpine
+    container_name: website-izadji-db
+    ports:
+      - "5432:5432/tcp"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRESS_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ".:/app:rw"
