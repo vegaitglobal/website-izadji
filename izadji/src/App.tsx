@@ -1,7 +1,7 @@
 import './App.css';
 import ProjectSlideImage1 from './assets/images/content/01.jpg';
 import ProjectSlideImage2 from './assets/images/content/02.jpg';
-import ProjectSlider from './components/ProjectSlider/ProjectSlider';
+import CollaboratorsSlider from './components/CollaboratorsSlider/CollaboratorsSlider';
 
 const projectSlides = [
   {
@@ -28,7 +28,7 @@ const projectSlides = [
 ];
 
 function App() {
-  return <ProjectSlider slides={projectSlides} />;
+  return <CollaboratorsSlider collaborators={projectSlides} title="Partneri" />;
 }
 
 export default App;
