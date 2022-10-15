@@ -1,0 +1,72 @@
+// ----------  button
+// ------------------------------------------------------------------------------
+@import './icon-font';
+
+button,
+input[type='button'],
+input[type='submit'] {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+a,
+button {
+  appearance: none;
+  outline: none;
+
+  &:focus {
+    outline: 1px dashed rgba($orange, 0.2);
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.btn {
+  background-color: $pink;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  height: 50px;
+  line-height: 50px;
+  min-width: 174px;
+  padding: 0 36px 0 17px;
+  position: relative;
+  text-align: left;
+  transition: background-color $transition;
+  @include icon(arrow-right, after) {
+    font-size: 11px;
+    position: absolute;
+    right: 21px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @include hover {
+    background-color: $black;
+  }
+}
+
+.btn--centered {
+  text-align: center;
+  &::after {
+    display: none;
+  }
+}
+
+.btn--large {
+  font-size: 18px;
+  height: 56px;
+  line-height: 56px;
+  min-width: 190px;
+  padding: 0 17px;
+}
+
+.btn--feed {
+  display: flex;
+  margin: 0 auto;
+}
