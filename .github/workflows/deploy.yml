@@ -39,18 +39,22 @@ jobs:
             echo moved to directory izadji
             git pull
             echo git pull
+            nssm stop izadji-site
             npm ci
             npm install cross-env
-            npm run build
-            npm run start
+            npm run build:win
+            nssm start izadji-site
             echo npm run build done
             echo install and deploy strapi 
             cd C:\Sites\website-izadji\api
             echo moved to directory api
             git pull
             echo git pull
+            nssm stop izadji-strapi
             npm ci
             npm install cross-env
+            npm install
             npm run build:win
             npm run start:win
+            nssm start izadji-strapi
             echo npm run build done
