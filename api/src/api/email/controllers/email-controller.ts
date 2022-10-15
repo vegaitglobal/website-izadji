@@ -9,17 +9,17 @@ module.exports  = {
       try {
         
        
-        let info = await mailService.sendMail()
+        // //let info = await mailService.sendMail("bojana.kliska@gmail.com")
         
     
-        ctx.body = info;
+        // ctx.body = info;
 
-        console.log("Message sent: %s", info.messageId);
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+        // console.log("Message sent: %s", info.messageId);
+        // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
-        // Preview only available when sending through an Ethereal account
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+        // // Preview only available when sending through an Ethereal account
+        // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        // // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
       } catch (err) {
         ctx.badRequest("Post report controller error", { moreDetails: err });

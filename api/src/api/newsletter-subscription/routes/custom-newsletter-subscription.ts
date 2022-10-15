@@ -6,8 +6,8 @@ module.exports = {
       handler: "newsletter-subscription.getAllSubscriptions",
     },
     {
-      method: "PUT",
-      path: "/newsletter-subscriptions/unsubscribe",
+      method: "GET",
+      path: "/newsletter-subscriptions/unsubscribe/:email",
       handler: "newsletter-subscription.unsubscribe",
     },
   ],
