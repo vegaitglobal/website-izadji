@@ -45,7 +45,6 @@ jobs:
             echo git pull
             cd C:\Sites\website-izadji\izadji
             nssm stop izadji-site
-            npm ci
             npm install cross-env
             npm run build:win
             nssm start izadji-site
