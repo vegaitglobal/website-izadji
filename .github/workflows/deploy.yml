@@ -39,10 +39,11 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             echo instal and deploy izadji website
-            cd C:\Sites\website-izadji\izadji
+            cd C:\Sites\website-izadji\
             echo moved to directory izadji
             git pull
             echo git pull
+            cd C:\Sites\website-izadji\izadji
             nssm stop izadji-site
             npm ci
             npm install cross-env
@@ -52,8 +53,6 @@ jobs:
             echo install and deploy strapi 
             cd C:\Sites\website-izadji\api
             echo moved to directory api
-            git pull
-            echo git pull
             nssm stop izadji-strapi
             yarn install
             yarn run build:win
