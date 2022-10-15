@@ -20,7 +20,12 @@ jobs:
         working-directory: izadji
       - run: CI=false npm run build
         working-directory: izadji
-
+        
+      - run: yarn install react-scripts
+        working-directory: api
+      - run: yarn build
+        working-directory: api
+   
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -38,4 +43,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            PowerShell -file C:\Sites\runTest.ps1  
+            PowerShell -file C:\Sites\website-izadji\runBuildDeploy.ps1  
