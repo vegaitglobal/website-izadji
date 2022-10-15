@@ -1,0 +1,178 @@
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/reset';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/icon-font';
+@import '../../style/layout/buttons';
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.swiper_slide {
+  // justify-content: flex-start;
+  width: 500px;
+}
+
+.events__content {
+  font-family: $poppins;
+  width: 100%;
+}
+
+.events__nav {
+  background-color: #040404;
+  padding: 10px fluid(10px, 15px) 12px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 10px;
+  }
+}
+
+.events__btn__prev {
+  background-color: $pink;
+  border-radius: 50%;
+  color: $white;
+  font-size: 10px;
+  height: 34px;
+  margin-right: 5px;
+  padding-top: 2px;
+  width: 34px;
+  @include icon(arrow-left, after) {
+    font-size: 9px;
+    position: relative;
+  }
+}
+
+.events__btn__next {
+  background-color: $pink;
+  border-radius: 50%;
+  color: $white;
+  font-size: 10px;
+  height: 34px;
+  margin-right: 5px;
+  padding-top: 2px;
+  width: 34px;
+  @include icon(arrow-right, after) {
+    font-size: 9px;
+    position: relative;
+  }
+}
+
+.events__btn {
+  background-color: $pink;
+  border-radius: 50%;
+  color: $white;
+  font-size: 10px;
+  height: 34px;
+  margin-right: 5px;
+  padding-top: 2px;
+  width: 34px;
+  #slidePrev {
+    @include icon(arrow-left, after) {
+      font-size: 9px;
+      position: relative;
+    }
+  }
+}
+
+#slidePrev {
+  @include icon(arrow-left, after) {
+    font-size: 9px;
+    position: relative;
+  }
+}
+
+#slideNext {
+  @include icon(arrow-right, after) {
+    font-size: 9px;
+    position: relative;
+  }
+}
+
+.events__head {
+  border-bottom: 1px solid $black;
+  font-size: 0;
+  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 10px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 5px 10px;
+  }
+}
+
+.arrow_left {
+  color: $white;
+}
+
+.events__cell {
+  color: $black;
+  display: inline-block;
+}
+
+.events__cell__date {
+  border-bottom: 1px solid $black;
+  font-size: 0;
+  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 10px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 5px 10px;
+  }
+  width: 30%;
+  @include media-breakpoint-only(md) {
+    width: 22%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 50%;
+  }
+}
+
+.events__cell__time {
+  border-bottom: 1px solid $black;
+  font-size: 0;
+  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 10px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 5px 10px;
+  }
+  width: 16.6%;
+  @include media-breakpoint-only(md) {
+    width: 17%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 5px;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.events__cell__name {
+  border-bottom: 1px solid $black;
+  font-size: 0;
+  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 10px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 5px 10px;
+  }
+  width: 38%;
+  @include media-breakpoint-only(md) {
+    width: 44%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
