@@ -51,10 +51,8 @@ jobs:
             git pull
             echo git pull
             nssm stop izadji-strapi
-            npm ci
-            npm install cross-env
-            npm install
-            npm run build:win
-            npm run start:win
+            yarn install
+            yarn run build:win
+            yarn run start:win
             nssm start izadji-strapi
-            echo npm run build done
+            echo yarn run build done
