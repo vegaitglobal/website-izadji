@@ -4,6 +4,7 @@
 @import '../utils/variables';
 @import '../utils/mixins';
 
+
 .rte h1,
 .rte h2,
 .rte h3,
@@ -172,7 +173,7 @@ img {
   max-width: 100%;
 }
 
-.img-right-aligned {
+.img__right__aligned {
   float: right;
   margin: 0 0 50px 50px;
   max-width: 48%;
