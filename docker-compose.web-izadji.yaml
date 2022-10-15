@@ -5,7 +5,7 @@ services:
     image: codeforacause/website-izadji:web-#{TAG_NUMBER}#
     container_name: website-izadji-web
     ports:
-      - "80:1337"
+      - "3073:80"
   
   api:
     image: codeforacause/website-izadji:api-#{TAG_NUMBER}#

@@ -1,7 +1,7 @@
 ARG LIBRARY=docker.io
 ARG DOCKER_TAG=18-alpine
 ARG PLATFORM=linux/x86_64
-ARG PORT=1337
+ARG PORT=3073
 ARG NODE_ENV=development
 
 FROM --platform=${PLATFORM} ${LIBRARY}/node:${DOCKER_TAG} as build-step

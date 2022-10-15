@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.dev
     container_name: website-izadji-web
     ports:
-      - "80:1337"
+      - "3073:80"
   
   api:
     build:
