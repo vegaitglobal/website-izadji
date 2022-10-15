@@ -38,10 +38,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd c:\Sites\testDevOps
-            echo moved to directory testDevOps
-            git pull
-            echo git pull
-            npm ci
-            npm run build
-            echo npm run build done  
+            PowerShell -file C:\Sites\runTest.ps1  
