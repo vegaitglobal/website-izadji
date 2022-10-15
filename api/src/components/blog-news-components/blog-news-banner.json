@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_blog_news_components_blog_news_banners",
+  "info": {
+    "displayName": "Blog news banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "date": {
+      "type": "date"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "work_program_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-program-page.work-program-page"
+    }
+  }
+}

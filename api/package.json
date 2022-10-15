@@ -20,7 +20,8 @@
     "better-sqlite3": "^7.6.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "pg": "8.6.0"
+    "pg": "8.6.0",
+    "strapi-plugin-populate-deep": "^1.0.1"
   },
   "author": {
     "name": "A Strapi developer"

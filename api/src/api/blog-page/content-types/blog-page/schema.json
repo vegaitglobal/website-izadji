@@ -21,7 +21,8 @@
         "shared-components.rich-text-component",
         "shared-components.gallery-swiper",
         "shared-components.donate-section",
-        "blog-page-components.similar-posts"
+        "blog-page-components.similar-posts",
+        "blog-page-components.blog-banner"
       ]
     },
     "work_program": {

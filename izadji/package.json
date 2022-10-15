@@ -89,11 +89,11 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-storybook": "^0.6.6",
     "prop-types": "^15.8.1",
+    "postcss": "^8.2.4",
+    "postcss-import": "^14.0.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
-    "style-loader": "^3.3.1",    
-    "webpack": "^5.74.0",
-    "postcss": "^8.2.4",
-    "postcss-import": "^14.0.0"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0"
   }
 }
