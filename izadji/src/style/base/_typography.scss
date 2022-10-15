@@ -1,9 +1,9 @@
 // ----------  typography
 // ------------------------------------------------------------------------------
+
 @import '../utils/breakpoints';
 @import '../utils/variables';
 @import '../utils/mixins';
-
 
 .rte h1,
 .rte h2,
@@ -193,6 +193,7 @@ img {
   text-align: center;
   text-transform: uppercase;
 }
+
 
 .section__title--left {
   text-align: left;
