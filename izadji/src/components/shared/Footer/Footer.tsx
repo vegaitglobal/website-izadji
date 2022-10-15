@@ -1,3 +1,4 @@
+import backToTop from '../../../utils/backToTop';
 import Icon from '../Icon/Icon';
 import styles from './Footer.module.scss';
 
@@ -57,7 +58,7 @@ const Footer = ({
               </ul>
             ))}
           </div>
-          {/* TODO: Add button for going to top of the page after the Button component is done */}
+          {/* TODO: Add Button once it is implemented */}
         </div>
       </div>
     </footer>

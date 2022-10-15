@@ -78,8 +78,6 @@ const footerProps = {
   ],
 };
 
-// TODO: Check how to connect storybook with scss
-
 export default {
   title: 'shared/Footer',
   component: Footer,
@@ -88,4 +86,9 @@ export default {
 const Default: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
 export const DefaultFooter = Default.bind({});
-DefaultFooter.args = {};
+DefaultFooter.args = {
+  iconSrc: footerProps.iconSrc,
+  emails: footerProps.emails,
+  copyText: footerProps.copyText,
+  navItems: footerProps.navItems,
+};

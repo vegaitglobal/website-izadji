@@ -1,7 +1,8 @@
-import './App.css';
-import ProjectSlideImage1 from './assets/images/content/01.jpg';
-import ProjectSlideImage2 from './assets/images/content/02.jpg';
-import ProjectSlider from './components/ProjectSlider/ProjectSlider';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import ProjectSlider from './ProjectSlider';
+import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
+import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
+import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
 
 const projectSlides = [
   {
@@ -19,7 +20,7 @@ const projectSlides = [
       'Savetovalište G pruža se besplatna savetodavna i psihoterapijska podrška LGBTIQ+ osobama i članovima/cama njihovih....',
   },
   {
-    imageSrc: ProjectSlideImage1,
+    imageSrc: ProjectSlideImage3,
     date: '25. decembar',
     title: 'Novi Projekat udruzenja Ime Projekta',
     description:
@@ -27,8 +28,16 @@ const projectSlides = [
   },
 ];
 
-function App() {
-  return <ProjectSlider slides={projectSlides} />;
-}
+export default {
+  title: 'Project Slider',
+  component: ProjectSlider,
+} as ComponentMeta<typeof ProjectSlider>;
 
-export default App;
+const Default: ComponentStory<typeof ProjectSlider> = (args) => (
+  <ProjectSlider {...args} />
+);
+
+export const DefaultProjectSlider = Default.bind({});
+DefaultProjectSlider.args = {
+  slides: projectSlides,
+};
