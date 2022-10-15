@@ -1,0 +1,129 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style//utils/breakpoints';
+@import '../../style//utils//helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/layout/buttons';
+
+// ---------- newsletter
+// ------------------------------------------------------------------------------
+
+.newsletter {
+  background-color: #f1f1f1;
+  overflow: hidden;
+  padding: 57px 0 50px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  &::before,
+  &::after {
+    background: url('../../assets/images/logo-frame.svg') no-repeat 0 0;
+    background-size: 100% auto;
+    content: '';
+    height: 286px;
+    position: absolute;
+    width: 336px;
+    @include animation {
+      transition: $transition;
+      transition-property: left, right, width, height;
+    }
+  }
+  &::before {
+    bottom: 63px;
+    right: calc(50% + 470px);
+  }
+  &::after {
+    left: calc(50% + 517px);
+    top: 35px;
+  }
+  @include media-breakpoint-only(md) {
+    &::before,
+    &::after {
+      height: 255px;
+      width: 300px;
+    }
+    &::before {
+      right: calc(50% + 300px);
+    }
+    &::after {
+      left: calc(50% + 300px);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.newsletter__white {
+  background-color: $white;
+}
+
+.newsletter__inner {
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    max-width: 530px;
+  }
+}
+
+.newsletter__heading {
+  font-size: 24px;
+  line-height: 30px;
+  color: $black;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.newsletter__title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 20px;
+  @include animation {
+    transition: font-size $transition;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: 22px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.newsletter__form {
+  font-size: 0;
+}
+
+.newsletter__input {
+  background-color: $white;
+  border: 1px solid #bababa;
+  font-size: 14px;
+  height: 50px;
+  margin-right: 16px;
+  padding: 0 15px;
+  width: 389px;
+  @include animation {
+    transition: width $transition;
+  }
+  @include media-breakpoint-only(md) {
+    width: 300px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.newsletter__btn {
+  vertical-align: top;
+}
