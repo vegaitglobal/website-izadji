@@ -8,9 +8,13 @@ export type ProjectSlideProps = {
 };
 
 type ProjectSliderProps = {
+  buttonText: string;
   slides: ProjectSlideProps[];
 };
-const TrendingArticles = ({ slides }: ProjectSliderProps): JSX.Element => {
+const TrendingArticles = ({
+  slides,
+  buttonText,
+}: ProjectSliderProps): JSX.Element => {
   return (
     <div className={`${styles.feed} ${styles.feed__white}`}>
       <div className={styles.wrap}>
@@ -26,6 +30,11 @@ const TrendingArticles = ({ slides }: ProjectSliderProps): JSX.Element => {
               title={slide.title}
             />
           ))}
+        </div>
+        <div className={styles.feed__link__wrap}>
+          <a href="/" className={styles.btn}>
+            {buttonText}
+          </a>
         </div>
       </div>
     </div>

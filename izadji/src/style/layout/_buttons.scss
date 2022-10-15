@@ -51,14 +51,14 @@ a {
   }
 }
 
-.btn--centered {
+.btn__centered {
   text-align: center;
   &::after {
     display: none;
   }
 }
 
-.btn--large {
+.btn__large {
   font-size: 18px;
   height: 56px;
   line-height: 56px;
