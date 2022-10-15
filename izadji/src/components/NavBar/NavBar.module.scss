@@ -1,0 +1,38 @@
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/reset';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/icon-font';
+@import '../../style/layout/buttons';
+
+.nav {
+  display: block;
+  @include media-breakpoint-down(md) {
+    background-color: $white;
+    bottom: 0;
+    display: none;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 82px;
+  }
+  @include media-breakpoint-down(sm) {
+    top: 120px;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav__open {
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+}

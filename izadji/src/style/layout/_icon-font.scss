@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'svgicons';
+  src: url('../../assets/fonts/svgicons.woff2?t=1665768758712') format('woff2'),
+    url('../../assets/fonts/svgicons.woff?t=1665768758712') format('woff');
+}
+
+@mixin font-styles {
+  font-family: 'svgicons';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+%font {
+  @include font-styles;
+}
+
+@function font-char($filename) {
+  $char: '';
+
+  @if $filename == ico-arrow-bottom {
+    $char: '\EA01';
+  }
+  @if $filename == ico-arrow-left {
+    $char: '\EA02';
+  }
+  @if $filename == ico-arrow-long-right {
+    $char: '\EA03';
+  }
+  @if $filename == ico-arrow-long-top {
+    $char: '\EA04';
+  }
+  @if $filename == ico-arrow-right {
+    $char: '\EA05';
+  }
+  @if $filename == ico-close {
+    $char: '\EA06';
+  }
+  @if $filename == ico-facebook {
+    $char: '\EA07';
+  }
+  @if $filename == ico-instagram {
+    $char: '\EA08';
+  }
+  @if $filename == ico-linkedin {
+    $char: '\EA09';
+  }
+  @if $filename == ico-mail {
+    $char: '\EA0A';
+  }
+  @if $filename == ico-menu {
+    $char: '\EA0B';
+  }
+  @if $filename == ico-twitter {
+    $char: '\EA0C';
+  }
+  @if $filename == ico-wheel {
+    $char: '\EA0D';
+  }
+  @if $filename == ico-youtube {
+    $char: '\EA0E';
+  }
+
+  @return $char;
+}
+
+@mixin font($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %font;
+    } @else {
+      @include font-styles;
+    }
+    content: font-char($filename);
+  }
+}
+
+[class*='font-ico'] {
+  display: inline-block;
+}
+
+.font-ico-arrow-bottom {
+  @include font(ico-arrow-bottom);
+}
+.font-ico-arrow-left {
+  @include font(ico-arrow-left);
+}
+.font-ico-arrow-long-right {
+  @include font(ico-arrow-long-right);
+}
+.font-ico-arrow-long-top {
+  @include font(ico-arrow-long-top);
+}
+.font-ico-arrow-right {
+  @include font(ico-arrow-right);
+}
+.font-ico-close {
+  @include font(ico-close);
+}
+.font-ico-facebook {
+  @include font(ico-facebook);
+}
+.font-ico-instagram {
+  @include font(ico-instagram);
+}
+.font-ico-linkedin {
+  @include font(ico-linkedin);
+}
+.font-ico-mail {
+  @include font(ico-mail);
+}
+.font-ico-menu {
+  @include font(ico-menu);
+}
+.font-ico-twitter {
+  @include font(ico-twitter);
+}
+.font-ico-wheel {
+  @include font(ico-wheel);
+}
+.font-ico-youtube {
+  @include font(ico-youtube);
+}
