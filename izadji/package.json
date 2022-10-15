@@ -10,6 +10,8 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "prettier": "^2.7.1",
@@ -29,7 +31,9 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
     "format": "npm run lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build:win": "cross-env NODE_ENV=production npm run build",
+    "start:win": "cross-env NODE_ENV=production npm start"
   },
   "eslintConfig": {
     "extends": [
@@ -79,9 +83,15 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-storybook": "^0.6.6",
     "prop-types": "^15.8.1",
+<<<<<<< .merge_file_a04528
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0"
+=======
+    "webpack": "^5.74.0",
+    "postcss": "^8.2.4",
+    "postcss-import": "^14.0.0"
+>>>>>>> .merge_file_a16800
   }
 }
