@@ -1,0 +1,63 @@
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/helpers';
+
+.box__slider {
+  border-top: 1px solid $black;
+  padding: 35px 0 7px;
+  width: 100%;
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 35px 0 30px;
+  }
+}
+
+.box__slider__wrap {
+  position: relative;
+  @media screen and (min-width: 768px) and (max-width: 1300px) {
+    padding: 0 50px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 0 40px;
+  }
+}
+
+.box__slider__title {
+  margin-bottom: 24px;
+}
+
+.box__slider__btn {
+  font-size: 17px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  &::before {
+    @include font-styles;
+  }
+}
+
+.box__slider__btn__prev {
+  left: -5px;
+  &::before {
+    content: font-char(ico-arrow-left);
+  }
+  @media screen and (max-width: 1300px) {
+    left: 10px;
+  }
+}
+
+.box__slider__btn__next {
+  right: -5px;
+  &::before {
+    content: font-char(ico-arrow-right);
+  }
+  @media screen and (max-width: 1300px) {
+    right: 10px;
+  }
+}

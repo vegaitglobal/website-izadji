@@ -1,6 +1,7 @@
 @import '../../style/utils/helpers';
 @import '../../style/utils/mixins';
 @import '../../style/utils/breakpoints';
+@import '../../style/layout/buttons';
 
 .hero__slider__item {
   @include animation {

@@ -5,6 +5,8 @@
 @import '../../../style/base/fonts';
 @import '../../../style/base/layout';
 @import '../../../style/utils/mixins';
+@import '../../../style/layout/icon-font';
+@import '../../../style/layout/buttons';
 
 .footer {
   background-color: $black;
@@ -117,5 +119,25 @@
   color: $white;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.footer__to__top {
+  bottom: 20px;
+  color: $white;
+  font-size: 13px;
+  padding-top: 24px;
+  position: absolute;
+  right: 0;
+  @include icon(arrow-long-top) {
+    font-size: 16px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    bottom: auto;
+    top: 0;
   }
 }
