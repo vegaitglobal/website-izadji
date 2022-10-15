@@ -8,6 +8,7 @@ type GallerySliderProps = {
 };
 
 const GallerySlider = ({ slides }: GallerySliderProps) => {
+  console.log(slides);
   return (
     <div className={styles.gallery__slider}>
       <div className={styles.wrap}>
