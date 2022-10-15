@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "About us page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.rich-text-with-image",
+        "shared-components.work-program-component",
+        "shared-components.rich-text-component",
+        "shared-components.donate-section",
+        "shared-components.newsletter",
+        "about-us-page-components.our-team"
+      ]
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-components.banner"
+    }
+  }
+}

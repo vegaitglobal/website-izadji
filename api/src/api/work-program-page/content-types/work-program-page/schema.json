@@ -15,7 +15,6 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.banner",
         "shared-components.collaborators-swiper",
         "shared-components.donate-section",
         "shared-components.gallery-swiper",
@@ -24,6 +23,15 @@
         "shared-components.newsletter",
         "shared-components.rich-text-with-image"
       ]
+    },
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-components.banner"
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   }
 }
