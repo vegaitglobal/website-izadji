@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "documentation_pages",
+  "info": {
+    "singularName": "documentation-page",
+    "pluralName": "documentation-pages",
+    "displayName": "Documentation page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "documentation-components.documentation-components",
+        "shared-components.donate-section"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_news_pages",
+  "info": {
+    "singularName": "blog-news-page",
+    "pluralName": "blog-news-pages",
+    "displayName": "Blog news page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.trending-articles",
+        "shared-components.donate-section"
+      ]
+    }
+  }
+}

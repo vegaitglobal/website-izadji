@@ -1,0 +1,38 @@
+// ----------  helpers
+// ------------------------------------------------------------------------------
+@import './mixins';
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.sr__only {
+  @include visually-hidden;
+}
+
+.has-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+// Theming and colors iterator
+@each $colors-name in $site-colors {
+  $name: nth($colors-name, 1);
+  $color: nth($colors-name, 2);
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .color-#{$name} {
+    color: $color;
+  }
+}

@@ -1,1 +1,57 @@
-$colorPink: #df0a8c;
+// ----------  variables
+// ------------------------------------------------------------------------------
+
+$font-default: 'Inter', sans-serif;
+$poppins: 'Poppins', sans-serif;
+
+// Colors
+$white: #fff;
+$black: #000;
+$blue: #1e8ef5;
+$green: #4acb7e;
+$purple: #bf5fd9;
+$red: #fb5757;
+$orange: #ffa756;
+$yellow: #fff06d;
+$pink: #df0a8c;
+$grey: #6a6a6a;
+$grey-100: #696969;
+$bg-primary: #f5f5f5;
+$transition: 0.4s ease;
+$site-colors: (
+  'black': $black,
+  'white': $white,
+  'orange': $orange,
+) !default;
+
+// ----------  Bootstrap grid
+// ------------------------------------------------------------------------------
+
+$enable-grid-classes: true !default;
+
+// ----------  Media queries breakpoints - Grid breakpoint
+// ------------------------------------------------------------------------------
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+// ----------  Grid containers
+// ------------------------------------------------------------------------------
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+) !default;
+
+// ----------  Grid columns
+// ------------------------------------------------------------------------------
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;

@@ -1,0 +1,51 @@
+@import '../../style/utils/swiper';
+@import '../../style/base/layout';
+@import '../../style/utils/breakpoints';
+@import '../../style//utils/mixins';
+
+.hero__slider {
+  padding: 17px 0;
+  width: 100%;
+}
+
+.hero__slider__nav {
+  margin-right: 250px;
+  bottom: 26px;
+  display: flex;
+  padding-left: 20px;
+  position: absolute;
+  right: 0;
+  width: 50%;
+
+  .swiper-pagination {
+    position: relative;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    background-color: rgba($black, 0.3);
+    height: 10px;
+    margin-right: 8px;
+    opacity: 1;
+    width: 10px;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: rgba($black, 0.8);
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    margin-right: 150px;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    margin-right: 180px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-right: 0;
+    bottom: 0;
+    justify-content: center;
+    padding-left: 0;
+    width: 100%;
+  }
+}
