@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_page_components_our_teams",
+  "info": {
+    "displayName": "Our team",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
+    }
+  }
+}

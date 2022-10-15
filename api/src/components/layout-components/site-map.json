@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_components_site_maps",
+  "info": {
+    "displayName": "Site map",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "page_links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page-link.page-link"
+    }
+  }
+}

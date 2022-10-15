@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_documentation_components_documentation_components",
+  "info": {
+    "displayName": "Documentation card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "downloadButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared-components.download-button"
+    }
+  }
+}

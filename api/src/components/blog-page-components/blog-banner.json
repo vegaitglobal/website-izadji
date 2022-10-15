@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_blog_page_components_blog_banners",
+  "info": {
+    "displayName": "Blog banner"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}

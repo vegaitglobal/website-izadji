@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "publication_pages",
+  "info": {
+    "singularName": "publication-page",
+    "pluralName": "publication-pages",
+    "displayName": "Publication page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.newsletter",
+        "publication-page-components.publication-card"
+      ]
+    }
+  }
+}

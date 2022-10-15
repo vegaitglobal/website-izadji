@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "homepages",
+  "collectionName": "pride_pages",
   "info": {
-    "singularName": "homepage",
-    "pluralName": "homepages",
-    "displayName": "Homepage",
-    "description": ""
+    "singularName": "pride-page",
+    "pluralName": "pride-pages",
+    "displayName": "Pride page"
   },
   "options": {
     "draftAndPublish": true
@@ -18,11 +17,12 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.work-program-component",
+        "shared-components.banner",
         "shared-components.collaborators-swiper",
+        "shared-components.rich-text-component",
         "shared-components.gallery-swiper",
         "shared-components.trending-articles",
-        "homepage-components.event-table-swiper"
+        "shared-components.newsletter"
       ]
     }
   }

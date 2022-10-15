@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-page",
     "pluralName": "blog-pages",
-    "displayName": "Blog page"
+    "displayName": "Blog page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,20 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "shared-components.rich-text-component",
+        "shared-components.gallery-swiper",
+        "shared-components.donate-section",
+        "blog-page-components.similar-posts"
+      ]
+    },
+    "work_program": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-program-page.work-program-page"
     }
   }
 }

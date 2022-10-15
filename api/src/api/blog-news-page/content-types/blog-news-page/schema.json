@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "homepages",
+  "collectionName": "blog_news_pages",
   "info": {
-    "singularName": "homepage",
-    "pluralName": "homepages",
-    "displayName": "Homepage",
+    "singularName": "blog-news-page",
+    "pluralName": "blog-news-pages",
+    "displayName": "Blog news page",
     "description": ""
   },
   "options": {
@@ -18,11 +18,8 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.work-program-component",
-        "shared-components.collaborators-swiper",
-        "shared-components.gallery-swiper",
         "shared-components.trending-articles",
-        "homepage-components.event-table-swiper"
+        "shared-components.donate-section"
       ]
     }
   }
