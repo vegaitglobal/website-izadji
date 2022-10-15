@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blog_news_components_filter_components",
+  "info": {
+    "displayName": "Filter component"
+  },
+  "options": {},
+  "attributes": {
+    "work_program_pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work-program-page.work-program-page"
+    }
+  }
+}

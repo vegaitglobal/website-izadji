@@ -19,7 +19,9 @@
       "type": "dynamiczone",
       "components": [
         "shared-components.trending-articles",
-        "shared-components.donate-section"
+        "shared-components.donate-section",
+        "blog-news-components.blog-news-banner",
+        "blog-news-components.filter-component"
       ]
     }
   }
