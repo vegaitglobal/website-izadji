@@ -50,12 +50,4 @@ jobs:
             npm run build:win
             nssm start izadji-site
             echo npm run build done
-            echo install and deploy strapi 
-            cd C:\Sites\website-izadji\api
-            echo moved to directory api
-            nssm stop izadji-strapi
-            yarn install
-            yarn run build:win
-            yarn run start:win
-            nssm start izadji-strapi
-            echo yarn run build done
+            
