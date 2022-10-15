@@ -18,4 +18,6 @@ DefaultProjectSlide.args = {
   title: 'Novi Projekat udruzenja Ime Projekta',
   description:
     "Savetovalište Grupe 'IZAĐI' raspisuje poziv za volontere i volonterke! U okviru našeg savetovališta, pruža se besplatna savetodavna i psihoterapijska podrška LGBTIQ+ osobama i članovima/cama njihovih....",
+  linkText: 'Saznaj više',
+  link: '/projekat1',
 };

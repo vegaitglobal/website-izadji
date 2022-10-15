@@ -27,6 +27,8 @@ const ProjectSlider = ({ slides }: ProjectSliderProps): JSX.Element => {
                 date={slide.date}
                 title={slide.title}
                 description={slide.description}
+                link={slide.link}
+                linkText={slide.linkText}
               />
             </SwiperSlide>
           ))}

@@ -1,0 +1,90 @@
+@import '../../style/utils/helpers';
+@import '../../style/utils/mixins';
+@import '../../style/utils/breakpoints';
+@import '../../style/layout/icon-font';
+
+.box__slider__item {
+  display: flex;
+  height: auto;
+}
+
+.box__slider__inner {
+  align-items: flex-start;
+  background: transparent;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 24px 42px;
+  position: relative;
+  width: 100%;
+  transition: $transition;
+  transition-property: background, border;
+  &::after {
+    background-image: linear-gradient(
+      to right,
+      rgba($red, 1) 0%,
+      rgba($red, 1) 16%,
+      rgba($orange, 1) 16%,
+      rgba($orange, 1) 32%,
+      rgba($yellow, 1) 32%,
+      rgba($yellow, 1) 49%,
+      rgba($green, 1) 49%,
+      rgba($green, 1) 66%,
+      rgba($blue, 1) 66%,
+      rgba($blue, 1) 83%,
+      rgba($purple, 1) 83%,
+      rgba($purple, 1) 100%
+    );
+    bottom: 0;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  &:hover {
+    background: $white url('../../assets/images/slider-pattern.png') repeat 0 0;
+    &::after {
+      content: '';
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 30px 5px;
+    &::after {
+      content: '';
+    }
+  }
+}
+
+.box__slider__heading {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+}
+
+.box__slider__text {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 22px;
+  max-width: 100%;
+  @include media-breakpoint-down(sm) {
+    line-height: 20px;
+  }
+}
+
+.box__slider__link {
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: auto;
+  @include icon(arrow-long-right, after) {
+    font-size: 17px;
+    margin-left: 8px;
+    position: relative;
+    top: 3px;
+  }
+}

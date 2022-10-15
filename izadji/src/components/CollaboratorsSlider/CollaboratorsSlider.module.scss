@@ -1,0 +1,43 @@
+@import '../../style/utils/helpers';
+@import '../../style/utils/mixins';
+@import '../../style/utils/breakpoints';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+
+// ---------- logo-slider
+// ------------------------------------------------------------------------------
+
+.logo__slider {
+  overflow: hidden;
+  padding: 33px 0 0;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 35px 0 20px;
+  }
+}
+
+.logo__slider__title {
+  margin-bottom: 23px;
+}
+
+.logo__slider__container {
+  overflow: visible;
+  .swiper-wrapper {
+    align-items: center;
+  }
+}
+
+.logo__slider__item {
+  width: 140px;
+  @include media-breakpoint-down(sm) {
+    width: 110px;
+  }
+}
+
+.logo-slider__inner {
+  display: block;
+  padding: 21px;
+  @include media-breakpoint-down(sm) {
+    padding: 10px;
+  }
+}

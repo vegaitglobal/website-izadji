@@ -1,4 +1,4 @@
-type IconProps = {
+export type IconProps = {
   src: string;
   altText: string;
   width: string;
