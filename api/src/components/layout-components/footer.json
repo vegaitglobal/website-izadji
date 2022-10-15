@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_layout_components_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "firstEmail": {
+      "type": "email"
+    },
+    "secondEmail": {
+      "type": "email"
+    },
+    "designedBy": {
+      "type": "string"
+    },
+    "siteMap": {
+      "displayName": "Site map",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout-components.site-map"
+    }
+  }
+}
