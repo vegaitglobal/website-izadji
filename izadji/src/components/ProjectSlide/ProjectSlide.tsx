@@ -5,6 +5,8 @@ export type ProjectSlideProps = {
   date: string;
   title: string;
   description: string;
+  link: string;
+  linkText: string;
 };
 
 const ProjectSlide = ({
@@ -12,6 +14,8 @@ const ProjectSlide = ({
   date,
   title,
   description,
+  link,
+  linkText,
 }: ProjectSlideProps): JSX.Element => {
   return (
     <div className={`${styles.hero__slider__item}`}>
@@ -25,7 +29,9 @@ const ProjectSlide = ({
           <span className={styles.hero__slider__subtitle}>{date}</span>
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
-          {/* TODO: Add Button once it is implemented */}
+          <a href={link} className={styles.btn}>
+            {linkText}
+          </a>
         </div>
       </div>
     </div>

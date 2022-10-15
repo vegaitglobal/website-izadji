@@ -1,0 +1,242 @@
+@import '../../../style/utils/variables';
+@import '../../../style/utils/breakpoints';
+@import '../../../style/utils/reset';
+@import '../../../style/utils/helpers';
+@import '../../../style/base/fonts';
+@import '../../../style/base/layout';
+@import '../../../style/utils/mixins';
+@import '../../../style/layout/icon-font';
+@import '../../../style/layout/buttons';
+
+.header {
+  border-bottom: 1px solid rgba($black, 0.08);
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  @include media-breakpoint-only(md) {
+    height: 82px;
+    padding: 15px 0;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 120px;
+    padding-top: 57px;
+  }
+}
+
+.header__wrap {
+  @include media-breakpoint-down(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.header__top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include media-breakpoint-down(md) {
+    justify-content: flex-end;
+    order: 2;
+  }
+}
+
+.header__emails {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.header__top__link {
+  color: $black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-right: 2px solid $black;
+  padding-right: 14px;
+  transition: color $transition;
+  &:last-child {
+    border-right: none;
+    padding: 0 0 0 14px;
+    @include media-breakpoint-only(md) {
+      padding-left: 30px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+  // TODO: Check if this is correct icon once the code is merged
+  @include icon(twitter) {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 14px;
+    padding-right: 0;
+    border-right: none;
+  }
+}
+
+.header__actions {
+  align-items: center;
+  display: flex;
+  @include media-breakpoint-down(md) {
+    border-right: 1px solid $black;
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+}
+
+.header__social {
+  font-size: 0;
+  padding-top: 7px;
+  @include media-breakpoint-down(sm) {
+    border-bottom: 1px solid rgba($black, 0.08);
+    display: flex;
+    left: 0;
+    padding: 10px 20px 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.header__social__item {
+  display: inline-block;
+  margin-left: 20px;
+  @include media-breakpoint-only(md) {
+    margin-left: 25px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.header__social__link {
+  color: $black;
+  font-size: 20px;
+  transition: color $transition;
+  &:hover {
+    color: $pink;
+  }
+}
+
+.header__btn {
+  background-color: $black;
+  color: $white;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 35px;
+  padding: 16px 33px 15px;
+  transition: background-color $transition;
+  &:hover {
+    background-color: $pink;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+.header__btn__touch {
+  @include media-breakpoint-down(md) {
+    display: inline-block;
+  }
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.header__hamburger {
+  font-size: 32px;
+  .font-ico-menu {
+    bottom: -4px;
+    position: relative;
+  }
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.header__hamburger__active .font__ico__menu::before {
+  content: font-char(ico-close);
+}
+
+.header__container {
+  margin: 0 auto;
+  max-width: 1234px;
+  padding: 0 20px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  @include media-breakpoint-down(md) {
+    width: auto;
+  }
+}
+
+.header__logo {
+  width: 58px;
+}
+
+.header__logo__img {
+  width: 100%;
+}
+
+.nav {
+  @include media-breakpoint-down(md) {
+    background-color: $white;
+    bottom: 0;
+    display: none;
+    left: 0;
+    overflow: auto;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 82px;
+  }
+  @include media-breakpoint-down(sm) {
+    top: 120px;
+  }
+}
+
+.nav__open {
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+}
+
+.nav__top {
+  display: none;
+  @include media-breakpoint-down(md) {
+    align-items: center;
+    border-bottom: 1px solid rgba($black, 0.08);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.header__emails__touch {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-only(md) {
+    flex-direction: row;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}

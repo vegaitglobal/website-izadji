@@ -1,0 +1,59 @@
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/reset';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/icon-font';
+@import '../../style/layout/buttons';
+
+.nav__link {
+  all: unset;
+  display: inline-block;
+
+  @include media-breakpoint-down(md) {
+    border-bottom: 1px solid rgba($black, 0.08);
+    width: 100%;
+  }
+  color: $black;
+
+  font-size: 14px;
+  font-weight: 700;
+  padding: 29px 12px 30px;
+  position: relative;
+  &::after,
+  &:active::after {
+    background-image: linear-gradient(
+      to right,
+      rgba($red, 1) 0%,
+      rgba($red, 1) 16%,
+      rgba($orange, 1) 16%,
+      rgba($orange, 1) 32%,
+      rgba($yellow, 1) 32%,
+      rgba($yellow, 1) 49%,
+      rgba($green, 1) 49%,
+      rgba($green, 1) 66%,
+      rgba($blue, 1) 66%,
+      rgba($blue, 1) 83%,
+      rgba($purple, 1) 83%,
+      rgba($purple, 1) 100%
+    );
+    bottom: -1px;
+    content: '';
+    height: 4px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity $transition;
+    width: 100%;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 20px 10px;
+    width: 100%;
+  }
+}

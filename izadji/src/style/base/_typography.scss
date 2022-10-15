@@ -1,5 +1,9 @@
 // ----------  typography
 // ------------------------------------------------------------------------------
+@import '../utils/breakpoints';
+@import '../utils/variables';
+@import '../utils/mixins';
+
 
 .rte h1,
 .rte h2,

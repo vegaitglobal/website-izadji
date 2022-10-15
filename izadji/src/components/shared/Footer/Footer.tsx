@@ -58,7 +58,13 @@ const Footer = ({
               </ul>
             ))}
           </div>
-          {/* TODO: Add Button once it is implemented */}
+          <button
+            type="button"
+            className={styles.footer__to__top}
+            onClick={backToTop}
+          >
+            Go to Top
+          </button>
         </div>
       </div>
     </footer>
