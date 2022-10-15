@@ -1,15 +1,11 @@
 import styles from './Header.module.scss';
-import Icon from '../Icon/Icon';
+import Icon, { IconProps } from '../Icon/Icon';
 import LogoImage from '../../../assets/svg/logo.svg';
-import FacebookIcon from '../../../assets/svg/ico-facebook.svg';
-import InstagramIcon from '../../../assets/svg/ico-instagram.svg';
-import LinkedinIcon from '../../../assets/svg/ico-linkedin.svg';
-import TwitterIcon from '../../../assets/svg/ico-twitter.svg';
-import YouTubeIcon from '../../../assets/svg/ico-youtube.svg';
 import NavBar, { NavBarProps } from '../../NavBar/NavBar';
 
 type HeaderProps = {
   emails: string[];
+  social: IconProps[];
   navBar: NavBarProps;
 };
 
@@ -24,31 +20,17 @@ const Header = (props: HeaderProps): JSX.Element => (
           </div>
           <div className={styles.header__actions}>
             <ul className={styles.header__social}>
-              <li className={styles.header__social__item}>
-                <a className={styles.header__social__link}>
-                  <Icon src={InstagramIcon} altText="Logo icon" width="20px" />
-                </a>
-              </li>
-              <li className={styles.header__social__item}>
-                <a className={styles.header__social__link}>
-                  <Icon src={FacebookIcon} altText="Logo icon" width="20px" />
-                </a>
-              </li>
-              <li className={styles.header__social__item}>
-                <a className={styles.header__social__link}>
-                  <Icon src={LinkedinIcon} altText="Logo icon" width="20px" />
-                </a>
-              </li>
-              <li className={styles.header__social__item}>
-                <a className={styles.header__social__link}>
-                  <Icon src={TwitterIcon} altText="Logo icon" width="20px" />
-                </a>
-              </li>
-              <li className={styles.header__social__item}>
-                <a className={styles.header__social__link}>
-                  <Icon src={YouTubeIcon} altText="Logo icon" width="20px" />
-                </a>
-              </li>
+              {props.social.map((icon: IconProps) => (
+                <li key={icon.src} className={styles.header__social__item}>
+                  <a className={styles.header__social__link}>
+                    <Icon
+                      src={icon.src}
+                      altText={icon.altText}
+                      width={icon.width}
+                    />
+                  </a>
+                </li>
+              ))}
             </ul>
             <a className={styles.header__btn}>Doniraj</a>
           </div>
