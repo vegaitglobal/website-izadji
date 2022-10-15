@@ -9,18 +9,18 @@ type HeaderProps = {
   navBar: NavBarProps;
 };
 
-const Header = (props: HeaderProps): JSX.Element => (
+const Header = ({ emails, social, navBar }: HeaderProps): JSX.Element => (
   <div>
     <header className={styles.header}>
       <div className={styles.wrap}>
         <div className={styles.header__top}>
           <div className={styles.header__emails}>
-            <span className={styles.header__top__link}>{props.emails[0]}</span>
-            <span className={styles.header__top__link}>{props.emails[1]}</span>
+            <span className={styles.header__top__link}>{emails[0]}</span>
+            <span className={styles.header__top__link}>{emails[1]}</span>
           </div>
           <div className={styles.header__actions}>
             <ul className={styles.header__social}>
-              {props.social.map((icon: IconProps) => (
+              {social.map((icon: IconProps) => (
                 <li key={icon.src} className={styles.header__social__item}>
                   <a className={styles.header__social__link}>
                     <Icon
@@ -42,7 +42,7 @@ const Header = (props: HeaderProps): JSX.Element => (
       </div>
       <div className={styles.header__container}>
         <Icon src={LogoImage} altText="Logo icon" width="58px" />
-        <NavBar buttons={props.navBar.buttons}></NavBar>
+        <NavBar buttons={navBar.buttons}></NavBar>
       </div>
     </header>
   </div>

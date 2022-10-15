@@ -4,8 +4,8 @@ export type NavBarButtonProps = {
   title: string;
 };
 
-const NavBarButton = (props: NavBarButtonProps): JSX.Element => (
-  <button className={styles.nav__link}>{props.title}</button>
+const NavBarButton = ({ title }: NavBarButtonProps): JSX.Element => (
+  <a className={styles.nav__link}>{title}</a>
 );
 
 export default NavBarButton;
