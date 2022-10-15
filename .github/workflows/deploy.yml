@@ -18,8 +18,11 @@ jobs:
           node-version: '16.x'
 
       - run: npm install react-scripts
+        working-directory: izadji
       - run: npm install
+        working-directory: izadji
       - run: CI=false npm run build
+        working-directory: izadji
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
