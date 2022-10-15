@@ -1,0 +1,29 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style//utils/breakpoints';
+@import '../../style//utils//helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+
+.feed {
+  padding: 50px 0 40px;
+  width: 100%;
+}
+
+.feed__title {
+  margin-bottom: 39px;
+}
+
+.feed__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.feed__link-wrap {
+  padding-top: 17px;
+  text-align: center;
+  width: 100%;
+}
