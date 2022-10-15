@@ -42,4 +42,4 @@ jobs:
             git pull
             cd C:\Sites\website-izadji\izadji
             npm install cross-env
-            npm run build:win            
+            npm run build        
