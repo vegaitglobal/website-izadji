@@ -41,8 +41,8 @@ jobs:
             echo git pull
             npm ci
             npm install cross-env
-            npm run build:win
-            npm run start:win
+            npm run build
+            npm run start
             echo npm run build done
             echo install and deploy strapi 
             cd C:\Sites\website-izadji\api
