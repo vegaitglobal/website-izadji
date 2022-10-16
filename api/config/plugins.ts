@@ -4,17 +4,20 @@ export default ({ env }) => ({
         provider: 'nodemailer',
         providerOptions: {
           host: env('SMTP_HOST'),
-          port: env('SMTP_PORT', 587),
+          port: env('SMTP_PORT'),
+          secure: true,
           auth: {
-            user: env('SMTP_USERNAME'),
-            pass: env('SMTP_PASSWORD'),
+            user: env('SMTP_APPLICATION_EMAIL'),
+            pass: env('SMTP_APPLICATION_PASSWORD'),
           },
           // ... any custom nodemailer options
         },
         settings: {
-          defaultFrom: 'hello.izadji@gmail.com',
-          defaultReplyTo: 'hello.izadji@gmail.com',
+          defaultFrom: env('SMTP_APPLICATION_EMAIL'),
+          defaultReplyTo: env('SMTP_APPLICATION_EMAIL'),
         },
       },
     },
+
+  
   });

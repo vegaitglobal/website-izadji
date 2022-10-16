@@ -24,7 +24,6 @@ const generateTemplate = (props: GenerateTemplateParams) => {
 
     }
 
-    console.log(mapValues)
     
     let base_path = process.cwd()
     let index_file_path = base_path + "/assets/email/newsletter_template.htm"
@@ -38,27 +37,27 @@ const generateTemplate = (props: GenerateTemplateParams) => {
 }
 
 
-const mailParams = (email, subject, title, content) => {
+const \mailParams = (destination_email, user_email, subject, title, content) => {
     const params = { 
         url: LOGO_URL, 
         title: title, 
         description: content,
-        unsubscribe_url: "http://localhost:1337/api/newsletter-subscriptions/unsubscribe/" + email
+        unsubscribe_url: `${process.env['IZADJI_URL']}/api/newsletter-subscriptions/unsubscribe/${user_email}`
     };
 
     return {
-        to: email, // iz param
+        to: destination_email,
         from: 'Hello Izadji',
         subject: subject,
         html: generateTemplate(params)
     }
 }
 
-//TODO: izvuci title, dscription i setovati u html. Setovati url slike
+
 let mailService = {
-    sendMail: async (email, title, subject, content) => {
-        
-        return await strapi.plugin('email').service('email').send(mailParams(email, subject, title, content));
+    sendMail: async (destination_email, user_email, title, subject, content) => {
+
+        return await strapi.plugin('email').service('email').send(mailParams(destination_email, user_email, subject, title, content));
     }
 }
 

@@ -1,6 +1,6 @@
 // ./src/api/[api-name]/content-types/[api-name]/lifecycles.ts
 import  mailService from "../../../email/services/email-service"
-import { factories } from "@strapi/strapi";
+
 
 
 interface SubscriptionEntity {
@@ -36,7 +36,7 @@ export default {
     let subscriptions: [SubscriptionEntity] = await getAllSubscriptions()
     let data = event.params.data
     if(isPublished(data)) {
-      subscriptions.forEach(val => mailService.sendMail(val.email, title, subject, content))
+      subscriptions.forEach(val => mailService.sendMail(val.email, val.email, title, subject, content))
     }
 
 
