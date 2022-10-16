@@ -10,7 +10,11 @@ type BannerProps = {
 const Banner = ({ imageSrc, title, text }: BannerProps): JSX.Element => {
   return (
     <section
+<<<<<<< HEAD
       className={`${styles.banner} ${styles.has__cover}`}
+=======
+      className={`${styles.banner} ${styles.has__cover} js-banner`}
+>>>>>>> develop
       style={{ backgroundImage: `url(${imageSrc})` }}
     >
       <div className={styles.wrap}>

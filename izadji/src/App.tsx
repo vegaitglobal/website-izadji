@@ -28,6 +28,10 @@ function App() {
             </Layout>
           }
         />
+        <Route path={routes.workProgram} element={<p>Work program</p>} />
+        <Route path={routes.blogPage} element={<p>Single blog page</p>} />
+        <Route path={routes.blog} element={<p>Blog page</p>} />
+        <Route path={routes.main} element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );

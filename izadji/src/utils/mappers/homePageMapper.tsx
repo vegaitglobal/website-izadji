@@ -1,12 +1,16 @@
+import dayjs from 'dayjs';
 import { ReactNode } from 'react';
 import CollaboratorsSlider, {
   CollaboratorsSlideProps,
 } from '../../components/CollaboratorsSlider/CollaboratorsSlider';
+import { EventProps } from '../../components/Event/Event';
+import EventsSlider from '../../components/EventsSlider/EventsSlider';
 import { GallerySlideProps } from '../../components/GallerySlide/GallerySlide';
 import GallerySlider from '../../components/GallerySlider/GallerySlider';
 import Newsletter from '../../components/Newsletter/Newsletter';
 import { TrendingArticleProps } from '../../components/TrendingArticle/TrendingArticle';
 import TrendingArticles from '../../components/TrendingArticles/TrendingArticles';
+import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponentEnums';
 import { getWorkProgramSlider } from './workProgramMapper';
 
@@ -35,6 +39,7 @@ export const getTrendingArticlesSlides = (
       date: blogBanner.date,
       title: blogBanner.title,
       category: workProgramme,
+      link: `/blogs/${trendingArticle.id}`,
     };
   });
 };
@@ -45,6 +50,21 @@ export const getCollaboratorsSlides = (
   return collaborators.map((collaboratorData: any) => {
     return {
       imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${collaboratorData.attributes.url}`,
+    };
+  });
+};
+
+const getEventTableSlides = (events: any): EventProps[] => {
+  return events.map((eventData: any) => {
+    const startTime = eventData.timeStart.split(':');
+    const endTime = eventData.timeStart.split(':');
+    return {
+      date: convertDate(eventData.date),
+      weekDay: convertWeekDay(eventData.date),
+      timeStart: `${startTime[0]}:${startTime[1]}`,
+      timeEnd: `${endTime[0]}:${endTime[1]}`,
+      name: eventData.text,
+      link: eventData.link,
     };
   });
 };
@@ -98,6 +118,17 @@ const getHomePageComponents = (
           />
         );
         pageComponents.push(newsletterComponent);
+        break;
+      }
+      case HomePageComponents.EVENT_TABLE: {
+        const eventTableComponent = (
+          <EventsSlider
+            events={getEventTableSlides(
+              component.event_table.data.attributes.event
+            )}
+          />
+        );
+        pageComponents.push(eventTableComponent);
         break;
       }
       default: {

@@ -17,4 +17,5 @@ DefaultProjectSlide.args = {
   date: '29. novembar',
   title: 'Novi Projekat udruzenja Ime Projekta',
   category: 'Kategorija',
+  link: 'link',
 };
