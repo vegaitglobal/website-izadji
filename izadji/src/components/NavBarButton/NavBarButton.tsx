@@ -1,5 +1,6 @@
 import styles from './NavBarButton.module.scss';
 import './header.js';
+import { useLocation } from 'react-router';
 
 export type NavBarButtonProps = {
   title: string;
@@ -15,22 +16,23 @@ const NavBarButton = ({
   buttons,
   buttonTitle,
 }: NavBarButtonsListProps): JSX.Element => {
-  const isActive = true;
+  console.log(window.location.href);
   return (
     <li className={`${styles.nav__item} js-nav-item`} role="menuitem">
       {buttons.length === 1 ? (
-        <a href={buttons[0].link} className={styles.nav__link}>
+        <a
+          href={buttons[0].link}
+          className={`${styles.nav__link} ${
+            window.location.href === buttons[0].link //TODO: logika ostaje samo uz react router
+              ? styles.nav__link__active
+              : ''
+          }`}
+        >
           {buttons[0].title}
         </a>
       ) : (
         <div className={styles.nav__item}>
-          <a
-            className={`${styles.nav__link} ${
-              isActive ? styles.nav__link__active : ''
-            }`}
-          >
-            {buttonTitle}
-          </a>
+          <a className={`${styles.nav__link}`}>{buttonTitle}</a>
           <button type="button" className={`${styles.nav__arrow} js_nav_arrow`}>
             <span className={styles.sr__only}>123</span>
           </button>
