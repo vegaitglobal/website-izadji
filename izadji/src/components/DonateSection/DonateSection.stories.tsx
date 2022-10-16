@@ -1,5 +1,3 @@
-import './DonateSection.module.scss';
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import DonateSection from './DonateSection';
 

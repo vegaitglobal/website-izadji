@@ -1,3 +1,4 @@
+import { routes } from '../../routes';
 import TrendingArticle, {
   TrendingArticleProps,
 } from '../TrendingArticle/TrendingArticle';
@@ -22,11 +23,12 @@ const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
               date={slide.date}
               title={slide.title}
               category={slide.category}
+              link={slide.link}
             />
           ))}
         </div>
         <div className={styles.feed__link__wrap}>
-          <a href="/" className={styles.btn}>
+          <a href={routes.blog} className={styles.btn}>
             Pročitaj više
           </a>
         </div>
