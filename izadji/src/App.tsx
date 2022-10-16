@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../src/style/utils/_reset.scss';
+import 'swiper/scss';
+import 'swiper/scss/pagination';
 
 import HomePage from './pages/HomePage/HomePage';
 import PridePage from './pages/PridePage/PridePage';
