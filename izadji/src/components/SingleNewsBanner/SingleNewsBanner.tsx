@@ -12,7 +12,7 @@ const SingleNewsBanner = ({ imageSrc, title, category, author, date }: SingleNew
   return (
     <section className={styles.blog__article__banner}>
         <div className={styles.wrap}>
-            <div className={`${styles.blog__article__banner__inner} has-cover`}
+            <div className={`${styles.blog__article__banner__inner} ${styles.has__cover}`}
                  style={{ backgroundImage: `url(${imageSrc})` }}
             >
                 <div className={styles.blog__article__banner__content}>

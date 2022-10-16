@@ -8,6 +8,14 @@
 @import '../../style/layout/icon-font';
 @import '../../style/layout/buttons';
 
+.events {
+  padding: 44px 0 80px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0 50px;
+  }
+}
+
 .swiper-wrapper {
   display: flex;
   flex-direction: column;
@@ -77,22 +85,16 @@
   margin-right: 5px;
   padding-top: 2px;
   width: 34px;
-  #slidePrev {
-    @include icon(arrow-left, after) {
-      font-size: 9px;
-      position: relative;
-    }
-  }
 }
 
-#slidePrev {
+#sliderPrevEvents {
   @include icon(arrow-left, after) {
     font-size: 9px;
     position: relative;
   }
 }
 
-#slideNext {
+#sliderNextEvents {
   @include icon(arrow-right, after) {
     font-size: 9px;
     position: relative;
