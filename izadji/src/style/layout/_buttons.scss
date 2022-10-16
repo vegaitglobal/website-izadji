@@ -1,6 +1,8 @@
 // ----------  button
 // ------------------------------------------------------------------------------
 @import './icon-font';
+@import './../utils/mixins';
+@import './../utils/variables';
 
 button,
 input[type='button'],
@@ -46,19 +48,19 @@ a {
     top: 50%;
     transform: translateY(-50%);
   }
-  @include hover {
+  &:hover {
     background-color: $black;
   }
 }
 
-.btn--centered {
+.btn__centered {
   text-align: center;
   &::after {
     display: none;
   }
 }
 
-.btn--large {
+.btn__large {
   font-size: 18px;
   height: 56px;
   line-height: 56px;
