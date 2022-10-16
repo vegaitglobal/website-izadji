@@ -6,8 +6,8 @@ import HomePageComponents from '../enums/homePageComponentEnums';
 export const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   return imagesData.map((imageData: any) => {
     return {
-      imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.formats.large.url}`,
-      largeImageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.formats.large.url}`,
+      imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
+      largeImageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
       altText: imageData.attributes.alternativeText,
     };
   });
