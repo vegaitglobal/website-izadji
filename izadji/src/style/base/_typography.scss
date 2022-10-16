@@ -113,11 +113,11 @@
     line-height: 22px;
     margin-bottom: 4px;
   }
-  .large-text {
+  .large__text {
     font-size: 34px;
     line-height: 25px;
   }
-  .rainbow-text {
+  .rainbow__text {
     background: linear-gradient(
       90deg,
       #fb5757 0%,
@@ -194,8 +194,7 @@ img {
   text-transform: uppercase;
 }
 
-
-.section__title--left {
+.section__title__left {
   text-align: left;
 }
 
