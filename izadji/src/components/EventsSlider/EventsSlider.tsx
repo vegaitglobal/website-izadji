@@ -1,3 +1,5 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import styles from './EventsSlider.module.scss';
 import { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';

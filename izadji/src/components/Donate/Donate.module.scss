@@ -1,0 +1,146 @@
+@import "src/style/utils/variables";
+@import "src/style/layout/icon-font";
+@import "src/style/utils/mixins";
+@import "src/style/base/fonts";
+@import "src/style/utils/breakpoints";
+@import "src/style/layout/forms";
+@import '../../style/utils/helpers';
+@import '../../style/base/layout';
+@import '../../style/utils/reset';
+@import '../../style/layout/buttons';
+
+// ---------- donation
+// ------------------------------------------------------------------------------
+
+.donation {
+  display: flex;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.donation__picker {
+  background-color: $white;
+  display: flex;
+  justify-content: flex-end;
+  width: 43.6%;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.donation__picker__inner {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 522px;
+  padding: 40px 40px 40px 20px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+    padding: 30px 20px;
+  }
+}
+
+.donation__title {
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 15px;
+  @include media-breakpoint-down(sm) {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+.donation__text {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 34px;
+  max-width: 100%;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 30px;
+  }
+}
+
+.donation__info {
+  background-color: #9c0762;
+  color: $white;
+  width: 56.4%;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.donation__info-inner {
+  max-width: 712px;
+  padding: 48px 20px 47px 32px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+    padding: 30px 20px;
+  }
+}
+
+.donation__info-title {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  max-width: 490px;
+}
+
+.donation__info-text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 17px;
+  max-width: 490px;
+}
+
+.donation__payment {
+  width: 100%;
+}
+
+.donation__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  width: 100%;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.donation__payment-item {
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-right: 20px;
+  }
+}
+
+.donation__payment-label {
+  color: rgba($white, 0.36);
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 7px;
+  @include media-breakpoint-down(sm) {
+    font-size: 17px;
+  }
+}
+
+.donation__payment-value {
+  font-size: 24px;
+  line-height: 30px;
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
