@@ -36,3 +36,17 @@
     display: block;
   }
 }
+
+.nav__item {
+  display: inline-block;
+  position: relative;
+  &:hover {
+    .nav__sublist {
+      display: block;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    border-bottom: 1px solid rgba($black, 0.08);
+    width: 100%;
+  }
+}

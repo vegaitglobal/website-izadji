@@ -7,32 +7,37 @@ import FacebookIcon from '../../../assets/svg/ico-facebook.svg';
 import TwitterIcon from '../../../assets/svg/ico-twitter.svg';
 import LinkedinIcon from '../../../assets/svg/ico-linkedin.svg';
 
-const navBar = {
+const navBarButtons = {
   buttons: [
     {
-      title: 'Pocetna',
+      buttons: [{ title: 'Pocetna', link: '' }],
+      buttonTitle: 'Pocetna',
     },
     {
-      title: 'Pride',
+      buttons: [{ title: 'Pride', link: '' }],
+      buttonTitle: 'Pride',
     },
     {
-      title: 'Publikacije',
+      buttons: [
+        { title: 'Publikacije', link: '' },
+        { title: 'Dokumentacije', link: '' },
+      ],
+      buttonTitle: 'Dokumenta',
     },
     {
-      title: 'Vesti/Blog',
+      buttons: [{ title: 'Vesti/Blog', link: '' }],
+      buttonTitle: 'Vesti/Blog',
     },
     {
-      title: 'Dokumantacija',
+      buttons: [{ title: 'O nama', link: '' }],
+      buttonTitle: 'O nama',
     },
     {
-      title: 'O Nama',
-    },
-    {
-      title: 'Kontakt',
+      buttons: [{ title: 'Kontakt', link: '' }],
+      buttonTitle: 'Kontakt',
     },
   ],
 };
-
 const social = [
   {
     src: InstagramIcon,
@@ -71,6 +76,6 @@ const Default: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 export const DefaultHeader = Default.bind({});
 DefaultHeader.args = {
   emails: ['savetovaliste@izadji.rs', 'office@izadji.rs'],
-  navBar: navBar,
+  navBar: navBarButtons,
   social: social,
 };

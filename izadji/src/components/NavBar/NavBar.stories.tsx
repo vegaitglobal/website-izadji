@@ -4,25 +4,31 @@ import './NavBar.module.scss';
 
 const navBarButtons = [
   {
-    title: 'Pocetna',
+    buttons: [{ title: 'Pocetna', link: '' }],
+    buttonTitle: 'Pocetna',
   },
   {
-    title: 'Pride',
+    buttons: [{ title: 'Pride', link: '' }],
+    buttonTitle: 'Pride',
   },
   {
-    title: 'Publikacije',
+    buttons: [
+      { title: 'Publikacije', link: '' },
+      { title: 'Dokumentacije', link: '' },
+    ],
+    buttonTitle: 'Dokumenta',
   },
   {
-    title: 'Vesti/Blog',
+    buttons: [{ title: 'Vesti/Blog', link: '' }],
+    buttonTitle: 'Vesti/Blog',
   },
   {
-    title: 'Dokumantacija',
+    buttons: [{ title: 'O nama', link: '' }],
+    buttonTitle: 'O nama',
   },
   {
-    title: 'O Nama',
-  },
-  {
-    title: 'Kontakt',
+    buttons: [{ title: 'Kontakt', link: '' }],
+    buttonTitle: 'Kontakt',
   },
 ];
 
