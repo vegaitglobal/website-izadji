@@ -9,16 +9,19 @@ const trendingArticles = [
     imageSrc: ProjectSlideImage1,
     date: '29. novembar',
     title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
   },
   {
     imageSrc: ProjectSlideImage2,
     date: '30. novembar',
     title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
   },
   {
     imageSrc: ProjectSlideImage3,
     date: '25. decembar',
     title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
   },
 ];
 

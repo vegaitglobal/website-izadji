@@ -1,16 +1,13 @@
-import TrendingArticle from '../TrendingArticle/TrendingArticle';
+import TrendingArticle, {
+  TrendingArticleProps,
+} from '../TrendingArticle/TrendingArticle';
 import styles from './TrendingArticles.module.scss';
 
-export type ProjectSlideProps = {
-  imageSrc: string;
-  date: string;
-  title: string;
+type TrendingArticlesProps = {
+  slides: TrendingArticleProps[];
 };
 
-type ProjectSliderProps = {
-  slides: ProjectSlideProps[];
-};
-const TrendingArticles = ({ slides }: ProjectSliderProps): JSX.Element => {
+const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
   return (
     <div className={`${styles.feed} ${styles.feed__white}`}>
       <div className={styles.wrap}>
@@ -24,6 +21,7 @@ const TrendingArticles = ({ slides }: ProjectSliderProps): JSX.Element => {
               imageSrc={slide.imageSrc}
               date={slide.date}
               title={slide.title}
+              category={slide.category}
             />
           ))}
         </div>

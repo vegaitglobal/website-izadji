@@ -1,17 +1,18 @@
 import styles from './TrendingArticle.module.scss';
 
-export type ProjectSlideProps = {
+export type TrendingArticleProps = {
   imageSrc: string;
   date: string;
   title: string;
-  //   description: string;
+  category: string;
 };
 
 const TrendingArticle = ({
   imageSrc,
   date,
   title,
-}: ProjectSlideProps): JSX.Element => {
+  category,
+}: TrendingArticleProps): JSX.Element => {
   return (
     <a href="/" className={styles.feed__card}>
       <div className={styles.feed__image__holder}>
@@ -25,7 +26,7 @@ const TrendingArticle = ({
           <span className={styles.feed__heading__text}>{title}</span>
         </h3>
         <span className={`${styles.feed__category} ${styles.category}`}>
-          Kategorija
+          {category}
         </span>
         <div className={styles.feed__more}>
           {/*TODO add button */}
