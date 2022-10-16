@@ -37,7 +37,7 @@ const generateTemplate = (props: GenerateTemplateParams) => {
 }
 
 
-const \mailParams = (destination_email, user_email, subject, title, content) => {
+const mailParams = (destination_email, user_email, subject, title, content) => {
     const params = { 
         url: LOGO_URL, 
         title: title, 

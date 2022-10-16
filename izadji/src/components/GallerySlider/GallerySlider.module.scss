@@ -1,0 +1,55 @@
+@import '../../style/base/layout';
+@import '../../style/utils/helpers';
+@import '../../style/utils/mixins';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/reset';
+
+.gallery__slider {
+  background: $black;
+  overflow: hidden;
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+  @media screen and (max-width: 1300px) {
+    padding: 8px 20px;
+  }
+}
+
+.gallery__slider__btn {
+  color: $white;
+  display: inline-block;
+  font-size: 19px;
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  transform: translateY(-50%);
+  &::before {
+    @include font-styles;
+  }
+  &.swiper-button-disabled {
+    opacity: 0.4;
+  }
+}
+
+.gallery__slider__btn__prev {
+  right: calc(50% + 632px);
+  &::before {
+    content: font-char(ico-arrow-left);
+  }
+  @media screen and (max-width: 1300px) {
+    left: 10px;
+    right: auto;
+  }
+}
+
+.gallery__slider__btn__next {
+  left: calc(50% + 632px);
+  &::before {
+    content: font-char(ico-arrow-right);
+  }
+  @media screen and (max-width: 1300px) {
+    left: auto;
+    right: 10px;
+  }
+}

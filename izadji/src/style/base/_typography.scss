@@ -1,5 +1,6 @@
 // ----------  typography
 // ------------------------------------------------------------------------------
+
 @import '../utils/breakpoints';
 @import '../utils/variables';
 @import '../utils/mixins';
@@ -172,7 +173,7 @@ img {
   max-width: 100%;
 }
 
-.img-right-aligned {
+.img__right__aligned {
   float: right;
   margin: 0 0 50px 50px;
   max-width: 48%;
@@ -192,6 +193,7 @@ img {
   text-align: center;
   text-transform: uppercase;
 }
+
 
 .section__title--left {
   text-align: left;

@@ -1,15 +1,16 @@
 {
   "collectionName": "components_shared_components_newsletters",
   "info": {
-    "displayName": "Newsletter"
+    "displayName": "Newsletter",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "string"
-    },
     "buttonText": {
       "type": "string"
+    },
+    "text": {
+      "type": "richtext"
     }
   }
 }

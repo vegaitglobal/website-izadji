@@ -1,0 +1,159 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/helpers';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/icon-font';
+
+.events__row {
+  align-items: center;
+  border-bottom: 1px solid $black;
+  display: flex;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px fluid(10px, 15px) 3px fluid(10px, 22px);
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    font-size: 14px;
+    padding: 10px;
+  }
+  @include media-breakpoint-down(sm) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 12px 10px;
+  }
+}
+
+.events__cell {
+  color: $black;
+  display: inline-block;
+}
+
+.events__cell__body_date {
+  color: $black;
+  display: inline-block;
+
+  font-size: fluid(34px, 40px);
+  font-weight: 700;
+  line-height: fluid(40px, 60px);
+  text-transform: uppercase;
+  @include media-breakpoint-up(lg) {
+    white-space: nowrap;
+  }
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 10px;
+  }
+
+  width: 30%;
+  @include media-breakpoint-only(md) {
+    width: 22%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 50%;
+  }
+}
+
+.events__cell__body_time {
+  color: $black;
+  display: inline-block;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: nowrap;
+  @include media-breakpoint-only(md) {
+    font-size: 14px;
+  }
+
+  width: 16.6%;
+  @include media-breakpoint-only(md) {
+    width: 17%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 5px;
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.events__cell_body_name {
+  color: $black;
+  display: inline-block;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 7px;
+  }
+
+  width: 38%;
+  @include media-breakpoint-only(md) {
+    width: 44%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.events__cell__head {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+  @include media-breakpoint-only(md) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  @include media-breakpoint-down(sm) {
+    &.events__cell--name {
+      display: none;
+    }
+  }
+}
+
+.events__cell_link {
+  color: $black;
+  display: inline-block;
+  margin-left: auto;
+  padding-bottom: 4px;
+  text-align: right;
+  @include icon(arrow-long-right, after) {
+    font-size: 17px;
+    margin-left: 6px;
+    position: relative;
+    top: 3px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+.events__date__inner {
+  display: inline-block;
+  width: 49%;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}
+
+.events__day {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 5px;
+    vertical-align: middle;
+  }
+}

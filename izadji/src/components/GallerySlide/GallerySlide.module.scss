@@ -1,0 +1,30 @@
+@import '../../style/utils/variables';
+
+.gallery__slider__item {
+  display: flex;
+  height: auto;
+}
+
+.gallery__slider__thumb {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 100%;
+  position: relative;
+  width: 100%;
+  &:hover {
+    .gallery__slider__image {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}
+
+.gallery__slider__image {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform $transition;
+  width: 100%;
+}

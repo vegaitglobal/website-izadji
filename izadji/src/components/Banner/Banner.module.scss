@@ -1,0 +1,60 @@
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/helpers';
+
+.banner {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.banner__inner {
+  align-items: flex-end;
+  display: flex;
+  min-height: 440px;
+  padding: 44px 0;
+  width: 100%;
+}
+
+.banner__content {
+  background-color: rgba($white, 0.8);
+  max-width: 572px;
+  padding: 34px 33px 30px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 20px;
+  }
+}
+
+.banner__heading {
+  display: block;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 16px;
+}
+
+.banner__text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.banner__btn {
+  font-size: 14px;
+  margin-left: -7px;
+  padding-left: 16px;
+  position: relative;
+  @include icon(arrow-long-top) {
+    font-size: 17px;
+    left: 0;
+    margin-right: 9px;
+    position: absolute;
+    top: 0;
+    transform: rotate(-180deg);
+  }
+}

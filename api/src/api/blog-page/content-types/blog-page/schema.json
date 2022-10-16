@@ -28,6 +28,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::work-program-page.work-program-page"
+    },
+    "blogBanner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blog-page-components.blog-banner"
     }
   }
 }
