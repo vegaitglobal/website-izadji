@@ -12,7 +12,8 @@ export const DefaultEvent = Default.bind({});
 DefaultEvent.args = {
   date: '25.OKT',
   weekDay: 'NEDELJA',
-  time: '14:00 - 17:00',
+  timeStart: '14:00',
+  timeEnd: '17:00',
   name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis purus sit amet luctus venenatis',
   link: '',
 };

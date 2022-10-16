@@ -5,6 +5,7 @@ export type TrendingArticleProps = {
   date: string;
   title: string;
   category: string;
+  link: string;
 };
 
 const TrendingArticle = ({
@@ -12,9 +13,10 @@ const TrendingArticle = ({
   date,
   title,
   category,
+  link,
 }: TrendingArticleProps): JSX.Element => {
   return (
-    <a href="/" className={styles.feed__card}>
+    <a href={link} className={styles.feed__card}>
       <div className={styles.feed__image__holder}>
         <div
           className={`${styles.feed__image} ${styles.has_cover}`}
