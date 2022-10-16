@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 function createGroups(array: EventProps[]) {
-  var numGroups =
+  let numGroups =
     array.length % 4 == 0 ? array.length / 4 : Math.floor(array.length / 4) + 1;
   return new Array(numGroups)
     .fill('')

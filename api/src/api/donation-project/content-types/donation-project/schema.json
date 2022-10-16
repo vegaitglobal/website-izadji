@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donation_projects",
+  "info": {
+    "singularName": "donation-project",
+    "pluralName": "donation-projects",
+    "displayName": "Donation project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "projectName": {
+      "type": "string"
+    },
+    "paymentModel": {
+      "type": "string"
+    },
+    "paymentReferenceNumber": {
+      "type": "string"
+    },
+    "paymentAccountNumber": {
+      "type": "string"
+    },
+    "project_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::projects-page.projects-page"
+    },
+    "paymentReceiver": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

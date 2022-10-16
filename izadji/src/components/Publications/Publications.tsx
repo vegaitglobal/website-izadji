@@ -1,12 +1,6 @@
-import Publication from '../Publication/Publication';
+import Publication, {PublicationProps} from '../Publication/Publication';
 import styles from './Publications.module.scss';
 
-export type PublicationProps = {
-  imageSrc: string;
-  text: string;
-  title: string;
-  buttonText: string;
-};
 type PublicationsProps = {
   title: string;
   publications: PublicationProps[];
