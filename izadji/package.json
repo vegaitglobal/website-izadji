@@ -41,7 +41,9 @@
     "lint": "eslint --ext .js,.ts,.jsx,.tsx src",
     "format": "npm run lint --fix & yarn prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build:win": "cross-env NODE_ENV=production npm run build",
+    "start:win": "cross-env NODE_ENV=production npm start"
   },
   "eslintConfig": {
     "extends": [
@@ -90,11 +92,8 @@
     "eslint": "^8.25.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-storybook": "^0.6.6",
-<<<<<<< HEAD
-=======
     "postcss": "^8.2.4",
     "postcss-import": "^14.0.0",
->>>>>>> develop
     "prop-types": "^15.8.1",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
