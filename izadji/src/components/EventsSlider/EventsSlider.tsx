@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './EventsSlider.module.scss';
 import Event, { EventProps } from '../Event/Event';
 import { Navigation } from 'swiper';
@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 function createGroups(array: EventProps[]) {
-  var numGroups =
+  const numGroups =
     array.length % 4 == 0 ? array.length / 4 : Math.floor(array.length / 4) + 1;
   return new Array(numGroups)
     .fill('')

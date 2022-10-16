@@ -1,6 +1,8 @@
 // ----------  button
 // ------------------------------------------------------------------------------
 @import './icon-font';
+@import './../utils/mixins';
+@import './../utils/variables';
 
 button,
 input[type='button'],
@@ -46,7 +48,7 @@ a {
     top: 50%;
     transform: translateY(-50%);
   }
-  @include hover {
+  &:hover {
     background-color: $black;
   }
 }
@@ -66,7 +68,7 @@ a {
   padding: 0 17px;
 }
 
-.btn--feed {
+.btn__feed {
   display: flex;
   margin: 0 auto;
 }
