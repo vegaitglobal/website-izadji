@@ -16,4 +16,5 @@ DefaultProjectSlide.args = {
   imageSrc: ProjectSlideImage1,
   date: '29. novembar',
   title: 'Novi Projekat udruzenja Ime Projekta',
+  category: 'Kategorija',
 };

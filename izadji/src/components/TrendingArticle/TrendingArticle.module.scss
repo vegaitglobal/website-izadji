@@ -6,6 +6,7 @@
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/base/typography';
+@import '../../style/layout/icon-font';
 
 .feed__card {
   background-color: $white;
@@ -103,12 +104,12 @@
 .feed__read__more {
   font-size: 12px;
   line-height: 21px;
-  //   @include icon(arrow-long-right, after) {
-  //     font-size: 13px;
-  //     margin-left: 9px;
-  //     position: relative;
-  //     top: 3px;
-  //   }
+  @include icon(arrow-long-right, after) {
+    font-size: 13px;
+    margin-left: 9px;
+    position: relative;
+    top: 3px;
+  }
 }
 
 .feed__date {

@@ -8,6 +8,7 @@ type GallerySliderProps = {
 };
 
 const GallerySlider = ({ slides }: GallerySliderProps) => {
+  console.log(slides);
   return (
     <div className={styles.gallery__slider}>
       <div className={styles.wrap}>
@@ -21,8 +22,8 @@ const GallerySlider = ({ slides }: GallerySliderProps) => {
             },
           }}
           navigation={{
-            prevEl: '#sliderPrev',
-            nextEl: '#sliderNext',
+            prevEl: '#sliderPrevGallery',
+            nextEl: '#sliderNextGallery',
           }}
           modules={[Navigation]}
         >
@@ -39,14 +40,14 @@ const GallerySlider = ({ slides }: GallerySliderProps) => {
         <button
           type="button"
           className={`${styles.gallery__slider__btn} ${styles.gallery__slider__btn__prev}`}
-          id="sliderPrev"
+          id="sliderPrevGallery"
         >
           <span className={styles.sr__only}>Prev</span>
         </button>
         <button
           type="button"
           className={`${styles.gallery__slider__btn} ${styles.gallery__slider__btn__next}`}
-          id="sliderNext"
+          id="sliderNextGallery"
         >
           <span className={styles.sr__only}>Next</span>
         </button>

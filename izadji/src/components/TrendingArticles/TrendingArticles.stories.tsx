@@ -4,26 +4,26 @@ import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
 import TrendingArticles from './TrendingArticles';
 
-const trendingArticles = {
-  slides: [
-    {
-      imageSrc: ProjectSlideImage1,
-      date: '29. novembar',
-      title: 'Novi Projekat udruzenja Ime Projekta',
-    },
-    {
-      imageSrc: ProjectSlideImage2,
-      date: '30. novembar',
-      title: 'Novi Projekat udruzenja Ime Projekta',
-    },
-    {
-      imageSrc: ProjectSlideImage3,
-      date: '25. decembar',
-      title: 'Novi Projekat udruzenja Ime Projekta',
-    },
-  ],
-  buttonText: 'Pogledaj blog',
-};
+const trendingArticles = [
+  {
+    imageSrc: ProjectSlideImage1,
+    date: '29. novembar',
+    title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
+  },
+  {
+    imageSrc: ProjectSlideImage2,
+    date: '30. novembar',
+    title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
+  },
+  {
+    imageSrc: ProjectSlideImage3,
+    date: '25. decembar',
+    title: 'Novi Projekat udruzenja Ime Projekta',
+    category: 'Kategorija',
+  },
+];
 
 export default {
   title: 'Trending Artciles',
@@ -36,6 +36,5 @@ const Default: ComponentStory<typeof TrendingArticles> = (args) => (
 
 export const DefaultTrendingArticles = Default.bind({});
 DefaultTrendingArticles.args = {
-  slides: trendingArticles.slides,
-  buttonText: trendingArticles.buttonText,
+  slides: trendingArticles,
 };

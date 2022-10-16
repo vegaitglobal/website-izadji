@@ -1,20 +1,13 @@
-import TrendingArticle from '../TrendingArticle/TrendingArticle';
+import TrendingArticle, {
+  TrendingArticleProps,
+} from '../TrendingArticle/TrendingArticle';
 import styles from './TrendingArticles.module.scss';
 
-export type ProjectSlideProps = {
-  imageSrc: string;
-  date: string;
-  title: string;
+type TrendingArticlesProps = {
+  slides: TrendingArticleProps[];
 };
 
-type ProjectSliderProps = {
-  buttonText: string;
-  slides: ProjectSlideProps[];
-};
-const TrendingArticles = ({
-  slides,
-  buttonText,
-}: ProjectSliderProps): JSX.Element => {
+const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
   return (
     <div className={`${styles.feed} ${styles.feed__white}`}>
       <div className={styles.wrap}>
@@ -28,12 +21,13 @@ const TrendingArticles = ({
               imageSrc={slide.imageSrc}
               date={slide.date}
               title={slide.title}
+              category={slide.category}
             />
           ))}
         </div>
         <div className={styles.feed__link__wrap}>
           <a href="/" className={styles.btn}>
-            {buttonText}
+            Pročitaj više
           </a>
         </div>
       </div>
