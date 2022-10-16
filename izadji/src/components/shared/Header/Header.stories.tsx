@@ -1,11 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Header from './Header';
 import './Header.module.scss';
-import YouTubeIcon from '../../../assets/svg/ico-youtube.svg';
-import InstagramIcon from '../../../assets/svg/ico-instagram.svg';
-import FacebookIcon from '../../../assets/svg/ico-facebook.svg';
-import TwitterIcon from '../../../assets/svg/ico-twitter.svg';
-import LinkedinIcon from '../../../assets/svg/ico-linkedin.svg';
 
 const navBar = {
   buttons: [
@@ -35,29 +30,29 @@ const navBar = {
 
 const social = [
   {
-    src: InstagramIcon,
     altText: 'instagram',
-    width: '20px',
+    iconClass: 'instagram',
+    url: '/',
   },
   {
-    src: FacebookIcon,
     altText: 'facebook',
-    width: '20px',
+    iconClass: 'facebook',
+    url: '/',
   },
   {
-    src: LinkedinIcon,
     altText: 'linkedin',
-    width: '20px',
+    iconClass: 'linkedin',
+    url: '/',
   },
   {
-    src: TwitterIcon,
     altText: 'twitter',
-    width: '20px',
+    iconClass: 'twitter',
+    url: '/',
   },
   {
-    src: YouTubeIcon,
     altText: 'youtube',
-    width: '20px',
+    iconClass: 'youtube',
+    url: '/',
   },
 ];
 
