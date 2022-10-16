@@ -1,0 +1,119 @@
+@import '../../../style/utils/breakpoints';
+@import '../../../style/base/layout';
+@import '../../../style/base/fonts';
+@import '../../../style/layout/icon-font';
+@import '../../../style/utils/mixins';
+@import '../../../style/layout/buttons';
+
+.header__social {
+  font-size: 0;
+  padding-top: 7px;
+  @include media-breakpoint-down(sm) {
+    border-bottom: 1px solid rgba($black, 0.08);
+    display: flex;
+    left: 0;
+    padding: 10px 20px 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.header__social__item {
+  display: inline-block;
+  margin-left: 20px;
+  @include media-breakpoint-only(md) {
+    margin-left: 25px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.header__social__link {
+  color: $black;
+  font-size: 20px;
+  transition: color $transition;
+  &:hover {
+    color: $pink;
+  }
+}
+
+.font__ico__close:before {
+  content: '\ea06';
+}
+
+.font__ico__facebook:before {
+  content: '\ea09';
+}
+
+.font__ico__instagram:before {
+  content: '\ea0a';
+}
+
+.font__ico__linkedin:before {
+  content: '\ea0b';
+}
+
+.font__ico__mail:before {
+  content: '\ea0a';
+}
+
+.font__ico__menu:before {
+  content: '\ea0b';
+}
+
+.font__ico__twitter:before {
+  content: '\ea10';
+}
+
+.font__ico__wheel:before {
+  content: '\ea0d';
+}
+
+.font__ico__youtube:before {
+  content: '\ea12';
+}
+.font__ico__arrow__bottom:before {
+  content: '\ea01';
+}
+.font__ico__arrow__left:before {
+  content: '\ea02';
+}
+.font__ico__arrow__long__right:before {
+  content: '\ea03';
+}
+.font__ico__arrow__long__top:before {
+  content: '\ea04';
+}
+.font__ico__arrow__right:before {
+  content: '\ea05';
+}
+
+.font__ico__youtube:before,
+.font__ico__wheel:before,
+.font__ico__twitter:before,
+.font__ico__menu:before,
+.font__ico__mail:before,
+.font__ico__linkedin:before,
+.font__ico__instagram:before,
+.font__ico__facebook:before,
+.font__ico__close:before,
+.font__ico__arrow__right:before,
+.font__ico__arrow__long-top:before,
+.font__ico__arrow__long-right:before,
+.font__ico__arrow__left:before,
+.font__ico__arrow__bottom:before {
+  font-family: 'svgicons';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  display: inline-block;
+  line-height: 1;
+}

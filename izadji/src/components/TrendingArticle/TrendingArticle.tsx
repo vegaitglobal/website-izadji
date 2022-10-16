@@ -19,7 +19,7 @@ const TrendingArticle = ({
     <a href={link} className={styles.feed__card}>
       <div className={styles.feed__image__holder}>
         <div
-          className={`${styles.feed__image} ${styles.has_cover}`}
+          className={`${styles.feed__image} ${styles.has__cover}`}
           style={{ backgroundImage: `url(${imageSrc})` }}
         ></div>
       </div>
