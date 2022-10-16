@@ -1,5 +1,6 @@
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import backToTop from '../../../utils/backToTop';
-import Icon from '../Icon/Icon';
 import styles from './Footer.module.scss';
 
 type FooterNavItemLink = {
@@ -12,7 +13,7 @@ type FooterNavItem = {
   items: FooterNavItemLink[];
 };
 
-type FooterProps = {
+export type FooterProps = {
   iconSrc: string;
   emails: string[];
   copyText: string;
@@ -25,6 +26,7 @@ const Footer = ({
   copyText,
   navItems,
 }: FooterProps): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
@@ -40,7 +42,9 @@ const Footer = ({
                 </li>
               ))}
             </ul>
-            <p className={styles.footer__copy}>{copyText}</p>
+            <p className={styles.footer__copy}>
+              @Designed by <strong>{copyText}</strong>
+            </p>
           </div>
           <div className={styles.footer__nav}>
             {navItems?.map((navItem: FooterNavItem) => (
@@ -50,9 +54,12 @@ const Footer = ({
                 </li>
                 {navItem.items.map((linkItem: FooterNavItemLink) => (
                   <li className={styles.footer__item} key={linkItem.text}>
-                    <a className={styles.footer__link} href={linkItem.href}>
+                    <Link
+                      className={styles.footer__link}
+                      to={`/${linkItem.href}`}
+                    >
                       {linkItem.text}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
