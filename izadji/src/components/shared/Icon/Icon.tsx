@@ -1,17 +1,18 @@
+import styles from './Icon.module.scss';
+
 export type IconProps = {
-  src: string;
   altText: string;
-  width: string;
-  height?: string;
+  iconClass: string;
 };
 
-const Icon = ({
-  src,
-  altText,
-  width,
-  height = 'auto',
-}: IconProps): JSX.Element => (
-  <img src={src} alt={altText} style={{ width: width, height: height }} />
+const map = {
+  facebook: 'linkedin',
+  instagram: 'mail',
+  linkedin: 'menu',
+};
+
+const Icon = ({ iconClass, altText }: IconProps): JSX.Element => (
+  <span className={styles[`font__ico__${iconClass}`]}></span>
 );
 
 export default Icon;

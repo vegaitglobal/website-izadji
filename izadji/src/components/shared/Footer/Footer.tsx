@@ -30,9 +30,9 @@ const Footer = ({
       <div className={styles.wrap}>
         <div className={styles.footer__inner}>
           <div className={styles.footer__info}>
-            <div className={styles.footer__logo}>
-              <Icon src={iconSrc} altText="Logo icon" width="60px" />
-            </div>
+            <a href="/" className={styles.footer__logo}>
+              <img src={iconSrc} alt="Logo icon" width="60px" />
+            </a>
             <ul className={styles.footer__contact}>
               {emails.map((email: string) => (
                 <li className={styles.footer__contact__item} key={email}>

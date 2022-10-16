@@ -10,7 +10,7 @@ import TrendingArticles from '../../components/TrendingArticles/TrendingArticles
 import HomePageComponents from '../enums/homePageComponentEnums';
 import { getWorkProgramSlider } from './workProgramMapper';
 
-const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
+export const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   return imagesData.map((imageData: any) => {
     return {
       imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
@@ -21,9 +21,11 @@ const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   });
 };
 
-const getTrendingArticlesSlides = (
+export const getTrendingArticlesSlides = (
   trendingArticlesData: any
 ): TrendingArticleProps[] => {
+  console.log(trendingArticlesData);
+
   return trendingArticlesData.map((trendingArticle: any) => {
     const blogBanner = trendingArticle.attributes.blogBanner;
     const workProgramme =
@@ -37,7 +39,7 @@ const getTrendingArticlesSlides = (
   });
 };
 
-const getCollaboratorsSlides = (
+export const getCollaboratorsSlides = (
   collaborators: any
 ): CollaboratorsSlideProps[] => {
   return collaborators.map((collaboratorData: any) => {
