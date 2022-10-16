@@ -4,6 +4,7 @@ enum HomePageComponents {
   COLLABORATORS_SWIPER = 'shared-components.collaborators-swiper',
   WORK_PROGRAM_SLIDER = 'shared-components.work-program-component',
   NEWSLETTER = 'shared-components.newsletter',
+  EVENT_TABLE = 'homepage-components.event-calendar',
 }
 
 export default HomePageComponents;

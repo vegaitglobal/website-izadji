@@ -77,22 +77,16 @@
   margin-right: 5px;
   padding-top: 2px;
   width: 34px;
-  #slidePrev {
-    @include icon(arrow-left, after) {
-      font-size: 9px;
-      position: relative;
-    }
-  }
 }
 
-#slidePrev {
+#sliderPrevEvents {
   @include icon(arrow-left, after) {
     font-size: 9px;
     position: relative;
   }
 }
 
-#slideNext {
+#sliderNextEvents {
   @include icon(arrow-right, after) {
     font-size: 9px;
     position: relative;

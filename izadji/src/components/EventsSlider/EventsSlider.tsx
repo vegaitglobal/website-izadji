@@ -1,12 +1,12 @@
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import styles from './EventsSlider.module.scss';
-import Event, { EventProps } from '../Event/Event';
 import { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Event, { EventProps } from '../Event/Event';
+import styles from './EventsSlider.module.scss';
 
 function createGroups(array: EventProps[]) {
-  var numGroups =
+  const numGroups =
     array.length % 4 == 0 ? array.length / 4 : Math.floor(array.length / 4) + 1;
   return new Array(numGroups)
     .fill('')
@@ -27,14 +27,14 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
         <button
           type="button"
           className={styles.events__btn__prev}
-          id="sliderPrev"
+          id="sliderPrevEvents"
         >
           <span className={styles.sr__only}>Prev</span>
         </button>
         <button
           type="button"
           className={styles.events__btn__next}
-          id="sliderNext"
+          id="sliderNextEvents"
         >
           <span className={styles.sr__only}>Next</span>
         </button>
@@ -50,8 +50,8 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
         slidesPerView={1}
         className={styles.swiper}
         navigation={{
-          prevEl: '#sliderPrev',
-          nextEl: '#sliderNext',
+          prevEl: '#sliderPrevEvents',
+          nextEl: '#sliderNextEvents',
         }}
         modules={[Navigation]}
       >
@@ -62,7 +62,8 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
                 key={event.name}
                 date={event.date}
                 weekDay={event.weekDay}
-                time={event.time}
+                timeStart={event.timeStart}
+                timeEnd={event.timeEnd}
                 name={event.name}
                 link={event.link}
               />
