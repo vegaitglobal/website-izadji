@@ -16,8 +16,10 @@
   "dependencies": {
     "@strapi/plugin-i18n": "4.4.3",
     "@strapi/plugin-users-permissions": "4.4.3",
+    "@strapi/provider-email-nodemailer": "^4.4.3",
     "@strapi/strapi": "4.4.3",
     "better-sqlite3": "^7.6.2",
+    "jsdom": "^20.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "pg": "8.6.0",
