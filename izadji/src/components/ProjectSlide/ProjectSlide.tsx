@@ -21,7 +21,7 @@ const ProjectSlide = ({
     <div className={`${styles.hero__slider__item}`}>
       <div className={styles.hero__slider__inner}>
         <div
-          className={`has-cover ${styles.hero__slider__image}`}
+          className={`${styles.has__cover} ${styles.hero__slider__image}`}
           style={{ backgroundImage: `url(${imageSrc})` }}
           role="presentation"
         ></div>
