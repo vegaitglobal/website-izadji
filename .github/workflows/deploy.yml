@@ -14,9 +14,17 @@ jobs:
           node-version: '16.x'
 
       - run: npm install react-scripts
+        working-directory: izadji
       - run: npm install
+        working-directory: izadji
       - run: CI=false npm run build
-
+        working-directory: izadji
+        
+      - run: yarn install 
+        working-directory: api
+      - run: yarn build
+        working-directory: api
+   
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -34,25 +42,4 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            echo instal and deploy izadji website
-            cd C:\Sites\website-izadji\izadji
-            echo moved to directory izadji
-            git pull
-            echo git pull
-            nssm stop izadji-site
-            npm ci
-            npm install cross-env
-            npm run build:win
-            nssm start izadji-site
-            echo npm run build done
-            echo install and deploy strapi 
-            cd C:\Sites\website-izadji\api
-            echo moved to directory api
-            git pull
-            echo git pull
-            nssm stop izadji-strapi
-            yarn install
-            yarn run build:win
-            yarn run start:win
-            nssm start izadji-strapi
-            echo yarn run build done
+            PowerShell -file C:\Sites\website-izadji\runBuildDeploy.ps1  

@@ -6,6 +6,7 @@
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/base/typography';
+@import '../../style/layout/buttons';
 
 .feed {
   padding: 50px 0 40px;
@@ -26,7 +27,7 @@
   width: 100%;
 }
 
-.feed__link-wrap {
+.feed__link__wrap {
   padding-top: 17px;
   text-align: center;
   width: 100%;

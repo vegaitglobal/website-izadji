@@ -25,6 +25,11 @@ const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
             />
           ))}
         </div>
+        <div className={styles.feed__link__wrap}>
+          <a href="/" className={styles.btn}>
+            Pročitaj više
+          </a>
+        </div>
       </div>
     </div>
   );
