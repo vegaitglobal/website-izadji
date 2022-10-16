@@ -1,3 +1,5 @@
+// ----------  forms
+// ------------------------------------------------------------------------------
 input,
 textarea {
   background: $white;
@@ -24,6 +26,14 @@ input,
 textarea {
   font-family: inherit;
 }
+
+// @supports (-webkit-touch-callout: none) {
+// 	select,
+// 	textarea,
+// 	input {
+// 		font-size: 16px !important;
+// 	}
+// }
 
 .form {
   width: 100%;
@@ -122,7 +132,7 @@ textarea {
   }
 }
 
-.dropdown__btn__open::after {
+.dropdown__btn____open::after {
   transform: translateY(-50%) rotate(-180deg);
 }
 
@@ -141,7 +151,7 @@ textarea {
   z-index: 3;
 }
 
-.dropdown__list__open {
+.dropdown__list____open {
   display: block;
 }
 
@@ -155,6 +165,6 @@ textarea {
   width: 100%;
 }
 
-.dropdown__link__selected {
+.dropdown__link--selected {
   color: $pink;
 }
