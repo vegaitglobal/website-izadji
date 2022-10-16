@@ -6,17 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "url": {
       "type": "string",
       "regex": "[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
@@ -24,6 +13,16 @@
     },
     "altText": {
       "type": "string"
+    },
+    "iconClass": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "youtube",
+        "linkedin",
+        "instagram",
+        "twitter"
+      ]
     }
   }
 }
