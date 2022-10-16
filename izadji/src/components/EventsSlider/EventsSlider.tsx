@@ -1,11 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './EventsSlider.module.scss';
 import { Navigation } from 'swiper';
+import Event, { EventProps } from '../Event/Event';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Event, { EventProps } from '../Event/Event';
-import styles from './EventsSlider.module.scss';
 
 function createGroups(array: EventProps[]) {
   const numGroups =
