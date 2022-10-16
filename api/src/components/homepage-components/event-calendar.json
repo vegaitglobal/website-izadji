@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_homepage_components_event_calendars",
+  "info": {
+    "displayName": "Event calendar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "event_table": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-table.event-table"
+    }
+  }
+}

@@ -1,18 +1,27 @@
 {
   "collectionName": "components_homepage_components_event_table_swipers",
   "info": {
-    "displayName": "Event table",
+    "displayName": "Event table item",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "date": {
-      "type": "datetime"
+    "timeStart": {
+      "type": "time"
     },
     "text": {
       "type": "string"
     },
     "buttonText": {
+      "type": "string"
+    },
+    "timeEnd": {
+      "type": "time"
+    },
+    "date": {
+      "type": "date"
+    },
+    "link": {
       "type": "string"
     }
   }
