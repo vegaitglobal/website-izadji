@@ -1,0 +1,88 @@
+@import "src/style/utils/variables";
+@import '../../style/base/layout';
+@import "src/style/utils/breakpoints";
+@import '../../style/utils/helpers';
+// ---------- donation
+// ------------------------------------------------------------------------------
+
+
+.donation__info {
+  background-color: #9c0762;
+  color: $white;
+  width: 56.4%;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.donation__info__inner {
+  max-width: 712px;
+  padding: 48px 20px 47px 32px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+    padding: 30px 20px;
+  }
+}
+
+.donation__info__title {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  max-width: 490px;
+}
+
+.donation__info__text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 17px;
+  max-width: 490px;
+}
+
+.donation__payment {
+  width: 100%;
+}
+
+.donation__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  width: 100%;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.donation__payment__item {
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-right: 20px;
+  }
+}
+
+.donation__payment__label {
+  color: rgba($white, 0.36);
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 7px;
+  @include media-breakpoint-down(sm) {
+    font-size: 17px;
+  }
+}
+
+.donation__payment__value {
+  font-size: 24px;
+  line-height: 30px;
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
