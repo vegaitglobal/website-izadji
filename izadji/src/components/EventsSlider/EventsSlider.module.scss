@@ -14,8 +14,14 @@
   justify-content: flex-start;
 }
 .swiper_slide {
-  // justify-content: flex-start;
   width: 500px;
+}
+
+.events__title {
+  margin-bottom: 16px;
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
 }
 
 .events__content {

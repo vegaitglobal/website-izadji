@@ -22,6 +22,7 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
 
   return (
     <div className={styles.events__content}>
+      <h2 className={styles.events__title}>DOGAĐAJI</h2>
       <div className={styles.events__nav}>
         <button
           type="button"
@@ -58,6 +59,7 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
           <SwiperSlide className={styles.swiper_slide} key={index}>
             {group.map((event) => (
               <Event
+                key={event.name}
                 date={event.date}
                 weekDay={event.weekDay}
                 time={event.time}
