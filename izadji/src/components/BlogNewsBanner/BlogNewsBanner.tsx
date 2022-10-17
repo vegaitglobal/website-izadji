@@ -1,4 +1,5 @@
-import styles from './BlogNewsBanner.module.scss'
+import { Link } from 'react-router-dom';
+import styles from './BlogNewsBanner.module.scss';
 
 type BlogNewsBannerProps = {
   imageSrc: string;
@@ -9,24 +10,38 @@ type BlogNewsBannerProps = {
   date: string;
 };
 
-const BlogNewsBanner = ({ imageSrc, title, category, text, url, date }: BlogNewsBannerProps): JSX.Element => {
+const BlogNewsBanner = ({
+  imageSrc,
+  title,
+  category,
+  text,
+  url,
+  date,
+}: BlogNewsBannerProps): JSX.Element => {
   return (
     <div className={styles.blog__landing__banner}>
-        <div className={styles.wrap}>
-            <div className={`${styles.blog__landing__banner__inner} ${styles.has__cover}`}
-                 style={{ backgroundImage: `url(${imageSrc})` }}
+      <div className={styles.wrap}>
+        <div
+          className={`${styles.blog__landing__banner__inner} ${styles.has__cover}`}
+          style={{ backgroundImage: `url(${imageSrc})` }}
+        >
+          <div className={styles.blog__landing__banner__content}>
+            <span
+              className={`${styles.category} ${styles.blog__landing__banner__category}`}
             >
-                <div className={styles.blog__landing__banner__content}>
-                    <span className={`${styles.category} ${styles.blog__landing__banner__category}`}>{category}</span>
-                    <h2 className={styles.blog__landing__banner__heading}>{title}</h2>
-                    <p className={styles.blog__landing__banner__text}>{text}</p>
-                    <div className={styles.blog__landing__banner__footer}>
-                        <a href={url} className={styles.blog__landing__banner__btn}>Pročitaj više</a>
-                        <span className={styles.blog__landing__banner__date}>{date}</span>
-                    </div>
-                </div>
+              {category}
+            </span>
+            <h2 className={styles.blog__landing__banner__heading}>{title}</h2>
+            <p className={styles.blog__landing__banner__text}>{text}</p>
+            <div className={styles.blog__landing__banner__footer}>
+              <Link to={url} className={styles.blog__landing__banner__btn}>
+                Pročitaj više
+              </Link>
+              <span className={styles.blog__landing__banner__date}>{date}</span>
             </div>
+          </div>
         </div>
+      </div>
     </div>
   );
 };

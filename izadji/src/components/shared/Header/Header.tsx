@@ -1,4 +1,4 @@
-import LogoImage from '../../../assets/svg/logo.svg';
+import { Link } from 'react-router-dom';
 import NavBar, { NavBarProps } from '../../NavBar/NavBar';
 import Icon, { IconProps } from '../Icon/Icon';
 import styles from './Header.module.scss';
@@ -47,13 +47,13 @@ const Header = ({
           </div>
         </div>
         <div className={styles.header__container}>
-          <a href="/" className={styles.header__logo}>
+          <Link to="/" className={styles.header__logo}>
             <img
               src={logoSrc}
               alt="Izađi"
               className={styles.header__logo__img}
             />
-          </a>
+          </Link>
           <NavBar buttons={navBar.buttons}></NavBar>
         </div>
       </header>

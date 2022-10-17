@@ -28,9 +28,30 @@ function App() {
             </Layout>
           }
         />
-        <Route path={routes.workProgram} element={ <Layout><p>Work program</p></Layout>} />
-        <Route path={routes.blogPage} element={ <Layout><p>Single blog page</p></Layout>} />
-        <Route path={routes.blog} element={ <Layout><p>Blog page</p></Layout>} />
+        <Route
+          path={routes.workProgram}
+          element={
+            <Layout>
+              <p>Work program</p>
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.blogPage}
+          element={
+            <Layout>
+              <p>Single blog page</p>
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.blog}
+          element={
+            <Layout>
+              <p>Blog page</p>
+            </Layout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
