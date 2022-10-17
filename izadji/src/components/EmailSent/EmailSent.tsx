@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './EmailSent.module.scss';
 
 export type EmailSentProps = {
@@ -18,12 +19,12 @@ const EmailSent = ({
       ></span>
       <h2 className={styles.contact__thank__you__title}>{title}</h2>
       <p className={styles.contact__thank__you__text}>{description}</p>
-      <a
-        href="/"
+      <Link
+        to="/"
         className={`${styles.btn} ${styles.contact__thank__you__link}`}
       >
         {buttonText}
-      </a>
+      </Link>
     </div>
   );
 };

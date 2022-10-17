@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import backToTop from '../../../utils/backToTop';
 import styles from './Footer.module.scss';
@@ -26,15 +25,14 @@ const Footer = ({
   copyText,
   navItems,
 }: FooterProps): JSX.Element => {
-  const navigate = useNavigate();
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
         <div className={styles.footer__inner}>
           <div className={styles.footer__info}>
-            <a href="/" className={styles.footer__logo}>
+            <Link to="/" className={styles.footer__logo}>
               <img src={iconSrc} alt="Logo icon" width="60px" />
-            </a>
+            </Link>
             <ul className={styles.footer__contact}>
               {emails.map((email: string) => (
                 <li className={styles.footer__contact__item} key={email}>
