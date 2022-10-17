@@ -9,6 +9,7 @@ export type ContactUsFormProps = {
   messagePlaceholder: string;
   checkboxPlaceholder: string;
   buttonLabel: string;
+  showArrow: boolean;
 };
 
 const ContactUsForm = ({
@@ -20,20 +21,41 @@ const ContactUsForm = ({
   messagePlaceholder,
   checkboxPlaceholder,
   buttonLabel,
+  showArrow,
 }: ContactUsFormProps): JSX.Element => {
   return (
     <div>
-      <section className={styles.contact__block}>
+      <section
+        className={`${
+          showArrow ? styles.contact__block : styles.contact__block_column
+        }`}
+      >
         <div className="wrap">
-          <div className={styles.contact__block__inner}>
-            <div className={styles.contact__block__text__holder}>
+          <div
+            className={`${
+              showArrow
+                ? styles.contact__block__inner
+                : styles.contact__block__inner_column
+            }`}
+          >
+            <div
+              className={`${
+                showArrow
+                  ? styles.contact__block__text__holder
+                  : styles.contact__block__text__holder_column
+              }`}
+            >
               <h2
                 className={`${styles.contact__block__title} ${styles.section__title} ${styles.section__title__left}`}
               >
                 {title}
               </h2>
               <p className={styles.contact__block__text}>{text}</p>
-              <span className={styles.contact__block__arrow}></span>
+              {showArrow ? (
+                <span className={styles.contact__block__arrow}></span>
+              ) : (
+                ''
+              )}
             </div>
 
             <form className={`${styles.contact__block__form} ${styles.form}`}>
@@ -86,9 +108,10 @@ const ContactUsForm = ({
                   </div>
                 </div>
                 <div className={styles.form__col}>
-                  <label className={styles.sr__only} htmlFor="form.message.id">
-                    {}
-                  </label>
+                  <label
+                    className={styles.sr__only}
+                    htmlFor="form.message.id"
+                  ></label>
                   <textarea
                     id="form.message.id"
                     className={styles.form__textarea}
