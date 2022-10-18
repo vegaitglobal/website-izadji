@@ -27,12 +27,7 @@ const CollaboratorsSlider = ({
         >
           {title}
         </h2>
-        <Swiper
-          slidesPerView={5}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-          className={styles.logo__slider__container}
-        >
+        <Swiper slidesPerView={5} className={styles.logo__slider__container}>
           {collaborators.map((i: CollaboratorsSlideProps) => (
             <SwiperSlide key={i.imageSrc}>
               <div className={styles.logo__slider__item}>

@@ -12,6 +12,7 @@ import { TrendingArticleProps } from '../../components/TrendingArticle/TrendingA
 import TrendingArticles from '../../components/TrendingArticles/TrendingArticles';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponentEnums';
+import { getProjectSlider } from './projectMapper';
 import { getWorkProgramSlider } from './workProgramMapper';
 
 const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
@@ -56,7 +57,7 @@ const getEventTableSlides = (events: any): EventProps[] => {
     const startTime = eventData.timeStart.split(':');
     const endTime = eventData.timeStart.split(':');
     return {
-      date: convertDate(eventData.date),
+      date: convertDate(eventData.date, true),
       weekDay: convertWeekDay(eventData.date),
       timeStart: `${startTime[0]}:${startTime[1]}`,
       timeEnd: `${endTime[0]}:${endTime[1]}`,
@@ -68,7 +69,8 @@ const getEventTableSlides = (events: any): EventProps[] => {
 
 const getHomePageComponents = (
   homePageResponse: any,
-  workPrograms: any
+  workPrograms: any,
+  projects: any
 ): ReactNode[] => {
   const pageComponents: ReactNode[] = [];
   const responseComponents = homePageResponse.data.data.attributes.components;
@@ -126,6 +128,10 @@ const getHomePageComponents = (
           />
         );
         pageComponents.push(eventTableComponent);
+        break;
+      }
+      case HomePageComponents.PROJECT_SLIDER: {
+        pageComponents.push(getProjectSlider(projects));
         break;
       }
       default: {
