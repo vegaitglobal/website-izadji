@@ -23,6 +23,7 @@ const ProjectSlider = ({ slides }: ProjectSliderProps): JSX.Element => {
           {slides.map((slide: ProjectSlideProps) => (
             <SwiperSlide key={slide.title}>
               <ProjectSlide
+                id={slide.id}
                 imageSrc={slide.imageSrc}
                 date={slide.date}
                 title={slide.title}

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import projectPagesService from '../../services/projectService';
 import styles from './ProjectSlide.module.scss';
 
 export type ProjectSlideProps = {
@@ -8,6 +9,7 @@ export type ProjectSlideProps = {
   description: string;
   link: string;
   linkText: string;
+  id: number;
 };
 
 const ProjectSlide = ({
@@ -17,7 +19,10 @@ const ProjectSlide = ({
   description,
   link,
   linkText,
+  id,
 }: ProjectSlideProps): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <div className={`${styles.hero__slider__item}`}>
       <div className={styles.hero__slider__inner}>
@@ -30,9 +35,12 @@ const ProjectSlide = ({
           <span className={styles.hero__slider__subtitle}>{date}</span>
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
-          <Link to={link} className={styles.btn}>
+          <a
+            onClick={() => navigate(`/project-page/${id}`)}
+            className={styles.btn}
+          >
             {linkText}
-          </Link>
+          </a>
         </div>
       </div>
     </div>
