@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_homepage_components_project_slider_components",
+  "info": {
+    "displayName": "Project slider component"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

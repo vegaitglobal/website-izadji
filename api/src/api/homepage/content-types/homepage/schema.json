@@ -23,7 +23,8 @@
         "shared-components.gallery-swiper",
         "shared-components.trending-articles",
         "shared-components.newsletter",
-        "homepage-components.event-calendar"
+        "homepage-components.event-calendar",
+        "homepage-components.project-slider-component"
       ]
     }
   }
