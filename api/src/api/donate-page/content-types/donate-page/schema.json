@@ -15,13 +15,12 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "donation_projects": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::donation-project.donation-project"
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "donation-components.donation-component",
+        "shared-components.newsletter"
+      ]
     }
   }
 }
