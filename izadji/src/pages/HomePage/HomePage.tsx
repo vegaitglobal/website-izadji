@@ -20,12 +20,11 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    if (projects && workPrograms) {
-      homePageService.getHomePage().then((response) => {
-        setComponents(getHomePageComponents(response, workPrograms, projects));
-      });
-    }
-  }, [workPrograms, projects]);
+    homePageService.getHomePage().then((response) => {
+      console.log('home page', response);
+      setComponents(getHomePageComponents(response, workPrograms));
+    });
+  }, [workPrograms]);
 
   return <>{components}</>;
 };

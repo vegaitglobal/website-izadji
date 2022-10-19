@@ -22,7 +22,7 @@ export default factories.createCoreController(
     },
     async unsubscribe(ctx) {
       try {
-        const email = ctx.request.body.data.email;
+        const { email } = ctx.params;
 
         //fetch entity by email
         const subscriptions = await strapi.entityService.findMany(
@@ -41,11 +41,9 @@ export default factories.createCoreController(
           subscriptions[0].id
         );
 
-        ctx.body = subscription;
+        ctx.body = "Successfully unsubscribed.";
       } catch (err) {
-        ctx.badRequest("newsletter-subscription.unsubscribe error", {
-          moreDetails: err.message,
-        });
+        ctx.redirect("/")
       }
     },
   })

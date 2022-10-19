@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './ProjectSlide.module.scss';
 
 export type ProjectSlideProps = {
@@ -29,9 +30,9 @@ const ProjectSlide = ({
           <span className={styles.hero__slider__subtitle}>{date}</span>
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
-          <a href={link} className={styles.btn}>
+          <Link to={link} className={styles.btn}>
             {linkText}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

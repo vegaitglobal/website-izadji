@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import backToTop from '../../../utils/backToTop';
-import Icon from '../Icon/Icon';
 import styles from './Footer.module.scss';
 
 type FooterNavItemLink = {
@@ -12,7 +12,7 @@ type FooterNavItem = {
   items: FooterNavItemLink[];
 };
 
-type FooterProps = {
+export type FooterProps = {
   iconSrc: string;
   emails: string[];
   copyText: string;
@@ -30,9 +30,9 @@ const Footer = ({
       <div className={styles.wrap}>
         <div className={styles.footer__inner}>
           <div className={styles.footer__info}>
-            <div className={styles.footer__logo}>
-              <Icon src={iconSrc} altText="Logo icon" width="60px" />
-            </div>
+            <Link to="/" className={styles.footer__logo}>
+              <img src={iconSrc} alt="Logo icon" width="60px" />
+            </Link>
             <ul className={styles.footer__contact}>
               {emails.map((email: string) => (
                 <li className={styles.footer__contact__item} key={email}>
@@ -40,7 +40,9 @@ const Footer = ({
                 </li>
               ))}
             </ul>
-            <p className={styles.footer__copy}>{copyText}</p>
+            <p className={styles.footer__copy}>
+              @Designed by <strong>{copyText}</strong>
+            </p>
           </div>
           <div className={styles.footer__nav}>
             {navItems?.map((navItem: FooterNavItem) => (
@@ -50,9 +52,12 @@ const Footer = ({
                 </li>
                 {navItem.items.map((linkItem: FooterNavItemLink) => (
                   <li className={styles.footer__item} key={linkItem.text}>
-                    <a className={styles.footer__link} href={linkItem.href}>
+                    <Link
+                      className={styles.footer__link}
+                      to={`/${linkItem.href}`}
+                    >
                       {linkItem.text}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -12,21 +12,18 @@ const Default: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
 export const LogoIcon = Default.bind({});
 LogoIcon.args = {
-  src: LogoImage,
   altText: 'Logo icon',
-  width: '60px',
+  iconClass: 'facebook',
 };
 
 export const SocialNetworkIcon = Default.bind({});
 SocialNetworkIcon.args = {
-  src: YouTubeIcon,
   altText: 'YouTube icon',
-  width: '60px',
+  iconClass: 'youtube',
 };
 
 export const SmallIcon = Default.bind({});
 SmallIcon.args = {
-  src: YouTubeIcon,
   altText: 'YouTube icon',
-  width: '20px',
+  iconClass: 'linkedin',
 };

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
@@ -31,9 +32,9 @@ const CollaboratorsSlider = ({
           {collaborators.map((i: CollaboratorsSlideProps) => (
             <SwiperSlide key={i.imageSrc}>
               <div className={styles.logo__slider__item}>
-                <a href="/" className={styles.logo__slider_inner}>
+                <Link to="/" className={styles.logo__slider_inner}>
                   <img src={i.imageSrc} alt="al"></img>
-                </a>
+                </Link>
               </div>
             </SwiperSlide>
           ))}

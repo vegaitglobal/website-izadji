@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { routes } from '../../routes';
 import TrendingArticle, {
   TrendingArticleProps,
@@ -28,9 +29,9 @@ const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
           ))}
         </div>
         <div className={styles.feed__link__wrap}>
-          <a href={routes.blog} className={styles.btn}>
+          <Link to={routes.blog} className={styles.btn}>
             Pročitaj više
-          </a>
+          </Link>
         </div>
       </div>
     </div>

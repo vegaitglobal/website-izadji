@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './TrendingArticle.module.scss';
 
 export type TrendingArticleProps = {
@@ -16,10 +17,10 @@ const TrendingArticle = ({
   link,
 }: TrendingArticleProps): JSX.Element => {
   return (
-    <a href={link} className={styles.feed__card}>
+    <Link to={link} className={styles.feed__card}>
       <div className={styles.feed__image__holder}>
         <div
-          className={`${styles.feed__image} ${styles.has_cover}`}
+          className={`${styles.feed__image} ${styles.has__cover}`}
           style={{ backgroundImage: `url(${imageSrc})` }}
         ></div>
       </div>
@@ -36,7 +37,7 @@ const TrendingArticle = ({
           <span className={styles.feed__date}>{date}</span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
