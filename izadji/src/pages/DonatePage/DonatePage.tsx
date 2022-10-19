@@ -6,12 +6,8 @@ const DonatePage = () => {
     const [workPrograms, setWorkPrograms] = useState({});
 
     useEffect(() => {
-    }, []);
-
-    useEffect(() => {
         donatePageService.getDonatePage().then((response) => {
             console.log('donate page', response);
-            setComponents(getHomePageComponents(response, workPrograms));
         });
     }, [workPrograms]);
 
