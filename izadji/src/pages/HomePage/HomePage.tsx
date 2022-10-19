@@ -15,7 +15,7 @@ const HomePage = () => {
 
   useEffect(() => {
     homePageService.getHomePage().then((response) => {
-      console.log(response);
+      console.log('home page', response);
       setComponents(getHomePageComponents(response, workPrograms));
     });
   }, [workPrograms]);
