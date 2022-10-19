@@ -29,8 +29,6 @@ const HomePageMapper : MappingFunction = (component) => {
                 )}
             />;
         }
-        default:
-            return undefined;
     }
 }
 

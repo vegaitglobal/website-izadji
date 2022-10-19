@@ -85,9 +85,6 @@ const SharedComponentsMapper : MappingFunction = async component => {
         case SharedComponents.RICH_TEXT_EDITOR: {
             return <RichTextComponent key={`rte_${component['__component'].id}`} content={component.content}/>
         }
-        default: {
-            return;
-        }
     }
 }
 
