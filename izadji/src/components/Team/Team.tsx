@@ -65,7 +65,7 @@ const Team = ({ heading, teamMembersList }: TeamProps): JSX.Element => {
             jobTitle={selectedTeamMember.jobTitle}
             profileImage={selectedTeamMember.profileImage}
             bio={selectedTeamMember.bio}
-          ></TeamMemberBio>
+          />
         </div>
       </div>
     </section>
