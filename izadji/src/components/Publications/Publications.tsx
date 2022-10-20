@@ -1,4 +1,4 @@
-import Publication, {PublicationProps} from '../Publication/Publication';
+import Publication, { PublicationProps } from '../Publication/Publication';
 import styles from './Publications.module.scss';
 
 type PublicationsProps = {

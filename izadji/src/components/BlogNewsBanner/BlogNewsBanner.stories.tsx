@@ -7,7 +7,9 @@ export default {
   component: BlogNewsBanner,
 } as ComponentMeta<typeof BlogNewsBanner>;
 
-const Default: ComponentStory<typeof BlogNewsBanner> = (args) => <BlogNewsBanner {...args} />;
+const Default: ComponentStory<typeof BlogNewsBanner> = (args) => (
+  <BlogNewsBanner {...args} />
+);
 
 export const DefaultBlogNewsBanner = Default.bind({});
 DefaultBlogNewsBanner.args = {
