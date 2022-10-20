@@ -11,6 +11,7 @@ import { TrendingArticleProps } from '../../components/TrendingArticle/TrendingA
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import RichTextComponent from '../../components/RichTextComponent/RichTextComponent';
 import workProgramService from '../../services/workProgramService';
+import DonateSection from '../../components/DonateSection/DonateSection';
 
 const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   return imagesData.map((imageData: any) => {
@@ -97,6 +98,17 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
         <RichTextComponent
           key={`rte_${component['__component'].id}`}
           content={component.content}
+        />
+      );
+    }
+    case SharedComponents.DONATE_SECTION: {
+      return (
+        <DonateSection
+          key={`donate_section__${component['__component'].id}`}
+          title={component.title}
+          content={component.description}
+          buttonHref={component.buttonHref}
+          buttonText={component.buttonText}
         />
       );
     }

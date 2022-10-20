@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import {ReactNode, useEffect, useState} from 'react';
 import donatePageService from "../../services/donatePageService";
 import {MapComponents} from "../../utils/mappers/sharedMapper";
 
