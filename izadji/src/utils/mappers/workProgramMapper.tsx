@@ -15,6 +15,7 @@ const getWorkProgramSlides = (workPrograms: any): WorkProgrammeCardProps[] => {
 export const getWorkProgramSlider = (workPrograms: any): ReactNode => {
   return (
     <WorkProgrammeSlider
+      key={`work_programmer_slider`}
       heading="Program rada"
       slides={getWorkProgramSlides(workPrograms)}
     />

@@ -6,8 +6,9 @@ import {getWorkProgramSlider} from "./workProgramMapper";
 import Newsletter from "../../components/Newsletter/Newsletter";
 import {GallerySlideProps} from "../../components/GallerySlide/GallerySlide";
 import {TrendingArticleProps} from "../../components/TrendingArticle/TrendingArticle";
-import {ReactNode} from "react";
+import {Dispatch, ReactNode, SetStateAction} from "react";
 import RichTextComponent from "../../components/RichTextComponent/RichTextComponent";
+import workProgramService from "../../services/workProgramService";
 
 const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
     return imagesData.map((imageData: any) => {
@@ -49,80 +50,71 @@ const getCollaboratorsSlides = (
     });
 };
 
-export type SharedComponentsAdditionalData = {
-    workPrograms?: any
-}
-
-export type MappingResult = {
-    success: boolean,
-    mappedElement?: ReactNode
+const SharedComponentsMapper : MappingFunction = async component => {
+    switch (component['__component']) {
+        case SharedComponents.GALLERY_SWIPER: {
+            return <GallerySlider
+                key={`slider_${component['__component'].id}`}
+                slides={getGallerySlides(component.imageSwiper.data)}
+            />
+        }
+        case SharedComponents.TRENDING_ARTICLES: {
+            return <TrendingArticles
+                key={`trending_${component['__component'].id}`}
+                slides={getTrendingArticlesSlides(component.blog_pages.data)}
+            />
+        }
+        case SharedComponents.COLLABORATORS_SWIPER: {
+            return <CollaboratorsSlider
+                key={`collaborators_${component['__component'].id}`}
+                title={component.title}
+                collaborators={getCollaboratorsSlides(component.logos.data)}
+            />
+        }
+        case SharedComponents.WORK_PROGRAM_SLIDER: {
+            const workPrograms = await workProgramService.getWorkProgramPages()
+            return getWorkProgramSlider(workPrograms.data.data);
+        }
+        case SharedComponents.NEWSLETTER: {
+            return <Newsletter
+                key={`newsletter_${component['__component'].id}`}
+                title={component.text}
+                buttonText={component.buttonText}
+            />
+        }
+        case SharedComponents.RICH_TEXT_EDITOR: {
+            return <RichTextComponent key={`rte_${component['__component'].id}`} content={component.content}/>
+        }
+    }
 }
 
 export type MappingFunction = {
-    (component: any, additionalData: SharedComponentsAdditionalData): MappingResult
+    (component: any): Promise<ReactNode | undefined> | ReactNode | undefined
 }
 
-export const TryMapSharedComponents : MappingFunction = (component, additionalData) => {
-    switch (component['__component']) {
-        case SharedComponents.GALLERY_SWIPER: {
-            return {
-                success: true,
-                mappedElement: (
-                    <GallerySlider
-                        key={component['__component'].id}
-                        slides={getGallerySlides(component.imageSwiper.data)}
-                    />
-                )
-            };
+export type AdditionalComponents = {
+    appendBefore? : ReactNode[],
+    appendAfter?: ReactNode[]
+}
+
+export const MapComponents = (components: any[], customMappers: MappingFunction[], setComponents: Dispatch<SetStateAction<ReactNode[]>>, additionalComponents: AdditionalComponents = {}) => {
+    const allMappers = customMappers.concat(SharedComponentsMapper);
+    Promise.all(components.map(async (component: any) => {
+        for (const mapper of allMappers) {
+            let mappingResult = mapper(component);
+            if (mappingResult instanceof Promise<ReactNode | undefined>) {
+                mappingResult = await mappingResult;
+            }
+            if (mappingResult) return mappingResult;
         }
-        case SharedComponents.TRENDING_ARTICLES: {
-            return {
-                success: true,
-                mappedElement: (
-                    <TrendingArticles
-                        slides={getTrendingArticlesSlides(component.blog_pages.data)}
-                    />
-                )
-            };
-        }
-        case SharedComponents.COLLABORATORS_SWIPER: {
-            return {
-                success: true,
-                mappedElement: (
-                    <CollaboratorsSlider
-                        title={component.title}
-                        collaborators={getCollaboratorsSlides(component.logos.data)}
-                    />
-                )
-            };
-        }
-        case SharedComponents.WORK_PROGRAM_SLIDER: {
-            return {
-                success: true,
-                mappedElement: (getWorkProgramSlider(additionalData.workPrograms))
-            };
-        }
-        case SharedComponents.NEWSLETTER: {
-            return {
-                success: true,
-                mappedElement: (
-                    <Newsletter
-                        title={component.text}
-                        buttonText={component.buttonText}
-                    />
-                )
-            };
-        }
-        case SharedComponents.RICH_TEXT_EDITOR: {
-            return {
-                success: true,
-                mappedElement: (
-                    <RichTextComponent content={component.content} />
-                )
-            };
-        }
-        default: {
-            return { success: false };
-        }
-    }
+        console.error('failed to map', component);
+        return Promise.resolve(undefined);
+    }))
+    .then((components: ReactNode[]) => {
+        const appendBefore = additionalComponents.appendBefore ?? [];
+        const mappedComponents = components.filter(cmp => !!cmp);
+        const appendAfter = additionalComponents.appendAfter ?? [];
+
+        setComponents(appendBefore.concat(mappedComponents, appendAfter));
+    });
 }
