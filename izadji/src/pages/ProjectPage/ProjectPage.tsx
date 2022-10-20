@@ -22,7 +22,7 @@ const ProjectPage = () => {
               key="project_page_banner"
               title={bannerData.title}
               text={bannerData.text}
-              imageSrc={`${process.env.REACT_APP_STRAPI_HOST}${bannerData.image.data.attributes.url}`}
+              imageSrc={bannerData.image.data.attributes.url}
             />,
           ],
         }

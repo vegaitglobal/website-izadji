@@ -16,9 +16,9 @@ import DonateSection from '../../components/DonateSection/DonateSection';
 const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   return imagesData.map((imageData: any) => {
     return {
-      imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
-      largeImageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
-      thumbnailImageSrc: `${process.env.REACT_APP_STRAPI_HOST}${imageData.attributes.url}`,
+      imageSrc: imageData.attributes.url,
+      largeImageSrc: imageData.attributes.url,
+      thumbnailImageSrc: imageData.attributes.url,
       altText: imageData.attributes.alternativeText,
     };
   });
@@ -34,7 +34,7 @@ const getTrendingArticlesSlides = (
     const workProgramme =
       trendingArticle.attributes.work_program.data.attributes.banner.title;
     return {
-      imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${blogBanner.image.data.attributes.url}`,
+      imageSrc: blogBanner.image.data.attributes.url,
       date: blogBanner.date,
       title: blogBanner.title,
       category: workProgramme,
@@ -48,7 +48,7 @@ const getCollaboratorsSlides = (
 ): CollaboratorsSlideProps[] => {
   return collaborators.map((collaboratorData: any) => {
     return {
-      imageSrc: `${process.env.REACT_APP_STRAPI_HOST}${collaboratorData.attributes.url}`,
+      imageSrc: collaboratorData.attributes.url,
     };
   });
 };

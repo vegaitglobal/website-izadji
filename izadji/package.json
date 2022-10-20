@@ -16,6 +16,8 @@
     "dotenv": "^16.0.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
+    "html-react-parser": "^3.0.4",
+    "http-proxy-middleware": "^2.0.6",
     "iconfont": "^0.4.1",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
