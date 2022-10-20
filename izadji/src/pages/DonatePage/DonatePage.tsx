@@ -1,15 +1,16 @@
-import { ReactNode, useEffect, useState } from 'react';
+import {ReactNode, useEffect, useState} from 'react';
 import donatePageService from "../../services/donatePageService";
+import {MapComponents} from "../../utils/mappers/sharedMapper";
 
 const DonatePage = () => {
     const [components, setComponents] = useState<ReactNode[]>([]);
-    const [workPrograms, setWorkPrograms] = useState({});
 
     useEffect(() => {
         donatePageService.getDonatePage().then((response) => {
             console.log('donate page', response);
+            MapComponents(response.data.data.attributes.components, [], setComponents);
         });
-    }, [workPrograms]);
+    }, []);
 
     return <>{components}</>;
 };
