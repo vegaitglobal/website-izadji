@@ -9,7 +9,6 @@ export type ProjectSlideProps = {
   description: string;
   link: string;
   linkText: string;
-  id: number;
 };
 
 const ProjectSlide = ({
@@ -19,7 +18,6 @@ const ProjectSlide = ({
   description,
   link,
   linkText,
-  id,
 }: ProjectSlideProps): JSX.Element => {
   const navigate = useNavigate();
 
@@ -35,12 +33,9 @@ const ProjectSlide = ({
           <span className={styles.hero__slider__subtitle}>{date}</span>
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
-          <a
-            onClick={() => navigate(`/project-page/${id}`)}
-            className={styles.btn}
-          >
+          <Link to={link} className={styles.btn}>
             {linkText}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

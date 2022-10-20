@@ -54,7 +54,7 @@ function App() {
           }
         />
         <Route
-          path={routes.projectPage}
+          path={routes.project}
           element={
             <Layout>
               <ProjectPage />
