@@ -1,26 +1,25 @@
 import { ReactNode, useEffect, useState } from 'react';
-
-import 'swiper/scss';
-import 'swiper/scss/pagination';
-import pridePageService from '../../services/pridePageService';
-import HomePageMapper from '../../utils/mappers/homePageMapper';
+import { useParams } from 'react-router';
+import projectPagesService from '../../services/projectService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
 import Banner from '../../components/Banner/Banner';
+import ProjectPageMapper from '../../utils/mappers/projectPageMapper';
 
-const PridePage = () => {
+const ProjectPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
-    pridePageService.getPridePage().then((response) => {
+    projectPagesService.getProjectPage(id).then((response: any) => {
       const bannerData = response.data.data.attributes.banner;
       MapComponents(
         response.data.data.attributes.components,
-        [HomePageMapper],
+        [ProjectPageMapper],
         setComponents,
         {
           appendBefore: [
             <Banner
-              key="pride_banner"
+              key="project_page_banner"
               title={bannerData.title}
               text={bannerData.text}
               imageSrc={`${process.env.REACT_APP_STRAPI_HOST}${bannerData.image.data.attributes.url}`}
@@ -29,9 +28,8 @@ const PridePage = () => {
         }
       );
     });
-  }, []);
-
+  }, [id]);
   return <>{components}</>;
 };
 
-export default PridePage;
+export default ProjectPage;

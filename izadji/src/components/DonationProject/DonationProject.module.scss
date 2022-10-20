@@ -1,10 +1,9 @@
-@import "src/style/utils/variables";
+@import 'src/style/utils/variables';
 @import '../../style/base/layout';
-@import "src/style/utils/breakpoints";
+@import 'src/style/utils/breakpoints';
 @import '../../style/utils/helpers';
 // ---------- donation
 // ------------------------------------------------------------------------------
-
 
 .donation__info {
   background-color: #9c0762;

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import projectPagesService from '../../services/projectService';
 import styles from './ProjectSlide.module.scss';
 
 export type ProjectSlideProps = {
@@ -18,6 +19,8 @@ const ProjectSlide = ({
   link,
   linkText,
 }: ProjectSlideProps): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <div className={`${styles.hero__slider__item}`}>
       <div className={styles.hero__slider__inner}>

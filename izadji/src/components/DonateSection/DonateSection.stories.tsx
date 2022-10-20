@@ -13,7 +13,8 @@ const Default: ComponentStory<typeof DonateSection> = (args) => (
 export const DefaultDonateSection = Default.bind({});
 DefaultDonateSection.args = {
   title: 'Doniraj',
-  content: 'Zelis da ucestvujes u nasim ciljevima, da pomognes nasoj zajednici. Sa ove stranice mozes da **doniras**.',
+  content:
+    'Zelis da ucestvujes u nasim ciljevima, da pomognes nasoj zajednici. Sa ove stranice mozes da **doniras**.',
   buttonText: 'Doniraj',
-  buttonHref: 'https://www.google.com'
+  buttonHref: 'https://www.google.com',
 };

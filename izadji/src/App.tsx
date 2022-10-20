@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage/HomePage';
 import PridePage from './pages/PridePage/PridePage';
 import { routes } from './routes';
 import Layout from './components/Layout/Layout';
+import ProjectPage from './pages/ProjectPage/ProjectPage';
 
 function App() {
   return (
@@ -49,6 +50,14 @@ function App() {
           element={
             <Layout>
               <p>Blog page</p>
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.project}
+          element={
+            <Layout>
+              <ProjectPage />
             </Layout>
           }
         />

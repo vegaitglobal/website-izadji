@@ -1,6 +1,5 @@
 enum DonationComponents {
-    DONATION = 'donation-components.donations'
+  DONATION = 'donation-components.donations',
 }
 
 export default DonationComponents;
-

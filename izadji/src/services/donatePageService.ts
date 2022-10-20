@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 const getDonatePage = () =>
-    axios.get(`${process.env.REACT_APP_STRAPI_HOST}/api/donate-page?populate=deep`);
+  axios.get(
+    `${process.env.REACT_APP_STRAPI_HOST}/api/donate-page?populate=deep`
+  );
 
 const donatePageService = {
-    getDonatePage,
+  getDonatePage,
 };
 
 export default donatePageService;
