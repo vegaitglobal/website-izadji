@@ -4,7 +4,8 @@
   "info": {
     "singularName": "team-member",
     "pluralName": "team-members",
-    "displayName": "Team member"
+    "displayName": "Team member",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,17 +19,21 @@
       "type": "string"
     },
     "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "biography": {
       "type": "richtext"
+    },
+    "email": {
+      "type": "email"
     }
   }
 }

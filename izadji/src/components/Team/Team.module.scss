@@ -1,0 +1,90 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style//utils/breakpoints';
+@import '../../style//utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+
+.people__slider {
+  width: 100%;
+}
+
+.people__slider__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+}
+.swiper__container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+
+.swiper__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper__slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.people__slider__holder {
+  flex: 1 1 32%;
+  max-width: 32%;
+  min-height: 824px;
+  padding: 68px 60px 136px 0;
+  border-right: 1px solid $grey-border;
+  @include media-breakpoint-down(md) {
+    border-right: none;
+    padding: 40px 0;
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: unset;
+    height: 100%;
+  }
+}
+
+.people__slider__heading {
+  margin-bottom: 38px;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 25px;
+  }
+}
+
+.people__slider__list {
+  border: 1px solid $grey-border;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.people__slider__item__btm__none {
+  border-bottom: none;
+}
+
+.people__slider__item__top__none {
+  border-top: none;
+}
