@@ -30,6 +30,9 @@
       "type": "component",
       "repeatable": false,
       "component": "shared-components.banner"
+    },
+    "myRichText": {
+      "type": "richtext"
     }
   }
 }

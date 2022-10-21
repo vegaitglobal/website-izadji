@@ -24,13 +24,13 @@ const Layout = ({ children }: any): JSX.Element => {
       navBar: {
         buttons: [],
       },
-      logoSrc: `${process.env.REACT_APP_STRAPI_HOST}${dao.logo.data.attributes.url}`,
+      logoSrc: dao.logo.data.attributes.url,
     });
   };
 
   const setupFooterData = (dao: any) => {
     setFooterData({
-      iconSrc: `${process.env.REACT_APP_STRAPI_HOST}${dao.logo.data.attributes.url}`,
+      iconSrc: dao.logo.data.attributes.url,
       emails: [dao.firstEmail, dao.secondEmail],
       copyText: dao.designedBy,
       navItems: dao.siteMap.map((mapItem: any) => ({
