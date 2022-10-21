@@ -1,0 +1,82 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style//utils/breakpoints';
+@import '../../style//utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+
+.people__slider__btn__active {
+  background: $black;
+  .people__slider__text__holder {
+    color: $white;
+  }
+  .people__slider__social {
+    background-color: $white;
+    &::before {
+      color: $black;
+    }
+  }
+}
+
+.people__slider__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 15px;
+  width: 100%;
+  border-bottom: 1px solid $grey-border;
+}
+
+.people__slider__image__holder {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.people__slider_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.people__slider__text__holder {
+  display: flex;
+  flex-direction: column;
+  transition: $transition;
+}
+
+.people__slider__text {
+  text-align: left;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 300;
+  opacity: 0.6;
+}
+
+.people__slider__text__bold {
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 1;
+}
+
+.people__slider__social__holder {
+  margin-left: auto;
+}
+
+.people__slider__social {
+  background-color: $black;
+  padding: 0 4px;
+  border-radius: 3px;
+  transition: $transition;
+  @include icon(twitter, before) {
+    font-size: 13px;
+    color: $white;
+  }
+}
