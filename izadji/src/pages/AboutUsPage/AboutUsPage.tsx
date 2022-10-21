@@ -9,8 +9,6 @@ const AboutUsPage = () => {
 
   useEffect(() => {
     aboutUsPageService.getAboutUsPage().then((response: any) => {
-      console.log(response);
-
       const bannerData = response.data.data.attributes.banner;
       MapComponents(
         response.data.data.attributes.components,

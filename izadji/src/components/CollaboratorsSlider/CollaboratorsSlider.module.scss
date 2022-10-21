@@ -34,10 +34,14 @@
   }
 }
 
-.logo-slider__inner {
+.logo__slider__inner {
   display: block;
   padding: 21px;
   @include media-breakpoint-down(sm) {
     padding: 10px;
   }
+}
+
+.logo__slider__image{
+  max-width: 100%;
 }
