@@ -27,10 +27,10 @@ const TeamMemberBio = ({
               />
             </div>
             <div className={styles.people__slider__text__bio__holder}>
-              <span className={`${styles.people__slider__bio__text__bold}`}>
+              <span className={styles.people__slider__bio__text__bold}>
                 {name}
               </span>
-              <span className={`${styles.people__slider__bio__text}`}>
+              <span className={styles.people__slider__bio__text}>
                 {jobTitle}
               </span>
             </div>

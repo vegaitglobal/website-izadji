@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './TeamMemberItem.module.scss';
 
 export type TeamMemberItemProps = {
@@ -35,14 +34,14 @@ const TeamMemberItem = ({
         </div>
 
         <div className={styles.people__slider__text__holder}>
-          <span className={`${styles.people__slider__text__bold}`}>{name}</span>
-          <span className={`${styles.people__slider__text}`}>{jobTitle}</span>
+          <span className={styles.people__slider__text__bold}>{name}</span>
+          <span className={styles.people__slider__text}>{jobTitle}</span>
         </div>
         <a
           className={styles.people__slider__social__holder}
           href={`mailto:${email}`}
         >
-          <span className={`${styles.people__slider__social}`}></span>
+          <span className={styles.people__slider__social}></span>
         </a>
       </button>
     </li>
