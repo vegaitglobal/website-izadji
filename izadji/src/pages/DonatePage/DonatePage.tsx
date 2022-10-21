@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import donatePageService from '../../services/donatePageService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
+import DonatePageMapper from '../../utils/mappers/donatePageMapper';
 
 const DonatePage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -10,7 +11,7 @@ const DonatePage = () => {
       console.log('donate page', response);
       MapComponents(
         response.data.data.attributes.components,
-        [],
+        [DonatePageMapper],
         setComponents
       );
     });
@@ -18,3 +19,5 @@ const DonatePage = () => {
 
   return <>{components}</>;
 };
+
+export default DonatePage;
