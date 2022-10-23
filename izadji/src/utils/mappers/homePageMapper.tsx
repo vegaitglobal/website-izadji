@@ -9,13 +9,13 @@ import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
-    const startTime = eventData.timeStart.split(':');
-    const endTime = eventData.timeStart.split(':');
+    const [startHours, startMinutes] = eventData.timeStart.split(':');
+    const [endHours, endMinutes] = eventData.timeStart.split(':');
     return {
       date: convertDate(eventData.date, true),
       weekDay: convertWeekDay(eventData.date),
-      timeStart: `${startTime[0]}:${startTime[1]}`,
-      timeEnd: `${endTime[0]}:${endTime[1]}`,
+      timeStart: `${startHours}:${startMinutes}`,
+      timeEnd: `${endHours}:${endMinutes}`,
       name: eventData.text,
       link: eventData.link,
     };
