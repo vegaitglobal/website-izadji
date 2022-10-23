@@ -110,7 +110,7 @@
     padding: 10px;
   }
   @include media-breakpoint-down(sm) {
-    padding: 5px 10px;
+    display: none;
   }
 }
 
@@ -124,9 +124,9 @@
 }
 
 .events__cell__date {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;
@@ -144,9 +144,9 @@
 }
 
 .events__cell__time {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;
@@ -166,9 +166,9 @@
 }
 
 .events__cell__name {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;

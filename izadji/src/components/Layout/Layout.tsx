@@ -7,12 +7,6 @@ const Layout = ({ children }: any): JSX.Element => {
   const [headerData, setHeaderData] = useState<HeaderProps | undefined>();
   const [footerData, setFooterData] = useState<FooterProps | undefined>();
 
-  // useEffect(() => {
-  //   workProgramService.getWorkProgramPages().then((response) => {
-  //     setWorkPrograms(response.data.data);
-  //   });
-  // }, []);
-
   const setupHeadeData = (dao: any) => {
     setHeaderData({
       emails: [dao.firstEmail, dao.secondEmail],
@@ -45,7 +39,6 @@ const Layout = ({ children }: any): JSX.Element => {
 
   useEffect(() => {
     layoutService.getLayout().then((response) => {
-      console.log(response);
       const daoHeader = response.data.data.attributes.header;
       const daoFooter = response.data.data.attributes.footer;
       setupHeadeData(daoHeader);

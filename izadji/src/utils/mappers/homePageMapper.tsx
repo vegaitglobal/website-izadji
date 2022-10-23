@@ -3,13 +3,16 @@ import EventsSlider from '../../components/EventsSlider/EventsSlider';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponents';
 import { MappingFunction } from './sharedMapper';
+import projectPagesService from '../../services/projectService';
+import { ProjectSlideProps } from '../../components/ProjectSlide/ProjectSlide';
+import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
     const startTime = eventData.timeStart.split(':');
     const endTime = eventData.timeStart.split(':');
     return {
-      date: convertDate(eventData.date),
+      date: convertDate(eventData.date, true),
       weekDay: convertWeekDay(eventData.date),
       timeStart: `${startTime[0]}:${startTime[1]}`,
       timeEnd: `${endTime[0]}:${endTime[1]}`,
@@ -19,7 +22,21 @@ const getEventTableSlides = (events: any): EventProps[] => {
   });
 };
 
-const HomePageMapper: MappingFunction = (component) => {
+const getProjectSlides = (projects: any): ProjectSlideProps[] => {
+  return projects.map((projectData: any) => {
+    const projectBanner = projectData.attributes.banner;
+    return {
+      imageSrc: projectBanner.image.data.attributes.url,
+      date: projectBanner.date && convertDate(projectBanner.date, false),
+      title: projectBanner.title,
+      description: projectBanner.text,
+      link: `/projects-page/${projectData.id}`,
+      linkText: projectBanner.linkText,
+    };
+  });
+};
+
+const HomePageMapper: MappingFunction = async (component) => {
   switch (component['__component']) {
     case HomePageComponents.EVENT_TABLE: {
       return (
@@ -28,6 +45,15 @@ const HomePageMapper: MappingFunction = (component) => {
           events={getEventTableSlides(
             component.event_table.data.attributes.event
           )}
+        />
+      );
+    }
+    case HomePageComponents.PROJECTS_SLIDER: {
+      const projects = await projectPagesService.getProjectPages();
+      return (
+        <ProjectSlider
+          key={`projects_slider_${component['__component'].id}`}
+          slides={getProjectSlides(projects.data.data)}
         />
       );
     }
