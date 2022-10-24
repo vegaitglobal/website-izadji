@@ -7,7 +7,7 @@ export type PublicationProps = {
   buttonText: string;
 };
 
-const Publications = ({
+const Publication = ({
   imageSrc,
   text,
   title,
@@ -20,7 +20,7 @@ const Publications = ({
           <h3 className={styles.basic__block__head}>{title}</h3>
           <p className={styles.basic__block__par}>{text}</p>
           <a
-            href="{{link.url}}"
+            href="{{}}"
             className={`${styles.btn} ${styles.btn__centered} ${styles.btn__large}`}
           >
             {buttonText}
@@ -32,4 +32,4 @@ const Publications = ({
   );
 };
 
-export default Publications;
+export default Publication;

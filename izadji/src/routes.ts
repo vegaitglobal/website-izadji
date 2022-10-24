@@ -7,4 +7,5 @@ export const routes = {
   project: '/project/:id',
   aboutUs: '/about-us',
   donate: '/donate',
+  publication: '/publications'
 };
