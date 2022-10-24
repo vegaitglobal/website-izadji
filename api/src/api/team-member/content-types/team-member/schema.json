@@ -32,7 +32,7 @@
     "biography": {
       "type": "richtext"
     },
-    "email": {
+    "emailField": {
       "type": "email"
     }
   }

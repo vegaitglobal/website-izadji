@@ -7,7 +7,6 @@ const DonatePage = () => {
 
   useEffect(() => {
     donatePageService.getDonatePage().then((response) => {
-      console.log('donate page', response);
       MapComponents(
         response.data.data.attributes.components,
         [],

@@ -27,8 +27,6 @@ const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
 const getTrendingArticlesSlides = (
   trendingArticlesData: any
 ): TrendingArticleProps[] => {
-  console.log(trendingArticlesData);
-
   return trendingArticlesData.map((trendingArticle: any) => {
     const blogBanner = trendingArticle.attributes.blogBanner;
     const workProgramme =
