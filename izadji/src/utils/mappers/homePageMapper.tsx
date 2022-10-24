@@ -3,6 +3,8 @@ import EventsSlider from '../../components/EventsSlider/EventsSlider';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponents';
 import { MappingFunction } from './sharedMapper';
+import DonationComponents from '../enums/donationComponents';
+import Donate from '../../components/Donate/Donate';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
