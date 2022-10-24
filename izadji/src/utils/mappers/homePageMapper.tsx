@@ -6,6 +6,8 @@ import { MappingFunction } from './sharedMapper';
 import projectPagesService from '../../services/projectService';
 import { ProjectSlideProps } from '../../components/ProjectSlide/ProjectSlide';
 import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
+import DonationComponents from '../enums/donationComponents';
+import Donate from '../../components/Donate/Donate';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
