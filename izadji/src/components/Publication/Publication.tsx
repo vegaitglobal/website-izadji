@@ -5,6 +5,7 @@ export type PublicationProps = {
   text: string;
   title: string;
   buttonText: string;
+  link: string;
 };
 
 const Publications = ({
@@ -12,7 +13,9 @@ const Publications = ({
   text,
   title,
   buttonText,
+  link,
 }: PublicationProps): JSX.Element => {
+  const downloadPdf = (link: string) => {};
   return (
     <div className={styles.basic__block__holder}>
       <div className={styles.basic__block__row}>
@@ -20,7 +23,8 @@ const Publications = ({
           <h3 className={styles.basic__block__head}>{title}</h3>
           <p className={styles.basic__block__par}>{text}</p>
           <a
-            href="{{link.url}}"
+            href={link}
+            download=""
             className={`${styles.btn} ${styles.btn__centered} ${styles.btn__large}`}
           >
             {buttonText}

@@ -22,6 +22,7 @@ const Publications = ({
               text={publication.text}
               imageSrc={publication.imageSrc}
               buttonText={publication.buttonText}
+              link={publication.link}
             />
           ))}
         </div>
