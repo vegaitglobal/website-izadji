@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import RichTextComponent from '../RichTextComponent/RichTextComponent';
 import styles from './TeamMemberBio.module.scss';
 
 export type TeamMemberBioProps = {
@@ -36,7 +37,7 @@ const TeamMemberBio = ({
             </div>
           </div>
         </div>
-        <ReactMarkdown className={styles.rte}>{bio}</ReactMarkdown>
+        <RichTextComponent className={styles.rte} content={bio} />
       </div>
     </div>
   );

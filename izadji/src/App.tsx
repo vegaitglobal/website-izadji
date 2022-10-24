@@ -8,6 +8,7 @@ import PridePage from './pages/PridePage/PridePage';
 import { routes } from './routes';
 import Layout from './components/Layout/Layout';
 import ProjectPage from './pages/ProjectPage/ProjectPage';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import DonatePage from './pages/DonatePage/DonatePage';
 
 function App() {
@@ -59,6 +60,14 @@ function App() {
           element={
             <Layout>
               <ProjectPage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.aboutUs}
+          element={
+            <Layout>
+              <AboutUsPage />
             </Layout>
           }
         />

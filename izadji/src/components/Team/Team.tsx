@@ -15,9 +15,9 @@ const Team = ({ heading, teamMembersList }: TeamProps): JSX.Element => {
     useState<TeamMemberItemProps>(teamMembersList[0]);
 
   const teamMemberSelect = (email: string) => {
-    const selectedTeamMember = teamMembersList.find((tm) => tm.email === email);
-    if (selectedTeamMember) {
-      setSelectedTeamMember(selectedTeamMember);
+    const selectedMember = teamMembersList.find((tm) => tm.email === email);
+    if (selectedMember) {
+      setSelectedTeamMember(selectedMember);
     } else {
       setSelectedTeamMember(teamMembersList[0]);
     }

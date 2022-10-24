@@ -177,23 +177,8 @@
     }
   }
 }
-
-img {
+.img{
   max-width: 100%;
-}
-
-.img__right__aligned {
-  float: right;
-  margin: 0 0 50px 50px;
-  max-width: 48%;
-  @include media-breakpoint-only(md) {
-    margin: 0 0 30px 30px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin: 0 0 20px;
-    max-width: none;
-    width: 100%;
-  }
 }
 
 .section__title {

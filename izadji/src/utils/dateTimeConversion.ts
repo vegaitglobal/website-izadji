@@ -77,6 +77,5 @@ export const convertDate = (date: string) => {
 };
 
 export const convertWeekDay = (date: string) => {
-  console.log(dayjs(date).format('dddd'));
   return dayOfTheWeekSwitch(dayjs(date).format('dddd'));
 };
