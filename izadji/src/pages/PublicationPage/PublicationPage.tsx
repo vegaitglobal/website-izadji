@@ -4,16 +4,17 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import publicationPageService from '../../services/publicationService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
-import Banner from '../../components/Banner/Banner';
 import Publications from '../../components/Publications/Publications';
 import { PublicationProps } from '../../components/Publication/Publication';
 
 const GetPublications = (publication: any): PublicationProps => {
   return {      
-        imageSrc:publication.attributes.image.ulr,
+        imageSrc:publication.attributes.image.data.attributes.url,
         text:publication.attributes.text,
         title:publication.attributes.title,
         buttonText:publication.attributes.downloadButton.buttonText,
+        href:publication.attributes.downloadButton.pdfFile.data.attributes.url,
+        download:publication.attributes.downloadButton.pdfFile.data.attributes.hash,
     };
 };
 
