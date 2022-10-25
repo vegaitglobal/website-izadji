@@ -2,25 +2,33 @@
   "collectionName": "components_shared_components_banners",
   "info": {
     "displayName": "banner",
-    "icon": "archway"
+    "icon": "archway",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "title": {
       "type": "string"
     },
     "text": {
       "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "linkText": {
+      "type": "string"
     }
   }
 }

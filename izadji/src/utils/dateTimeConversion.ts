@@ -3,16 +3,16 @@ import dayjs from 'dayjs';
 const monthSwitch = (monthNumber: string) => {
   switch (monthNumber) {
     case '1': {
-      return 'JAN';
+      return 'JANUAR';
     }
     case '2': {
-      return 'FEB';
+      return 'FEBRUAR';
     }
     case '3': {
-      return 'MAR';
+      return 'MART';
     }
     case '4': {
-      return 'APR';
+      return 'APRIL';
     }
     case '5': {
       return 'MAJ';
@@ -24,19 +24,19 @@ const monthSwitch = (monthNumber: string) => {
       return 'JUL';
     }
     case '8': {
-      return 'AVG';
+      return 'AVGUST';
     }
     case '9': {
-      return 'SEP';
+      return 'SEPTEMBAR';
     }
     case '10': {
-      return 'OKT';
+      return 'OKTOBAR';
     }
     case '11': {
-      return 'NOV';
+      return 'NOVEMBAR';
     }
     case '12': {
-      return 'DEC';
+      return 'DECEMBAR';
     }
   }
 };
@@ -70,10 +70,13 @@ const dayOfTheWeekSwitch = (dayOfTheWeek: string) => {
   }
 };
 
-export const convertDate = (date: string) => {
+export const convertDate = (date: string, isShort: boolean) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, month, day] = date.split('-');
 
-  return `${day}.${monthSwitch(month)}`;
+  return isShort
+    ? `${day}.${monthSwitch(month)?.slice(0, 3)}`
+    : `${day}.${monthSwitch(month)}`;
 };
 
 export const convertWeekDay = (date: string) => {
