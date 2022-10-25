@@ -197,7 +197,7 @@
   &::after {
     @include font-styles;
     color: $white;
-    content: font-char(ico-check); // TODO: Find check icon
+    content: font-char(ico-check);
     font-size: 14px;
     left: 4px;
     position: absolute;
