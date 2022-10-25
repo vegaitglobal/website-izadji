@@ -1,10 +1,16 @@
 {
-  "collectionName": "components_publication_page_components_publication_cards",
+  "kind": "collectionType",
+  "collectionName": "publications",
   "info": {
-    "displayName": "Publication card",
+    "singularName": "publication",
+    "pluralName": "publications",
+    "displayName": "Publication",
     "description": ""
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string"
@@ -13,18 +19,16 @@
       "type": "text"
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "downloadButton": {
-      "displayName": "Download button",
       "type": "component",
       "repeatable": false,
       "component": "shared-components.download-button"

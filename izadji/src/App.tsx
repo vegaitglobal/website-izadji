@@ -10,6 +10,7 @@ import Layout from './components/Layout/Layout';
 import ProjectPage from './pages/ProjectPage/ProjectPage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import DonatePage from './pages/DonatePage/DonatePage';
+import PublicationPage from './pages/PublicationPage/PublicationPage';
 
 function App() {
   return (
@@ -28,6 +29,14 @@ function App() {
           element={
             <Layout>
               <PridePage />
+            </Layout>
+          }
+        />
+         <Route
+          path={routes.publication}
+          element={
+            <Layout>
+              <PublicationPage />
             </Layout>
           }
         />
