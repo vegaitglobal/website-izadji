@@ -169,7 +169,7 @@
   position: absolute;
   top: 0;
   width: 1px;
-  &:checked ~ .form__checkbox-label {
+  &:checked ~ .form__checkbox__label {
     &::before {
       background-color: $pink;
     }
@@ -197,7 +197,7 @@
   &::after {
     @include font-styles;
     color: $white;
-    content: font-char(ico-checked);
+    content: font-char(ico-check); // TODO: Find check icon
     font-size: 14px;
     left: 4px;
     position: absolute;

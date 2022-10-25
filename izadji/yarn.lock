@@ -8022,6 +8022,11 @@
     "pify" "^4.0.1"
     "slash" "^2.0.0"
 
+"goober@^2.1.10":
+  "integrity" "sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A=="
+  "resolved" "https://registry.npmjs.org/goober/-/goober-2.1.11.tgz"
+  "version" "2.1.11"
+
 "got@^9.6.0":
   "integrity" "sha512-R7eWptXuGYxwijs0eV+v3o6+XH1IqVK8dJOEecQfTmkncw9AV4dcw/Dhxi8MdlqPthxxpZyizMzyg8RTmEsG+Q=="
   "resolved" "https://registry.npmjs.org/got/-/got-9.6.0.tgz"
@@ -12845,6 +12850,18 @@
   "integrity" "sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg=="
   "resolved" "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   "version" "6.0.11"
+
+"react-hook-form@^7.38.0":
+  "integrity" "sha512-gxWW1kMeru9xR1GoR+Iw4hA+JBOM3SHfr4DWCUKY0xc7Vv1MLsF109oHtBeWl9shcyPFx67KHru44DheN0XY5A=="
+  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.38.0.tgz"
+  "version" "7.38.0"
+
+"react-hot-toast@^2.4.0":
+  "integrity" "sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA=="
+  "resolved" "https://registry.npmjs.org/react-hot-toast/-/react-hot-toast-2.4.0.tgz"
+  "version" "2.4.0"
+  dependencies:
+    "goober" "^2.1.10"
 
 "react-inspector@^5.1.0":
   "integrity" "sha512-GURDaYzoLbW8pMGXwYPDBIv6nqei4kK7LPRZ9q9HCZF54wqXz/dnylBp/kfE9XmekBhHvLDdcYeyIwSrvtOiWg=="
