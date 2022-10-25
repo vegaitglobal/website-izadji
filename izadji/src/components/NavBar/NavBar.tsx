@@ -11,7 +11,7 @@ const NavBar = ({ buttons }: NavBarProps): JSX.Element => (
       <ul className={styles.nav__list} role="menubar">
         {buttons.map((button: NavBarButtonProps) => (
           <li className={styles.nav__item} key={button.title} role="menuitem">
-            <NavBarButton title={button.title}></NavBarButton>
+            <NavBarButton {...button}></NavBarButton>
           </li>
         ))}
       </ul>

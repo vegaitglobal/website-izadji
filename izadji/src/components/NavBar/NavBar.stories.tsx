@@ -1,28 +1,36 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import NavBar from './NavBar';
 import './NavBar.module.scss';
+import { routes } from '../../routes';
 
 const navBarButtons = [
   {
     title: 'Pocetna',
+    href: routes.main,
   },
   {
     title: 'Pride',
+    href: routes.pride,
   },
   {
     title: 'Publikacije',
+    href: routes.main,
   },
   {
     title: 'Vesti/Blog',
+    href: routes.blog,
   },
   {
     title: 'Dokumantacija',
+    href: routes.main,
   },
   {
     title: 'O Nama',
+    href: routes.aboutUs,
   },
   {
     title: 'Kontakt',
+    href: routes.main,
   },
 ];
 

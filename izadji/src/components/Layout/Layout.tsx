@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import layoutService from '../../services/layoutService';
 import Footer, { FooterProps } from '../shared/Footer/Footer';
 import Header, { HeaderProps } from '../shared/Header/Header';
+import { getRouteForPageLink } from '../../routes';
 
 const Layout = ({ children }: any): JSX.Element => {
   const [headerData, setHeaderData] = useState<HeaderProps | undefined>();
   const [footerData, setFooterData] = useState<FooterProps | undefined>();
 
-  const setupHeadeData = (dao: any) => {
+  const setupHeaderData = (dao: any) => {
     setHeaderData({
       emails: [dao.firstEmail, dao.secondEmail],
       social: dao.socialMediaLinks.map((sml: any) => ({
@@ -16,7 +17,10 @@ const Layout = ({ children }: any): JSX.Element => {
         iconClass: sml.iconClass,
       })),
       navBar: {
-        buttons: [],
+        buttons: dao.navBarItems.data.map((navBarItem: any) => ({
+          title: navBarItem.attributes.title,
+          href: getRouteForPageLink(navBarItem),
+        })),
       },
       logoSrc: dao.logo.data.attributes.url,
     });
@@ -31,7 +35,7 @@ const Layout = ({ children }: any): JSX.Element => {
         title: mapItem.title,
         items: mapItem.page_links.data.map((linkItem: any) => ({
           text: linkItem.attributes.title,
-          href: linkItem.attributes.title,
+          href: getRouteForPageLink(linkItem),
         })),
       })),
     });
@@ -41,7 +45,7 @@ const Layout = ({ children }: any): JSX.Element => {
     layoutService.getLayout().then((response) => {
       const daoHeader = response.data.data.attributes.header;
       const daoFooter = response.data.data.attributes.footer;
-      setupHeadeData(daoHeader);
+      setupHeaderData(daoHeader);
       setupFooterData(daoFooter);
     });
   }, []);
