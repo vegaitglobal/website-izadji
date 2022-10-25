@@ -1,3 +1,7 @@
+import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import formService from '../../services/formService';
+import Toast from '../shared/Toast/Toast';
 import styles from './ContactUsForm.module.scss';
 
 export type ContactUsFormProps = {
@@ -23,6 +27,24 @@ const ContactUsForm = ({
   buttonLabel,
   showArrow,
 }: ContactUsFormProps): JSX.Element => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  // TODO: Review response and error handling (messages)
+  const onSubmit = (data: any) => {
+    formService
+      .sendEmailData(data)
+      .then(() => toast.success('Proces kontaktiranja uspešan.'))
+      .catch(() => {
+        toast.error(
+          'Trenutno postoje smetnje prilikom procesa kontaktiranja. Molimo, pokušajte ponovo.'
+        );
+      });
+  };
+
   return (
     <div>
       <section
@@ -58,7 +80,10 @@ const ContactUsForm = ({
               )}
             </div>
 
-            <form className={`${styles.contact__block__form} ${styles.form}`}>
+            <form
+              className={`${styles.contact__block__form} ${styles.form}`}
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className={styles.form__inner}>
                 <div className={styles.form__col}>
                   <label
@@ -70,18 +95,23 @@ const ContactUsForm = ({
                     id="vol-form-name"
                     className={styles.form__input}
                     placeholder={namePlaceholder}
+                    {...register('name', { required: true })}
                   />
+                  {errors.name && (
+                    <p className={styles.form__error__message}>
+                      Polje <i>Ime i prezime</i> je obavezno za unos
+                    </p>
+                  )}
                   <label
                     htmlFor="vol-form-phone"
                     className={styles.sr__only}
                   ></label>
-                  {/* TODO validacija za telefon */}
                   <input
                     type="tel"
-                    pattern="(\+381)?(\s|-)?6(([0-6]|[8-9])\d{8}|(77|78)\d{7}){1}"
                     id="vol-form-phone"
                     className={styles.form__input}
                     placeholder={phonePlaceholder}
+                    {...register('phone')}
                   />
                   <label
                     htmlFor="vol-form-email"
@@ -92,12 +122,25 @@ const ContactUsForm = ({
                     id="vol-form-email"
                     className={styles.form__input}
                     placeholder={emailPlaceholder}
+                    {...register('email', {
+                      required: true,
+                      pattern: new RegExp(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                      ),
+                    })}
                   />
+                  {errors.email && (
+                    <p className={styles.form__error__message}>
+                      Polje <i>Email Adresa</i> je obavezno za unos i mora biti
+                      validnog email formata
+                    </p>
+                  )}
                   <div className={styles.form__checkbox}>
                     <input
                       type="checkbox"
                       className={styles.form__checkbox__input}
                       id="messageCopy"
+                      {...register('messageCopy')}
                     />
                     <label
                       htmlFor="messageCopy"
@@ -116,9 +159,14 @@ const ContactUsForm = ({
                     id="form.message.id"
                     className={styles.form__textarea}
                     placeholder={messagePlaceholder}
+                    {...register('message', { required: true })}
                   ></textarea>
+                  {errors.message && (
+                    <p className={styles.form__error__message}>
+                      Polje <i>Poruka</i> je obavezno za unos
+                    </p>
+                  )}
                   <div className={styles.form__actions}>
-                    {/* TODO poslati mail */}
                     <button
                       type="submit"
                       className={`${styles.form__button} ${styles.btn}`}
@@ -132,6 +180,7 @@ const ContactUsForm = ({
           </div>
         </div>
       </section>
+      <Toast />
     </div>
   );
 };

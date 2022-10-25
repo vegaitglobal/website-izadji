@@ -43,7 +43,7 @@
   @if $filename == ico-close {
     $char: '\EA06';
   }
-  @if $filename == ico-facebook {
+  @if $filename == ico-check {
     $char: '\EA07';
   }
   @if $filename == ico-instagram {
@@ -66,6 +66,9 @@
   }
   @if $filename == ico-youtube {
     $char: '\EA0E';
+  }
+  @if $filename == ico-location {
+    $char: '\EA0F';
   }
 
   @return $char;
@@ -104,8 +107,8 @@
 .font-ico-close {
   @include font(ico-close);
 }
-.font-ico-facebook {
-  @include font(ico-facebook);
+.font-ico-check {
+  @include font(ico-check);
 }
 .font-ico-instagram {
   @include font(ico-instagram);
@@ -127,4 +130,7 @@
 }
 .font-ico-youtube {
   @include font(ico-youtube);
+}
+.font-ico-checked {
+  @include font(ico-location);
 }
