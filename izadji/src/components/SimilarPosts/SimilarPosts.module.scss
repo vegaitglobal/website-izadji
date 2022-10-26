@@ -1,0 +1,94 @@
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/helpers';
+
+.box__blog__feed {
+	margin: 40px 0;
+	@include media-breakpoint-down(sm) {
+		margin: 20px 0;
+	}
+}
+
+.box__blog__feed__container {
+	display: flex;
+	gap: 28px;
+	border-top: 1px solid $black;
+	padding-top: 40px;
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+	}
+}
+
+.box__blog__feed__content {
+	flex: 1 1 23%;
+	max-width: 23%;
+	margin-bottom: 22px;
+	@include media-breakpoint-down(md) {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+}
+
+.box__blog__feed__holder {
+	display: flex;
+	flex: 1 1 77%;
+	max-width: 77%;
+	@include media-breakpoint-down(md) {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+	}
+}
+
+.box__blog__feed__title {
+	background-color: $black;
+	color: $white;
+	flex-shrink: 0;
+	padding: 45px 32px 75px;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	height: 100%;
+}
+
+.box__blog__feed__arrow {
+	background: linear-gradient(270deg, $purple 0%, $blue 16.15%, $green 37.5%, $orange 62.5%, $red 100%);
+	bottom: 50px;
+	content: '';
+	height: 2px;
+	left: 32px;
+	max-width: 125px;
+	position: absolute;
+	width: 100%;
+	@include icon(arrow-right, after) {
+		color: $purple;
+		font-size: 14px;
+		position: absolute;
+		right: -5px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@include media-breakpoint-down(md) {
+		background: linear-gradient(0deg, $purple 0%, $blue 16.15%, $green 37.5%, $orange 62.5%, $red 100%);
+		bottom: 20px;
+		height: auto;
+		left: auto;
+		right: 18px;
+		top: 18px;
+		width: 2px;
+		&::after {
+			bottom: 0;
+			left: 0;
+			margin: 0 0 -5px -6px;
+			right: auto;
+			top: auto;
+			transform: rotate(90deg);
+		}
+	}
+}

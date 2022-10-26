@@ -32,7 +32,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path={routes.publication}
           element={
             <Layout>
