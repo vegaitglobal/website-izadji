@@ -1,5 +1,10 @@
 // ----------  forms
 // ------------------------------------------------------------------------------
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/mixins';
+
 input,
 textarea {
   background: $white;

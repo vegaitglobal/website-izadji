@@ -32,6 +32,11 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "featuredBlogPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-page.blog-page"
     }
   }
 }
