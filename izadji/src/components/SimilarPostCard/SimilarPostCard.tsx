@@ -35,7 +35,6 @@ const SimilarPostCard = ({
           {category}
         </span>
         <div className={styles.feed__more}>
-          {/*TODO add button */}
           <Link className={styles.feed__read__more} to={link}>
             Procitaj vise
           </Link>
