@@ -40,7 +40,9 @@ const BlogNewsPage = () => {
         const newArticles = blogsResponse.data.data.map((b: any) => ({
           title: b.attributes.title,
           date: b.attributes.blogBanner.date,
-          imageSrc: b.attributes.blogBanner.image.data.attributes.url,
+          imageSrc:
+            b.attributes.blogBanner.image.data.attributes.formats?.small?.url ??
+            b.attributes.blogBanner.image.data.attributes.url,
           category: b.attributes.work_program.data.attributes.title,
           link: routes.blogPage.replace(':id', b.id),
         }));
