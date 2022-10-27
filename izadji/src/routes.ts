@@ -10,7 +10,7 @@ export const routes = {
   aboutUs: '/about-us',
   donate: '/donate',
   publication: '/publications',
-  documentatio: '/documentation'
+  documentation: '/documentation'
 };
 
 export const getRouteForPageLink = function (pageLink: any) {

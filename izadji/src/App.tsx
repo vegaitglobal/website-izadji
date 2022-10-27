@@ -74,7 +74,7 @@ function App() {
           }
         />
          <Route
-          path={routes.documentatio}
+          path={routes.documentation}
           element={
             <Layout>
               <DocumentationPage />
