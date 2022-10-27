@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-import { routes } from '../../routes';
 import TrendingArticle, {
   TrendingArticleProps,
 } from '../TrendingArticle/TrendingArticle';
@@ -7,15 +5,25 @@ import styles from './TrendingArticles.module.scss';
 
 type TrendingArticlesProps = {
   slides: TrendingArticleProps[];
+  title?: string;
+  loadMoreCallback?: () => void;
+  hasMore?: boolean;
 };
 
-const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
+const TrendingArticles = ({
+  slides,
+  title,
+  loadMoreCallback,
+  hasMore,
+}: TrendingArticlesProps): JSX.Element => {
   return (
     <div className={`${styles.feed} ${styles.feed__white}`}>
       <div className={styles.wrap}>
-        <h2 className={`${styles.feed__title} ${styles.section__title}`}>
-          Naslov
-        </h2>
+        {title && (
+          <h2 className={`${styles.feed__title} ${styles.section__title}`}>
+            {title}
+          </h2>
+        )}
         <div className={styles.feed__list}>
           {slides.map((slide) => (
             <TrendingArticle
@@ -28,11 +36,13 @@ const TrendingArticles = ({ slides }: TrendingArticlesProps): JSX.Element => {
             />
           ))}
         </div>
-        <div className={styles.feed__link__wrap}>
-          <Link to={routes.blog} className={styles.btn}>
-            Pročitaj više
-          </Link>
-        </div>
+        {loadMoreCallback && hasMore && (
+          <div className={styles.feed__link__wrap}>
+            <button className={styles.btn} onClick={loadMoreCallback}>
+              Učitaj još
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

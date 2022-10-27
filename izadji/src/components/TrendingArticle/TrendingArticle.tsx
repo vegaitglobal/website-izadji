@@ -32,9 +32,14 @@ const TrendingArticle = ({
           {category}
         </span>
         <div className={styles.feed__more}>
-          {/*TODO add button */}
-          <span className={styles.feed__read__more}>Procitaj vise</span>
-          <span className={styles.feed__date}>{date}</span>
+          <span className={styles.feed__read__more}>Pročitaj više</span>
+          <span className={styles.feed__date}>
+            {new Date(date).toLocaleDateString('sr-Latn-RS', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </span>
         </div>
       </div>
     </Link>

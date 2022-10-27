@@ -2,28 +2,69 @@ import styles from './BlogNewsNav.module.scss';
 import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from 'react';
 import customDropdown from '../../utils/customDropdown';
+import workProgramService from '../../services/workProgramService';
+import { BlogNewsBannerProps } from '../BlogNewsBanner/BlogNewsBanner';
+import { routes } from '../../routes';
 
-type WorkProgrammeInfo = {
+export type WorkProgrammeInfo = {
   title: string;
   id: number;
+  featuredBlogPage?: BlogNewsBannerProps;
 };
 
 export type BlogNewsNavProps = {
-  onFilterChange: (programmeId: number, searchString: string) => void;
+  onFilterChange: (
+    workProgramme: WorkProgrammeInfo,
+    searchString: string
+  ) => void;
 };
 
 const BlogNewsNav = ({ onFilterChange }: BlogNewsNavProps) => {
   const { register, handleSubmit } = useForm();
   const searchInput = useRef<HTMLInputElement>(null);
-  const [workProgrammes, setWorkProgrammes] = useState<WorkProgrammeInfo[]>([
-    { title: 'title', id: 1 },
-    { title: 'other', id: 2 },
-  ]);
+  const [workProgrammes, setWorkProgrammes] = useState<WorkProgrammeInfo[]>([]);
   const [selectedWorkProgramme, setSelectedWorkProgramme] =
-    useState<WorkProgrammeInfo>(workProgrammes[0]);
+    useState<WorkProgrammeInfo>({ title: 'Odaberi kategoriju', id: -1 });
 
   useEffect(() => {
-    onFilterChange(selectedWorkProgramme.id, searchInput.current?.value ?? '');
+    workProgramService
+      .getWorkProgramPagesWithFeaturedBlogPage()
+      .then((response) => {
+        const workProgrammes = response.data.data.map((wp: any) => ({
+          title: wp.attributes.title,
+          id: wp.id,
+          featuredBlogPage:
+            wp.attributes.featuredBlogPage.data != null
+              ? {
+                  imageSrc:
+                    wp.attributes.featuredBlogPage.data.attributes.blogBanner
+                      .image.data.attributes.url,
+                  title: wp.attributes.featuredBlogPage.data.attributes.title,
+                  category: wp.attributes.title,
+                  text: wp.attributes.featuredBlogPage.data.attributes
+                    .featuredPageText,
+                  url: routes.blogPage.replace(
+                    ':id',
+                    wp.attributes.featuredBlogPage.id
+                  ),
+                  date: new Date(
+                    wp.attributes.featuredBlogPage.data.attributes.blogBanner.date
+                  ).toLocaleDateString('sr-Latn-RS', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  }),
+                }
+              : undefined,
+        }));
+
+        setWorkProgrammes(workProgrammes);
+        setSelectedWorkProgramme(workProgrammes[0]);
+      });
+  }, []);
+
+  useEffect(() => {
+    onFilterChange(selectedWorkProgramme, searchInput.current?.value ?? '');
   }, [selectedWorkProgramme]);
 
   const customDropdownInstance = useRef(customDropdown(styles));
@@ -36,7 +77,7 @@ const BlogNewsNav = ({ onFilterChange }: BlogNewsNavProps) => {
             className={styles.blog__landing__nav__search}
             onSubmit={handleSubmit(() =>
               onFilterChange(
-                selectedWorkProgramme.id,
+                selectedWorkProgramme,
                 searchInput.current?.value ?? ''
               )
             )}

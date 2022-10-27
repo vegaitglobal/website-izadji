@@ -1,9 +1,14 @@
 import axios from 'axios';
 
 const getBlogNewsPage = () => axios.get('/api/blog-news-page?populate=deep');
-const getBlogs = (workProgrammeId: number, searchString: string) =>
+const getBlogs = (
+  workProgrammeId: number,
+  searchString: string,
+  blogsPerPage: number,
+  page: number
+) =>
   axios.get(
-    `/api/blog-pages?filters[work_program][id][$eq]=${workProgrammeId}&populate=deep`
+    `/api/blog-pages?filters[work_program][id][$eq]=${workProgrammeId}&populate=deep&pagination[page]=${page}&pagination[pageSize]=${blogsPerPage}&filters[blog_page_tags][title][$containsi]=${searchString}`
   );
 
 const blogNewsPageService = {
