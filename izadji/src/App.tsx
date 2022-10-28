@@ -12,6 +12,8 @@ import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import DonatePage from './pages/DonatePage/DonatePage';
 import PublicationPage from './pages/PublicationPage/PublicationPage';
 import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
+import SingleBlogPage from './pages/BlogPage/SingleBlogPage';
+
 
 function App() {
   return (
@@ -53,7 +55,7 @@ function App() {
           path={routes.blogPage}
           element={
             <Layout>
-              <p>Single blog page</p>
+              <SingleBlogPage/>
             </Layout>
           }
         />

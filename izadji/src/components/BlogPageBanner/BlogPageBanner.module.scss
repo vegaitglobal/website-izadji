@@ -1,0 +1,76 @@
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/helpers';
+
+.blog__landing__banner {
+  width: 100%;
+}
+
+.blog__landing__banner__inner {
+  align-items: center;
+  display: flex;
+  min-height: 543px;
+  padding: 105px 0;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    min-height: 10px;
+    padding: 60px 20px;
+  }
+}
+
+.blog__landing__banner__content {
+  background-color: rgba($white, 0.8);
+  max-width: 578px;
+  padding: 32px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 20px;
+  }
+}
+
+.blog__landing__banner__category {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 9px;
+  padding: 4px 13px;
+  text-transform: none;
+}
+
+.blog__landing__banner__heading {
+  font-size: 32px;
+  line-height: 38px;
+  margin-bottom: 17px;
+}
+
+.blog__landing__banner__text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+
+.blog__landing__banner__footer {
+  padding-left: 3px;
+  width: 100%;
+}
+
+.blog__landing__banner__btn {
+  font-size: 16px;
+  line-height: 21px;
+  margin-right: 40px;
+  @include icon(arrow-long-right, after) {
+    font-size: 17px;
+    margin-left: 9px;
+    position: relative;
+    top: 3px;
+  }
+}
+
+.blog__landing__banner__date {
+  color: rgba($black, 0.35);
+  font-size: 12px;
+  line-height: 21px;
+}
