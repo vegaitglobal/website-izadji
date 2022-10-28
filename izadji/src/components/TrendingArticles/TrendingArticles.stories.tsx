@@ -40,4 +40,5 @@ const Default: ComponentStory<typeof TrendingArticles> = (args) => (
 export const DefaultTrendingArticles = Default.bind({});
 DefaultTrendingArticles.args = {
   slides: trendingArticles,
+  title: 'Aktuelnosti',
 };

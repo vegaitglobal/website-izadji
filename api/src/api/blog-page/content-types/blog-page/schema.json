@@ -33,6 +33,15 @@
       "type": "component",
       "repeatable": false,
       "component": "blog-page-components.blog-banner"
+    },
+    "featuredPageText": {
+      "type": "text"
+    },
+    "blog_page_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-page-tag.blog-page-tag",
+      "inversedBy": "blog_pages"
     }
   }
 }

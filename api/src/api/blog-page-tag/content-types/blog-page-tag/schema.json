@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_page_tags",
+  "info": {
+    "singularName": "blog-page-tag",
+    "pluralName": "blog-page-tags",
+    "displayName": "Blog page tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blog_pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-page.blog-page",
+      "inversedBy": "blog_page_tags"
+    }
+  }
+}

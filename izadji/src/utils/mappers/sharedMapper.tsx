@@ -66,6 +66,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
         <TrendingArticles
           key={`trending_${component['__component'].id}`}
           slides={getTrendingArticlesSlides(component.blog_pages.data)}
+          title="Aktuelnosti"
         />
       );
     }
@@ -79,7 +80,8 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
       );
     }
     case SharedComponents.WORK_PROGRAM_SLIDER: {
-      const workPrograms = await workProgramService.getWorkProgramPages();
+      const workPrograms =
+        await workProgramService.getWorkProgramPagesWithDeepPopulation();
       return getWorkProgramSlider(workPrograms.data.data);
     }
     case SharedComponents.NEWSLETTER: {

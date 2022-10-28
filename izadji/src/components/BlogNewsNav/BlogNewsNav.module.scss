@@ -1,0 +1,70 @@
+@import 'src/style/base/fonts';
+@import 'src/style/utils/breakpoints';
+@import 'src/style/layout/forms';
+@import '../../style/utils/helpers';
+@import '../../style/base/layout';
+@import '../../style/utils/reset';
+@import '../../style/layout/buttons';
+@import '../../style/layout/icon-font';
+
+// ---------- blog-landing-nav
+// ------------------------------------------------------------------------------
+
+.blog__landing__nav {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.blog__landing__nav__inner {
+  align-items: center;
+  background-color: $black;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.blog__landing__nav__search {
+  position: relative;
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.blog__landing__nav__input {
+  background-color: $white;
+  border: 0;
+  height: 52px;
+  padding: 0 50px 0 15px;
+  width: 314px;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.blog__landing__nav__submit {
+  font-size: 18px;
+  margin-top: 2px;
+  position: absolute;
+  right: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  @include icon(search);
+}
+
+.blog__landing__nav__dropdown {
+  margin-bottom: 0;
+  .dropdown__btn {
+    background-color: $white;
+    border: 0;
+    color: $black;
+  }
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+    width: 100%;
+  }
+}
