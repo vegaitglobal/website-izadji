@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import styles from './TrendingArticle.module.scss';
+import styles from './SimilarPostCard.module.scss';
 
-export type TrendingArticleProps = {
+export type SimilarPostCardProps = {
   imageSrc: string;
   date: string;
   title: string;
@@ -9,15 +9,18 @@ export type TrendingArticleProps = {
   link: string;
 };
 
-const TrendingArticle = ({
+const SimilarPostCard = ({
   imageSrc,
   date,
   title,
   category,
   link,
-}: TrendingArticleProps): JSX.Element => {
+}: SimilarPostCardProps): JSX.Element => {
   return (
-    <Link to={link} className={styles.feed__card}>
+    <Link
+      to={link}
+      className={`${styles.feed__card} ${styles.feed__card__blog}`}
+    >
       <div className={styles.feed__image__holder}>
         <div
           className={`${styles.feed__image} ${styles.has__cover}`}
@@ -32,18 +35,14 @@ const TrendingArticle = ({
           {category}
         </span>
         <div className={styles.feed__more}>
-          <span className={styles.feed__read__more}>Pročitaj više</span>
-          <span className={styles.feed__date}>
-            {new Date(date).toLocaleDateString('sr-Latn-RS', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-            })}
-          </span>
+          <Link className={styles.feed__read__more} to={link}>
+            Procitaj vise
+          </Link>
+          <span className={styles.feed__date}>{date}</span>
         </div>
       </div>
     </Link>
   );
 };
 
-export default TrendingArticle;
+export default SimilarPostCard;

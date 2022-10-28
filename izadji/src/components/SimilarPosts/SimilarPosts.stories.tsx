@@ -2,9 +2,9 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
-import TrendingArticles from './TrendingArticles';
+import SimilarPosts from './SimilarPosts';
 
-const trendingArticles = [
+const similarPosts = [
   {
     imageSrc: ProjectSlideImage1,
     date: '29. novembar',
@@ -29,16 +29,15 @@ const trendingArticles = [
 ];
 
 export default {
-  title: 'Trending Artciles',
-  component: TrendingArticles,
-} as ComponentMeta<typeof TrendingArticles>;
+  title: 'Similar Posts',
+  component: SimilarPosts,
+} as ComponentMeta<typeof SimilarPosts>;
 
-const Default: ComponentStory<typeof TrendingArticles> = (args) => (
-  <TrendingArticles {...args} />
+const Default: ComponentStory<typeof SimilarPosts> = (args) => (
+  <SimilarPosts {...args} />
 );
 
-export const DefaultTrendingArticles = Default.bind({});
-DefaultTrendingArticles.args = {
-  slides: trendingArticles,
-  title: 'Aktuelnosti',
+export const DefaultSimilarPosts = Default.bind({});
+DefaultSimilarPosts.args = {
+  cards: similarPosts,
 };

@@ -12,6 +12,7 @@ import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import DonatePage from './pages/DonatePage/DonatePage';
 import PublicationPage from './pages/PublicationPage/PublicationPage';
 import DocumentationPage from './pages/DocumentationPage/DocumentationPage';
+import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path={routes.publication}
           element={
             <Layout>
@@ -61,7 +62,7 @@ function App() {
           path={routes.blog}
           element={
             <Layout>
-              <p>Blog page</p>
+              <BlogNewsPage />
             </Layout>
           }
         />

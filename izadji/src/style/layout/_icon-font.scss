@@ -23,7 +23,7 @@
 }
 
 @function font-char($filename) {
-  $char: '';
+  $char: "";
 
   @if $filename == ico-arrow-bottom {
     $char: '\EA01';
@@ -40,35 +40,47 @@
   @if $filename == ico-arrow-right {
     $char: '\EA05';
   }
-  @if $filename == ico-close {
+  @if $filename == ico-checked-circle {
     $char: '\EA06';
   }
-  @if $filename == ico-check {
+  @if $filename == ico-checked {
     $char: '\EA07';
   }
-  @if $filename == ico-instagram {
+  @if $filename == ico-close {
     $char: '\EA08';
   }
-  @if $filename == ico-linkedin {
+  @if $filename == ico-facebook {
     $char: '\EA09';
   }
-  @if $filename == ico-mail {
+  @if $filename == ico-instagram {
     $char: '\EA0A';
   }
-  @if $filename == ico-menu {
+  @if $filename == ico-linkedin {
     $char: '\EA0B';
   }
-  @if $filename == ico-twitter {
+  @if $filename == ico-mail {
     $char: '\EA0C';
   }
-  @if $filename == ico-wheel {
+  @if $filename == ico-menu {
     $char: '\EA0D';
   }
-  @if $filename == ico-youtube {
+  @if $filename == ico-phone {
     $char: '\EA0E';
   }
-  @if $filename == ico-location {
+  @if $filename == ico-pin {
     $char: '\EA0F';
+  }
+  @if $filename == ico-search {
+    $char: '\EA10';
+  }
+  @if $filename == ico-twitter {
+    $char: '\EA11';
+  }
+  @if $filename == ico-wheel {
+    $char: '\EA12';
+  }
+  @if $filename == ico-youtube {
+    $char: '\EA13';
   }
 
   @return $char;
