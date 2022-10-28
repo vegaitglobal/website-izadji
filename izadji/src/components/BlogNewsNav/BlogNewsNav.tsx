@@ -45,7 +45,7 @@ const BlogNewsNav = ({ onFilterChange }: BlogNewsNavProps) => {
                     .featuredPageText,
                   url: routes.blogPage.replace(
                     ':id',
-                    wp.attributes.featuredBlogPage.id
+                    wp.attributes.featuredBlogPage.data.id
                   ),
                   date: new Date(
                     wp.attributes.featuredBlogPage.data.attributes.blogBanner.date
