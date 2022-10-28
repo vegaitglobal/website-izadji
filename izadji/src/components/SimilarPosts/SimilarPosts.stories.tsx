@@ -3,6 +3,7 @@ import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
 import SimilarPosts from './SimilarPosts';
+import { MemoryRouter } from 'react-router';
 
 const similarPosts = [
   {
@@ -34,7 +35,9 @@ export default {
 } as ComponentMeta<typeof SimilarPosts>;
 
 const Default: ComponentStory<typeof SimilarPosts> = (args) => (
-  <SimilarPosts {...args} />
+  <MemoryRouter>
+    <SimilarPosts {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultSimilarPosts = Default.bind({});

@@ -1,0 +1,43 @@
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+
+// ---------- breadcrumb
+// ------------------------------------------------------------------------------
+
+.breadcrumb {
+  padding: 24px 0 25px;
+  width: 100%;
+}
+
+.breadcrumb__list {
+  font-size: 0;
+}
+
+.breadcrumb__item {
+  color: $black;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 21px;
+  margin-right: 11px;
+  padding-right: 23px;
+  position: relative;
+  @include icon(arrow-right, after) {
+    font-size: 10px;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.breadcrumb__link {
+  font-weight: 700;
+}

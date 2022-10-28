@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { MemoryRouter } from 'react-router';
 import EmailSent from './EmailSent';
 
 export default {
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof EmailSent>;
 
 const Default: ComponentStory<typeof EmailSent> = (args) => (
-  <EmailSent {...args} />
+  <MemoryRouter>
+    <EmailSent {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultEmailSent = Default.bind({});

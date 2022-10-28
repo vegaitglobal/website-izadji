@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { MemoryRouter } from 'react-router';
 import DonateSection from './DonateSection';
 
 export default {
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof DonateSection>;
 
 const Default: ComponentStory<typeof DonateSection> = (args) => (
-  <DonateSection {...args} />
+  <MemoryRouter>
+    <DonateSection {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultDonateSection = Default.bind({});

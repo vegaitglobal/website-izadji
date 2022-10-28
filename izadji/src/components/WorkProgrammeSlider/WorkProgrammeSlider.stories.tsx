@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import WorkProgrammeSlider from './WorkProgrammeSlider';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'Work Programme Slider',
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof WorkProgrammeSlider>;
 
 const Default: ComponentStory<typeof WorkProgrammeSlider> = (args) => (
-  <WorkProgrammeSlider {...args} />
+  <MemoryRouter>
+    <WorkProgrammeSlider {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultWorkProgrammeSlider = Default.bind({});

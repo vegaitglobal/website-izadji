@@ -1,6 +1,7 @@
 import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import TrendingArticle from './TrendingArticle';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'Trending Article',
@@ -8,7 +9,9 @@ export default {
 } as ComponentMeta<typeof TrendingArticle>;
 
 const Default: ComponentStory<typeof TrendingArticle> = (args) => (
-  <TrendingArticle {...args} />
+  <MemoryRouter>
+    <TrendingArticle {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultProjectSlide = Default.bind({});

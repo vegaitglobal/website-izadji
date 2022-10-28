@@ -6,6 +6,7 @@ type SingleNewsBannerProps = {
   category: string;
   author: string;
   date: string;
+  tags: string[];
 };
 
 const SingleNewsBanner = ({
@@ -14,7 +15,9 @@ const SingleNewsBanner = ({
   category,
   author,
   date,
+  tags,
 }: SingleNewsBannerProps): JSX.Element => {
+  console.log(tags);
   return (
     <section className={styles.blog__article__banner}>
       <div className={styles.wrap}>
@@ -45,6 +48,13 @@ const SingleNewsBanner = ({
                   {date}
                 </span>
               </li>
+              {tags && (
+                <li className={styles.blog__article__banner__item}>
+                  <span className={styles.blog__article__banner__meta__text}>
+                    {tags.map((tag) => `#${tag}`).join(' ')}
+                  </span>
+                </li>
+              )}
             </ul>
           </div>
         </div>

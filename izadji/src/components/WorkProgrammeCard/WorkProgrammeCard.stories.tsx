@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import WorkProgrammeCard from './WorkProgrammeCard';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'Work Programme Card',
@@ -7,7 +8,9 @@ export default {
 } as ComponentMeta<typeof WorkProgrammeCard>;
 
 const Default: ComponentStory<typeof WorkProgrammeCard> = (args) => (
-  <WorkProgrammeCard {...args} />
+  <MemoryRouter>
+    <WorkProgrammeCard {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultWorkProgrammeCard = Default.bind({});

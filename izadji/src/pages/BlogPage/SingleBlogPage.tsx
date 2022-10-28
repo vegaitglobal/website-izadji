@@ -2,8 +2,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import singleBlogService from '../../services/singleBlogService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
-import Banner from '../../components/Banner/Banner';
-import ProjectPageMapper from '../../utils/mappers/projectPageMapper';
+import SingleNewsBanner from '../../components/SingleNewsBanner/SingleNewsBanner';
 
 const SingleBlogPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -18,11 +17,22 @@ const SingleBlogPage = () => {
         setComponents,
         {
           appendBefore: [
-            <Banner
+            <SingleNewsBanner
               key="blog_page_banner"
               title={bannerData.title}
-              text={bannerData.text}
               imageSrc={bannerData.image.data.attributes.url}
+              author={bannerData.author}
+              category={
+                response.data.data.attributes.work_program.data.attributes.title
+              }
+              date={new Date(bannerData.date).toLocaleDateString('sr-Latn-RS', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+              tags={response.data.data.attributes.blog_page_tags.data.map(
+                (tag: any) => tag.attributes.title
+              )}
             />,
           ],
         }

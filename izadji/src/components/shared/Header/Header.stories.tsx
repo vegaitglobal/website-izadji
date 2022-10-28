@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Header from './Header';
 import './Header.module.scss';
 import { routes } from '../../../routes';
+import { MemoryRouter } from 'react-router';
 
 const navBar = {
   buttons: [
@@ -69,7 +70,11 @@ export default {
   component: Header,
 } as ComponentMeta<typeof Header>;
 
-const Default: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+const Default: ComponentStory<typeof Header> = (args) => (
+  <MemoryRouter>
+    <Header {...args} />
+  </MemoryRouter>
+);
 
 export const DefaultHeader = Default.bind({});
 DefaultHeader.args = {
