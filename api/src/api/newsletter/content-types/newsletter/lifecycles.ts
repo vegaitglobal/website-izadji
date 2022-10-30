@@ -1,5 +1,5 @@
 // ./src/api/[api-name]/content-types/[api-name]/lifecycles.ts
-import  mailService from "../../../email/services/email-service"
+import  mailService from "../../../email/services/email"
 
 
 
