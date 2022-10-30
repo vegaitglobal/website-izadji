@@ -34,11 +34,11 @@ export default {
     try {
       const {name, phone, message, email} = ctx.request.body
       if (!validateFormData(ctx, email, phone)) {
-        return
+        return;
       }
 
-      let mailContent = generateMailContent(name, phone, message, email)
-      mailService.sendMail(process.env['SMTP_CONTACT_EMAIL'], email, TITLE, SUBJECT, mailContent)
+      let mailContent = generateMailContent(name, phone, message, email);
+      mailService.sendMail(process.env['SMTP_CONTACT_EMAIL'], email, TITLE, SUBJECT, mailContent);
 
       ctx.body = 'Success';
     } catch (err) {

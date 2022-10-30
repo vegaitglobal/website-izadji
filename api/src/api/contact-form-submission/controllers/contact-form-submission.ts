@@ -37,11 +37,11 @@ export default {
       const {name, phone, email, message} = ctx.request.body;
 
       if (!validateFormData(ctx, email, phone)) {
-        return
+        return;
       }
 
-      let mailContent = generateMailContent(name, phone, message, email)
-      mailService.sendMail(process.env['SMTP_CONTACT_EMAIL'], email, TITLE, SUBJECT, mailContent)
+      let mailContent = generateMailContent(name, phone, message, email);
+      mailService.sendMail(process.env['SMTP_CONTACT_EMAIL'], email, TITLE, SUBJECT, mailContent);
 
       ctx.body = "Success";
       ctx.status = 200;
