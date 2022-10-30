@@ -2,8 +2,8 @@ export default {
   routes: [
     {
      method: 'POST',
-     path: '/volunteer-form-submission',
-     handler: 'volunteer-form-submission.onSubmit',
+     path: '/contact-form-submission',
+     handler: 'contact-form-submission.onSubmit',
      config: {
        policies: [],
        middlewares: [],
