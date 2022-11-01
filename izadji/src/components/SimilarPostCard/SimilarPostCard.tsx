@@ -16,6 +16,7 @@ const SimilarPostCard = ({
   category,
   link,
 }: SimilarPostCardProps): JSX.Element => {
+  console.log(imageSrc, date, title, category, link);
   return (
     <Link
       to={link}
@@ -38,7 +39,13 @@ const SimilarPostCard = ({
           <Link className={styles.feed__read__more} to={link}>
             Procitaj vise
           </Link>
-          <span className={styles.feed__date}>{date}</span>
+          <span className={styles.feed__date}>
+            {new Date(date).toLocaleDateString('sr-Latn-RS', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </span>
         </div>
       </div>
     </Link>

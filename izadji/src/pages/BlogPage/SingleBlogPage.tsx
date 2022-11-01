@@ -3,6 +3,9 @@ import { useParams } from 'react-router';
 import singleBlogService from '../../services/singleBlogService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
 import SingleNewsBanner from '../../components/SingleNewsBanner/SingleNewsBanner';
+import Breadcrumbs from '../../components/Breadcrumbs/Beadcrumbs';
+import { routes } from '../../routes';
+import SingleBlogPageMapper from '../../utils/mappers/singleBlogPageMapper';
 
 const SingleBlogPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -13,10 +16,23 @@ const SingleBlogPage = () => {
       const bannerData = response.data.data.attributes.blogBanner;
       MapComponents(
         response.data.data.attributes.components,
-        [],
+        [SingleBlogPageMapper],
         setComponents,
         {
           appendBefore: [
+            <Breadcrumbs
+              key="breadcrumbs"
+              crumbs={[
+                { text: 'Blog', url: routes.blog },
+                {
+                  text: bannerData.title,
+                  url: routes.blogPage.replace(
+                    ':id',
+                    response.data.data.attributes.id
+                  ),
+                },
+              ]}
+            />,
             <SingleNewsBanner
               key="blog_page_banner"
               title={bannerData.title}

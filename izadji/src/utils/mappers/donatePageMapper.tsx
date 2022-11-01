@@ -7,7 +7,7 @@ const DonatePageMapper: MappingFunction = (component) => {
     case DonationComponents.DONATION: {
       return (
         <Donate
-          key={`donate_${component['__component'].id}`}
+          key={`donate_${component.id}`}
           text={component.description}
           title={component.title}
           donationProjects={component.donation_projects.data.map((p: any) => ({

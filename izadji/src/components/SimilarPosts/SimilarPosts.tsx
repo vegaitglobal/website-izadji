@@ -2,11 +2,14 @@ import SimilarPostCard, {
   SimilarPostCardProps,
 } from '../SimilarPostCard/SimilarPostCard';
 import styles from './SimilarPosts.module.scss';
+import { ReactNode } from 'react';
 
 type SimilarPostsProps = {
+  title: ReactNode;
   cards: SimilarPostCardProps[];
 };
-const SimilarPosts = ({ cards }: SimilarPostsProps): JSX.Element => {
+const SimilarPosts = ({ title, cards }: SimilarPostsProps): JSX.Element => {
+  console.log(cards);
   return (
     <section className={styles.box__blog__feed}>
       <div className={styles.wrap}>
@@ -15,8 +18,7 @@ const SimilarPosts = ({ cards }: SimilarPostsProps): JSX.Element => {
             <h2
               className={`${styles.box__blog__feed__title} ${styles.section__title}`}
             >
-              Slične <br />
-              objave
+              {title}
               <span className={styles.box__blog__feed__arrow}></span>
             </h2>
           </div>

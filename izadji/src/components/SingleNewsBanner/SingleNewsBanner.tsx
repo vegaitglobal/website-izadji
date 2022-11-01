@@ -17,7 +17,6 @@ const SingleNewsBanner = ({
   date,
   tags,
 }: SingleNewsBannerProps): JSX.Element => {
-  console.log(tags);
   return (
     <section className={styles.blog__article__banner}>
       <div className={styles.wrap}>
