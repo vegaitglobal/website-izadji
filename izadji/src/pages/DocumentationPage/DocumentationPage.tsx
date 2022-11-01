@@ -5,9 +5,9 @@ import 'swiper/scss/pagination';
 import documentationPageService from '../../services/documentationService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
 import Publications from '../../components/Publications/Publications';
-import { PublicationProps } from '../../components/Publication/Publication';
+import DownloadableProps from '../../utils/DownloadableProps';
 
-const GetPublications = (publication: any): PublicationProps => {
+const GetPublications = (publication: any): DownloadableProps => {
   return {      
         text:publication.attributes.text,
         title:publication.attributes.title,

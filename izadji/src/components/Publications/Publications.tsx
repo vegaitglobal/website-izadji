@@ -1,9 +1,10 @@
-import Publication, { PublicationProps } from '../Publication/Publication';
+import Publication from '../Publication/Publication';
+import DownloadableProps from '../../utils/DownloadableProps';
 import styles from './Publications.module.scss';
 
 type PublicationsProps = {
   title: string;
-  publications: PublicationProps[];
+  publications: DownloadableProps[];
 };
 
 const Publications = ({

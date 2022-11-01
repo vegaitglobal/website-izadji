@@ -1,13 +1,5 @@
 import styles from './Publication.module.scss';
-
-export type PublicationProps = {
-  imageSrc?: string;
-  text: string;
-  title: string;
-  buttonText: string;
-  href:string;
-  download:string;
-};
+import DownloadableProps from '../../utils/DownloadableProps';
 
 const Publication = ({
   imageSrc,
@@ -16,7 +8,7 @@ const Publication = ({
   buttonText,
   href,
   download
-}: PublicationProps): JSX.Element => {
+}: DownloadableProps): JSX.Element => {
   return (
     <div className={styles.basic__block__holder}>
       <div className={styles.basic__block__row}>
