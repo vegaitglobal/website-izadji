@@ -4263,6 +4263,11 @@ elliptic@^6.5.3, elliptic@^6.5.4:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
+email-validator@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/email-validator/-/email-validator-2.0.4.tgz#b8dfaa5d0dae28f1b03c95881d904d4e40bfe7ed"
+  integrity sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ==
+
 emittery@^0.10.2:
   version "0.10.2"
   resolved "https://registry.yarnpkg.com/emittery/-/emittery-0.10.2.tgz#902eec8aedb8c41938c46e9385e9db7e03182933"
@@ -10119,6 +10124,11 @@ v8flags@^2.0.10:
   integrity sha512-SKfhk/LlaXzvtowJabLZwD4K6SGRYeoxA7KJeISlUMAB/NT4CBkZjMq3WceX2Ckm4llwqYVo8TICgsDYCBU2tA==
   dependencies:
     user-home "^1.1.1"
+
+validate-phone-number-node-js@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/validate-phone-number-node-js/-/validate-phone-number-node-js-0.0.1.tgz#88ce5f7ee2ad53a1f469052a73b2e2ded77ec634"
+  integrity sha512-A9yVgLOYLyLhGKPFOxGsar9jQK/Ti4TKvEUrklQ26KWRxcV6xw9EzBBD9dCX6S+SeczxCuQgO1u3I/ne2tABYw==
 
 value-equal@^1.0.1:
   version "1.0.1"

@@ -127,3 +127,20 @@
 .newsletter__btn {
   vertical-align: top;
 }
+
+.div__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.div__row {
+  display: 'flex';
+  align-items: 'start';
+  justify-content: 'center';
+}
+
+.newsletter_form_error_message {
+  font-size: 14px;
+  color: $red;
+  margin-top: 10px;
+}

@@ -9,7 +9,8 @@ export const routes = {
   project: '/project/:id',
   aboutUs: '/about-us',
   donate: '/donate',
-  publication: '/publications'
+  publication: '/publications',
+  contactUs: '/contact-us',
 };
 
 export const getRouteForPageLink = function (pageLink: any) {
@@ -27,6 +28,8 @@ export const getRouteForPageLink = function (pageLink: any) {
       return routes.pride;
     case PageLinkComponents.PUBLICATION_PAGE:
       return routes.main;
+    case PageLinkComponents.CONTACT_PAGE:
+      return routes.contactUs;
     default:
       return routes.main;
   }

@@ -50,11 +50,26 @@ const Layout = ({ children }: any): JSX.Element => {
     });
   }, []);
   return (
-    <>
-      {headerData && <Header {...headerData} />}
-      {children}
-      {footerData && <Footer {...footerData} />}
-    </>
+    <div
+      style={{
+        boxSizing: 'border-box',
+        minHeight: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      {headerData && (
+        <div style={{ flexGrow: '0', flexShrink: '0' }}>
+          <Header {...headerData} />
+        </div>
+      )}
+      <div style={{ flexGrow: '1' }}>{children}</div>
+      {footerData && (
+        <div style={{ flexGrow: '0', flexShrink: '0' }}>
+          <Footer {...footerData} />
+        </div>
+      )}
+    </div>
   );
 };
 

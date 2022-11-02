@@ -1,0 +1,38 @@
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/reset';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+
+.contact {
+  padding: 92px 0;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 50px 0;
+  }
+}
+
+.contact__inner {
+  display: flex;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.contact__form {
+  @include media-breakpoint-up(md) {
+    border-right: 1px solid $black;
+    padding-right: 32px;
+    width: 57.4%;
+  }
+  @include media-breakpoint-down(sm) {
+    border-bottom: 1px solid $black;
+    padding-bottom: 30px;
+    width: 100%;
+  }
+}

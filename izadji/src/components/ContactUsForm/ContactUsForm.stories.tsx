@@ -20,5 +20,4 @@ DefaultContactUsForm.args = {
   messagePlaceholder: 'Poruka',
   checkboxPlaceholder: 'Želim kopiju poruke',
   buttonLabel: 'Pošalji',
-  showArrow: true,
 };

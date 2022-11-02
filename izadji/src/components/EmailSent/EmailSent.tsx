@@ -15,7 +15,7 @@ const EmailSent = ({
   return (
     <div className={styles.contact__thank__you}>
       <span
-        className={`${styles.contact__thank__you__icon} ${styles.font__ico__checked__circle}`}
+        className={`${styles.contact__thank__you__icon} ${styles.contact__thank__you__checked}`}
       ></span>
       <h2 className={styles.contact__thank__you__title}>{title}</h2>
       <p className={styles.contact__thank__you__text}>{description}</p>
