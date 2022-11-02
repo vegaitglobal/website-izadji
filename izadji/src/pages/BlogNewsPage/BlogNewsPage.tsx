@@ -27,7 +27,6 @@ const BlogNewsPage = () => {
       setProgrammeId(workProgramme.id);
       setSearchString(searchString);
       setCurrentPage(1);
-      console.log(workProgramme.featuredBlogPage);
       setFeaturedBlogPage(workProgramme.featuredBlogPage);
     },
     []

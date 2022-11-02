@@ -51,7 +51,7 @@ const ContactUsForm = ({
         toast.success('Proces kontaktiranja uspešan.');
       })
       .catch(() => {
-        setSubmitSuccessful(true);
+        setSubmitSuccessful(false);
         toast.error(
           'Trenutno postoje smetnje prilikom procesa kontaktiranja. Molimo, pokušajte ponovo.'
         );
