@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import NavBar from './NavBar';
 import './NavBar.module.scss';
 import { routes } from '../../routes';
+import { MemoryRouter } from 'react-router';
 
 const navBarButtons = [
   {
@@ -39,7 +40,11 @@ export default {
   component: NavBar,
 } as ComponentMeta<typeof NavBar>;
 
-const Default: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
+const Default: ComponentStory<typeof NavBar> = (args) => (
+  <MemoryRouter>
+    <NavBar {...args} />
+  </MemoryRouter>
+);
 
 export const DefaultNavBar = Default.bind({});
 DefaultNavBar.args = {

@@ -23,7 +23,7 @@ const AboutUsPageMapper: MappingFunction = (component) => {
     case AboutUsPageComponents.OUR_TEAM: {
       return (
         <Team
-          key={`our_team_${component['__component'].id}`}
+          key={`our_team_${component.id}`}
           teamMembersList={getOurTeamMembers(component.team_members.data)}
           heading={component.team_members.title}
         />

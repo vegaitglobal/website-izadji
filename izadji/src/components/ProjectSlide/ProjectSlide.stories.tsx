@@ -1,6 +1,7 @@
 import ProjectSlide from './ProjectSlide';
 import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'Project Slide',
@@ -8,7 +9,9 @@ export default {
 } as ComponentMeta<typeof ProjectSlide>;
 
 const Default: ComponentStory<typeof ProjectSlide> = (args) => (
-  <ProjectSlide {...args} />
+  <MemoryRouter>
+    <ProjectSlide {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultProjectSlide = Default.bind({});

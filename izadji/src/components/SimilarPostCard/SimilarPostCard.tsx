@@ -36,9 +36,15 @@ const SimilarPostCard = ({
         </span>
         <div className={styles.feed__more}>
           <Link className={styles.feed__read__more} to={link}>
-            Procitaj vise
+            Pročitaj više
           </Link>
-          <span className={styles.feed__date}>{date}</span>
+          <span className={styles.feed__date}>
+            {new Date(date).toLocaleDateString('sr-Latn-RS', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </span>
         </div>
       </div>
     </Link>

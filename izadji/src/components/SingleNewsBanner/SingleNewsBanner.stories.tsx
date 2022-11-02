@@ -18,4 +18,5 @@ DefaultSingleNewsBanner.args = {
   category: 'Obuke i Treninzi',
   author: 'Lazar Jovic',
   date: 'Novembar 27, 2021',
+  tags: ['tag1', 'tag2', 'tag3'],
 };

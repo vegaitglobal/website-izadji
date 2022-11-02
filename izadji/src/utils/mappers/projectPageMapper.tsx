@@ -7,7 +7,7 @@ const ProjectPageMapper: MappingFunction = (component) => {
     case ProjectPageComponents.VOLUNTEER_FORM: {
       return (
         <VolunteeringForm
-          key={`volunteer_form_${component['__component'].id}`}
+          key={`volunteer_form_${component.id}`}
           title={component.title}
           description={component.description}
           buttonText={component.buttonText}
