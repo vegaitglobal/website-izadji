@@ -1,0 +1,100 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style//utils/breakpoints';
+@import '../../style//utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+
+.people__slider__bio {
+  min-height: 824px;
+  flex: 1 1 70%;
+  max-width: 70%;
+  @include media-breakpoint-down(md) {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-height: unset;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.people__slider__bio__holder {
+  padding: 139px 0 0 40px;
+  transition: $transition;
+  @include media-breakpoint-down(md) {
+    padding: 0;
+  }
+}
+
+.people__slider__bio__container {
+  margin-bottom: 35px;
+}
+
+.people__slider__bio__item__container {
+  display: flex;
+  align-items: center;
+}
+
+.people__slider__item__bio__holder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 40px;
+  @include media-breakpoint-down(md) {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+}
+
+.people__slider__text__bio__holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.people__slider__bio__img {
+  max-width: 100% ;
+  object-fit: cover;
+  height: 100%;
+}
+
+.people__slider__bio__text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  opacity: 0.6;
+  @include media-breakpoint-down(md) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.people__slider__bio__text__bold {
+  display: block;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  opacity: 1;
+  @include media-breakpoint-down(md) {
+    font-size: 25px;
+    line-height: 27px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

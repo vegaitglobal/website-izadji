@@ -7,7 +7,9 @@ export default {
   component: SingleNewsBanner,
 } as ComponentMeta<typeof SingleNewsBanner>;
 
-const Default: ComponentStory<typeof SingleNewsBanner> = (args) => <SingleNewsBanner {...args} />;
+const Default: ComponentStory<typeof SingleNewsBanner> = (args) => (
+  <SingleNewsBanner {...args} />
+);
 
 export const DefaultSingleNewsBanner = Default.bind({});
 DefaultSingleNewsBanner.args = {

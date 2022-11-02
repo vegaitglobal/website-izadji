@@ -1,4 +1,4 @@
-import Publication, {PublicationProps} from '../Publication/Publication';
+import Publication, { PublicationProps } from '../Publication/Publication';
 import styles from './Publications.module.scss';
 
 type PublicationsProps = {
@@ -22,6 +22,8 @@ const Publications = ({
               text={publication.text}
               imageSrc={publication.imageSrc}
               buttonText={publication.buttonText}
+              href={publication.href}
+              download={publication.download}
             />
           ))}
         </div>

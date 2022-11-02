@@ -27,7 +27,9 @@ const ProjectSlide = ({
           role="presentation"
         ></div>
         <div className={styles.hero__slider__text__holder}>
-          <span className={styles.hero__slider__subtitle}>{date}</span>
+          {date && (
+            <span className={styles.hero__slider__subtitle}>{date}</span>
+          )}
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
           <Link to={link} className={styles.btn}>

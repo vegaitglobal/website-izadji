@@ -7,6 +7,11 @@ import HomePage from './pages/HomePage/HomePage';
 import PridePage from './pages/PridePage/PridePage';
 import { routes } from './routes';
 import Layout from './components/Layout/Layout';
+import ProjectPage from './pages/ProjectPage/ProjectPage';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
+import DonatePage from './pages/DonatePage/DonatePage';
+import PublicationPage from './pages/PublicationPage/PublicationPage';
+import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
 
 function App() {
   return (
@@ -25,6 +30,14 @@ function App() {
           element={
             <Layout>
               <PridePage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.publication}
+          element={
+            <Layout>
+              <PublicationPage />
             </Layout>
           }
         />
@@ -48,7 +61,31 @@ function App() {
           path={routes.blog}
           element={
             <Layout>
-              <p>Blog page</p>
+              <BlogNewsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.project}
+          element={
+            <Layout>
+              <ProjectPage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.aboutUs}
+          element={
+            <Layout>
+              <AboutUsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.donate}
+          element={
+            <Layout>
+              <DonatePage />
             </Layout>
           }
         />

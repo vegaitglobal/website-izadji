@@ -1,27 +1,35 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import 'swiper/scss';
 import 'swiper/scss/pagination';
-import Banner from '../../components/Banner/Banner';
 import pridePageService from '../../services/pridePageService';
-import workProgramService from '../../services/workProgramService';
-import getPridePageComponents from '../../utils/mappers/pridePageMappers';
+import HomePageMapper from '../../utils/mappers/homePageMapper';
+import { MapComponents } from '../../utils/mappers/sharedMapper';
+import Banner from '../../components/Banner/Banner';
 
 const PridePage = () => {
-  const [components, setComponents] = useState<any>([]);
-  const [workPrograms, setWorkPrograms] = useState({});
-
-  useEffect(() => {
-    workProgramService.getWorkProgramPages().then((response) => {
-      setWorkPrograms(response.data.data);
-    });
-  }, []);
+  const [components, setComponents] = useState<ReactNode[]>([]);
 
   useEffect(() => {
     pridePageService.getPridePage().then((response) => {
-      setComponents(getPridePageComponents(response, workPrograms));
+      const bannerData = response.data.data.attributes.banner;
+      MapComponents(
+        response.data.data.attributes.components,
+        [HomePageMapper],
+        setComponents,
+        {
+          appendBefore: [
+            <Banner
+              key="pride_banner"
+              title={bannerData.title}
+              text={bannerData.text}
+              imageSrc={bannerData.image.data.attributes.url}
+            />,
+          ],
+        }
+      );
     });
-  }, [workPrograms]);
+  }, []);
 
   return <>{components}</>;
 };

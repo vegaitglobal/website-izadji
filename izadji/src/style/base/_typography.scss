@@ -85,7 +85,7 @@
     line-height: 22px;
     margin-bottom: 22px;
     a {
-      color: inherit;
+      color: $pink;
       @include hover {
         text-decoration: underline;
       }
@@ -101,17 +101,26 @@
     margin-bottom: 23px;
     padding-left: 27px;
   }
-  ul li {
+  ul{
     list-style-type: disc;
   }
-  ol li {
+  ol{
     list-style-type: decimal;
+  }
+  li{
+    list-style-type: inherit;
   }
   ul li,
   ol li {
     font-size: 18px;
     line-height: 22px;
     margin-bottom: 4px;
+    a {
+      color: $pink;
+      @include hover {
+        text-decoration: underline;
+      }
+    }
   }
   .large__text {
     font-size: 34px;
@@ -168,23 +177,8 @@
     }
   }
 }
-
-img {
+.img{
   max-width: 100%;
-}
-
-.img__right__aligned {
-  float: right;
-  margin: 0 0 50px 50px;
-  max-width: 48%;
-  @include media-breakpoint-only(md) {
-    margin: 0 0 30px 30px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin: 0 0 20px;
-    max-width: none;
-    width: 100%;
-  }
 }
 
 .section__title {

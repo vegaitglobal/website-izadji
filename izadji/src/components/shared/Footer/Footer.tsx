@@ -36,7 +36,11 @@ const Footer = ({
             <ul className={styles.footer__contact}>
               {emails.map((email: string) => (
                 <li className={styles.footer__contact__item} key={email}>
-                  <span className={styles.footer__contact__span}>{email}</span>
+                  <a href={`mailto:${email}`}>
+                    <span className={styles.footer__contact__span}>
+                      {email}
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -52,10 +56,7 @@ const Footer = ({
                 </li>
                 {navItem.items.map((linkItem: FooterNavItemLink) => (
                   <li className={styles.footer__item} key={linkItem.text}>
-                    <Link
-                      className={styles.footer__link}
-                      to={`/${linkItem.href}`}
-                    >
+                    <Link className={styles.footer__link} to={linkItem.href}>
                       {linkItem.text}
                     </Link>
                   </li>

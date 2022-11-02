@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './BlogNewsBanner.module.scss';
 
-type BlogNewsBannerProps = {
+export type BlogNewsBannerProps = {
   imageSrc: string;
   title: string;
   category: string;

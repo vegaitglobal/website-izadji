@@ -9,6 +9,8 @@ const map = {
   facebook: 'linkedin',
   instagram: 'mail',
   linkedin: 'menu',
+  mail: 'twitter',
+  youtube: 'linkedin',
 };
 
 const Icon = ({ iconClass, altText }: IconProps): JSX.Element => (

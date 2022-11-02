@@ -14,4 +14,18 @@
   @include media-breakpoint-down(sm) {
     padding: 20px 0;
   }
+  img {
+    float: right;
+    margin: 0 0 50px 50px;
+    max-width: 48%;
+    @include media-breakpoint-only(md) {
+      margin: 0 0 30px 30px;
+    }
+    @include media-breakpoint-down(sm) {
+      margin: 0 0 20px;
+      max-width: none;
+      width: 100%;
+    }
+  }
 }
+

@@ -1,17 +1,21 @@
 import styles from './Publication.module.scss';
 
 export type PublicationProps = {
-  imageSrc: string;
+  imageSrc?: string;
   text: string;
   title: string;
   buttonText: string;
+  href:string;
+  download:string;
 };
 
-const Publications = ({
+const Publication = ({
   imageSrc,
   text,
   title,
   buttonText,
+  href,
+  download
 }: PublicationProps): JSX.Element => {
   return (
     <div className={styles.basic__block__holder}>
@@ -20,16 +24,17 @@ const Publications = ({
           <h3 className={styles.basic__block__head}>{title}</h3>
           <p className={styles.basic__block__par}>{text}</p>
           <a
-            href="{{link.url}}"
+            href={href}
+            download={download}
             className={`${styles.btn} ${styles.btn__centered} ${styles.btn__large}`}
           >
             {buttonText}
           </a>
         </div>
-        <img src={imageSrc} className={styles.basic__block__image} alt="" />
+        {imageSrc && <img src={imageSrc} className={styles.basic__block__image} alt="" />}
       </div>
     </div>
   );
 };
 
-export default Publications;
+export default Publication;

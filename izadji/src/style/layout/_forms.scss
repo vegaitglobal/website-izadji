@@ -1,5 +1,10 @@
 // ----------  forms
 // ------------------------------------------------------------------------------
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/layout/icon-font';
+@import '../../style/utils/mixins';
+
 input,
 textarea {
   background: $white;
@@ -68,10 +73,16 @@ textarea {
   }
 }
 
+.form__error__message {
+  color: $red;
+  margin-top: -20px;
+  margin-bottom: 26px;
+}
+
 .form__input {
   height: 52px;
-  margin-bottom: 26px;
   padding: 0 15px;
+  margin-bottom: 26px;
   @include media-breakpoint-up(lg) {
     &:last-child {
       margin-bottom: 0;
@@ -85,7 +96,7 @@ textarea {
 
 .form__textarea {
   height: 123px;
-  margin-bottom: 21px;
+  margin-bottom: 26px;
   padding: 16px 15px;
   resize: none;
   @include media-breakpoint-down(md) {

@@ -2,18 +2,13 @@ import { useEffect, useState } from 'react';
 import layoutService from '../../services/layoutService';
 import Footer, { FooterProps } from '../shared/Footer/Footer';
 import Header, { HeaderProps } from '../shared/Header/Header';
+import { getRouteForPageLink } from '../../routes';
 
 const Layout = ({ children }: any): JSX.Element => {
   const [headerData, setHeaderData] = useState<HeaderProps | undefined>();
   const [footerData, setFooterData] = useState<FooterProps | undefined>();
 
-  // useEffect(() => {
-  //   workProgramService.getWorkProgramPages().then((response) => {
-  //     setWorkPrograms(response.data.data);
-  //   });
-  // }, []);
-
-  const setupHeadeData = (dao: any) => {
+  const setupHeaderData = (dao: any) => {
     setHeaderData({
       emails: [dao.firstEmail, dao.secondEmail],
       social: dao.socialMediaLinks.map((sml: any) => ({
@@ -22,22 +17,25 @@ const Layout = ({ children }: any): JSX.Element => {
         iconClass: sml.iconClass,
       })),
       navBar: {
-        buttons: [],
+        buttons: dao.navBarItems.data.map((navBarItem: any) => ({
+          title: navBarItem.attributes.title,
+          href: getRouteForPageLink(navBarItem),
+        })),
       },
-      logoSrc: `${process.env.REACT_APP_STRAPI_HOST}${dao.logo.data.attributes.url}`,
+      logoSrc: dao.logo.data.attributes.url,
     });
   };
 
   const setupFooterData = (dao: any) => {
     setFooterData({
-      iconSrc: `${process.env.REACT_APP_STRAPI_HOST}${dao.logo.data.attributes.url}`,
+      iconSrc: dao.logo.data.attributes.url,
       emails: [dao.firstEmail, dao.secondEmail],
       copyText: dao.designedBy,
       navItems: dao.siteMap.map((mapItem: any) => ({
         title: mapItem.title,
         items: mapItem.page_links.data.map((linkItem: any) => ({
           text: linkItem.attributes.title,
-          href: linkItem.attributes.title,
+          href: getRouteForPageLink(linkItem),
         })),
       })),
     });
@@ -45,10 +43,9 @@ const Layout = ({ children }: any): JSX.Element => {
 
   useEffect(() => {
     layoutService.getLayout().then((response) => {
-      console.log(response);
       const daoHeader = response.data.data.attributes.header;
       const daoFooter = response.data.data.attributes.footer;
-      setupHeadeData(daoHeader);
+      setupHeaderData(daoHeader);
       setupFooterData(daoFooter);
     });
   }, []);

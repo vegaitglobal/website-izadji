@@ -22,8 +22,12 @@ const Header = ({
         <div className={styles.wrap}>
           <div className={styles.header__top}>
             <div className={styles.header__emails}>
-              <span className={styles.header__top__link}>{emails[0]}</span>
-              <span className={styles.header__top__link}>{emails[1]}</span>
+              <a href={`mailto:${emails[0]}`}>
+                <span className={styles.header__top__link}>{emails[0]}</span>
+              </a>
+              <a href={`mailto:${emails[1]}`}>
+                <span className={styles.header__top__link}>{emails[1]}</span>
+              </a>
             </div>
             <div className={styles.header__actions}>
               <ul className={styles.header__social}>

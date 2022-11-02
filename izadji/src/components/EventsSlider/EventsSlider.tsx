@@ -24,8 +24,8 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
   return (
     <section className={styles.events}>
       <div className={styles.wrap}>
+        <h2 className={styles.events__title}>DOGAĐAJI</h2>
         <div className={styles.events__content}>
-          <h2 className={styles.events__title}>DOGAĐAJI</h2>
           <div className={styles.events__nav}>
             <button
               type="button"
@@ -43,9 +43,21 @@ const EventsSlider = ({ events }: EventsSliderProps): JSX.Element => {
             </button>
           </div>
           <div className={styles.events__head}>
-            <span className={styles.events__cell__date}>Datum</span>
-            <span className={styles.events__cell__time}>Vreme</span>
-            <span className={styles.events__cell__name}>Događaj</span>
+            <span
+              className={`${styles.events__cell} ${styles.events__cell__head} ${styles.events__cell__date}`}
+            >
+              Datum
+            </span>
+            <span
+              className={`${styles.events__cell} ${styles.events__cell__head} ${styles.events__cell__time}`}
+            >
+              Vreme
+            </span>
+            <span
+              className={`${styles.events__cell} ${styles.events__cell__head} ${styles.events__cell__name}`}
+            >
+              Događaj
+            </span>
           </div>
           <Swiper
             centeredSlides={true}

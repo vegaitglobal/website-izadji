@@ -1,12 +1,16 @@
 import axios from 'axios';
 
+const getWorkProgramPagesWithDeepPopulation = () =>
+  axios.get('/api/work-program-pages?populate=deep');
+
 const getWorkProgramPages = () =>
   axios.get(
-    `${process.env.REACT_APP_STRAPI_HOST}/api/work-program-pages?populate=deep`
+    '/api/work-program-pages?populate[0]=featuredBlogPage&populate[1]=featuredBlogPage.blogBanner&populate[2]=featuredBlogPage.blogBanner.image'
   );
 
 const workProgramService = {
-  getWorkProgramPages,
+  getWorkProgramPagesWithDeepPopulation,
+  getWorkProgramPagesWithFeaturedBlogPage: getWorkProgramPages,
 };
 
 export default workProgramService;
