@@ -8,6 +8,28 @@
 @import '../../style/layout/buttons';
 @import '../../style/layout/forms';
 
+.contact__title {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 6px;
+}
+
+.contact__text {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.contact__block__form {
+  width: 57.7%;
+  @include media-breakpoint-only(md) {
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
 .contact__block {
   width: 100%;
   @include media-breakpoint-down(sm) {
@@ -193,13 +215,12 @@
       transition: background $transition;
     }
   }
-  &::after {
-    @include font-styles;
+  @include icon(checked) {
     color: $white;
-    content: font-char(ico-check);
     font-size: 14px;
     left: 4px;
     position: absolute;
-    top: 3px;
+    top: 0;
+    text-align: center;
   }
 }

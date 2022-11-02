@@ -38,6 +38,21 @@
     },
     "backToHomePageText": {
       "type": "string"
+    },
+    "namePlaceholder": {
+      "type": "string"
+    },
+    "phonePlaceholder": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "messagePlaceholder": {
+      "type": "string"
+    },
+    "checkboxPlaceholder": {
+      "type": "string"
     }
   }
 }

@@ -1,16 +1,16 @@
-import styles from './ContactForm.module.scss';
+import styles from './ContactInfo.module.scss';
 
-export type ContactFormProps = {
+export type ContactInfoProps = {
   email: string;
   address: string;
   phoneNumber: string;
 };
 
-const VolunteeringForm = ({
+const ContactInfo = ({
   email,
   address,
   phoneNumber,
-}: ContactFormProps): JSX.Element => {
+}: ContactInfoProps): JSX.Element => {
   return (
     <div className={styles.contact__details}>
       <span className={`${styles.contact__info} ${styles.contact__info__mail}`}>
@@ -21,11 +21,11 @@ const VolunteeringForm = ({
       >
         {phoneNumber}
       </span>
-      <span className={`${styles.contact__info} ${styles.contact__info_pin}`}>
+      <span className={`${styles.contact__info} ${styles.contact__info__pin}`}>
         {address}
       </span>
     </div>
   );
 };
 
-export default VolunteeringForm;
+export default ContactInfo;
