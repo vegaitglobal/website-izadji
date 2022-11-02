@@ -105,7 +105,6 @@ const BlogNewsNav = ({ onFilterChange }: BlogNewsNavProps) => {
               type="button"
               className={`${styles.dropdown__btn} js-dropdown-btn`}
               onClick={({ target }) => {
-                console.log('dropdown click');
                 customDropdownInstance.current.toggleDropdown(
                   target as Element
                 );

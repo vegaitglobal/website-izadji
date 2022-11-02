@@ -9,7 +9,6 @@ type SimilarPostsProps = {
   cards: SimilarPostCardProps[];
 };
 const SimilarPosts = ({ title, cards }: SimilarPostsProps): JSX.Element => {
-  console.log(cards);
   return (
     <section className={styles.box__blog__feed}>
       <div className={styles.wrap}>
