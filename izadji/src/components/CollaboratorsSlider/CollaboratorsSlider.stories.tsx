@@ -7,6 +7,7 @@ import CollaboratorImage3 from '../../assets/images/content/07.png';
 import CollaboratorImage4 from '../../assets/images/content/09.png';
 import CollaboratorImage5 from '../../assets/images/content/10.png';
 import CollaboratorImage6 from '../../assets/images/content/11.png';
+import { MemoryRouter } from 'react-router';
 
 const collaboratorsSlides = [
   {
@@ -35,7 +36,9 @@ export default {
 } as ComponentMeta<typeof CollaboratorsSlider>;
 
 const Default: ComponentStory<typeof CollaboratorsSlider> = (args) => (
-  <CollaboratorsSlider {...args} />
+  <MemoryRouter>
+    <CollaboratorsSlider {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultProjectSlider = Default.bind({});

@@ -3,7 +3,6 @@
 @import '../../style/utils/breakpoints';
 @import '../../style/utils/mixins';
 @import '../../style/utils/variables';
-@import '../../style/layout/icon-font';
 @import '../../style/utils/helpers';
 @import '../../style/layout/buttons';
 
@@ -25,6 +24,17 @@
       margin: 0 0 20px;
       max-width: none;
       width: 100%;
+    }
+  }
+}
+
+.text__box__blog {
+  margin: 0 auto;
+  max-width: 840px;
+  .rte {
+    p {
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 }

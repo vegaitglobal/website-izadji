@@ -13,6 +13,8 @@ import DonatePage from './pages/DonatePage/DonatePage';
 import PublicationPage from './pages/PublicationPage/PublicationPage';
 import DocumentationPage from './pages/DocumentationPage/DocumentationPage';
 import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
+import SingleBlogPage from './pages/BlogPage/SingleBlogPage';
+import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
 
 function App() {
   return (
@@ -54,7 +56,7 @@ function App() {
           path={routes.blogPage}
           element={
             <Layout>
-              <p>Single blog page</p>
+              <SingleBlogPage/>
             </Layout>
           }
         />
@@ -95,6 +97,14 @@ function App() {
           element={
             <Layout>
               <DonatePage />
+            </Layout>
+          }
+        />
+        <Route
+          path={routes.contactUs}
+          element={
+            <Layout>
+              <ContactUsPage />
             </Layout>
           }
         />

@@ -3,6 +3,7 @@ import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
 import TrendingArticles from './TrendingArticles';
+import { MemoryRouter } from 'react-router';
 
 const trendingArticles = [
   {
@@ -34,7 +35,9 @@ export default {
 } as ComponentMeta<typeof TrendingArticles>;
 
 const Default: ComponentStory<typeof TrendingArticles> = (args) => (
-  <TrendingArticles {...args} />
+  <MemoryRouter>
+    <TrendingArticles {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultTrendingArticles = Default.bind({});

@@ -56,7 +56,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.GALLERY_SWIPER: {
       return (
         <GallerySlider
-          key={`slider_${component['__component'].id}`}
+          key={`slider_${component.id}`}
           slides={getGallerySlides(component.imageSwiper.data)}
         />
       );
@@ -64,7 +64,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.TRENDING_ARTICLES: {
       return (
         <TrendingArticles
-          key={`trending_${component['__component'].id}`}
+          key={`trending_${component.id}`}
           slides={getTrendingArticlesSlides(component.blog_pages.data)}
           title="Aktuelnosti"
         />
@@ -73,7 +73,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.COLLABORATORS_SWIPER: {
       return (
         <CollaboratorsSlider
-          key={`collaborators_${component['__component'].id}`}
+          key={`collaborators_${component.id}`}
           title={component.title}
           collaborators={getCollaboratorsSlides(component.logos.data)}
         />
@@ -87,7 +87,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.NEWSLETTER: {
       return (
         <Newsletter
-          key={`newsletter_${component['__component'].id}`}
+          key={`newsletter_${component.id}`}
           title={component.text}
           buttonText={component.buttonText}
         />
@@ -96,7 +96,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.RICH_TEXT_EDITOR: {
       return (
         <RichTextComponent
-          key={`rte_${component['__component'].id}`}
+          key={`rte_${component.id}`}
           content={component.content}
         />
       );
@@ -104,7 +104,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.DONATE_SECTION: {
       return (
         <DonateSection
-          key={`donate_section__${component['__component'].id}`}
+          key={`donate_section__${component.id}`}
           title={component.title}
           content={component.description}
           buttonHref={component.buttonHref}

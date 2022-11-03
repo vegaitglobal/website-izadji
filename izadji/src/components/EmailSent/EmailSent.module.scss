@@ -1,13 +1,14 @@
 @use 'sass:math';
 @import '../../style/utils/variables';
 @import '../../style/utils/mixins';
-@import '../../style//utils/breakpoints';
-@import '../../style//utils//helpers';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/helpers';
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/base/typography';
 @import '../../style/layout/buttons';
 @import '../../style/layout/forms';
+@import '../../style/layout/icon-font';
 
 .contact__thank__you {
   padding: 30px 0;
@@ -18,7 +19,6 @@
   color: $pink;
   font-size: 80px;
   line-height: 1;
-  margin: 0 0 20px 7px;
 }
 
 .contact__thank__you__title {
@@ -35,4 +35,10 @@
 
 .contact__thank__you__link {
   padding-right: 70px;
+}
+
+.contact__thank__you__checked {
+  @include icon(checked-circle) {
+    margin: 0 0 40px 7px;
+  }
 }

@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import BlogNewsBanner from './BlogNewsBanner';
 import BannerImage from '../../assets/images/content/banner.png';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'BlogNewsBanner',
@@ -8,7 +9,9 @@ export default {
 } as ComponentMeta<typeof BlogNewsBanner>;
 
 const Default: ComponentStory<typeof BlogNewsBanner> = (args) => (
-  <BlogNewsBanner {...args} />
+  <MemoryRouter>
+    <BlogNewsBanner {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultBlogNewsBanner = Default.bind({});

@@ -43,7 +43,7 @@ const HomePageMapper: MappingFunction = async (component) => {
     case HomePageComponents.EVENT_TABLE: {
       return (
         <EventsSlider
-          key={`events_slider_${component['__component'].id}`}
+          key={`events_slider_${component.id}`}
           events={getEventTableSlides(
             component.event_table.data.attributes.event
           )}
@@ -54,7 +54,7 @@ const HomePageMapper: MappingFunction = async (component) => {
       const projects = await projectPagesService.getProjectPages();
       return (
         <ProjectSlider
-          key={`projects_slider_${component['__component'].id}`}
+          key={`projects_slider_${component.id}`}
           slides={getProjectSlides(projects.data.data)}
         />
       );
