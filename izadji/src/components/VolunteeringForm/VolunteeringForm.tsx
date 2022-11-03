@@ -24,7 +24,7 @@ const VolunteeringForm = ({
   // TODO: Review response and error handling (messages)
   const onSubmit = (data: any) => {
     formService
-      .sendEmailData(data)
+      .sendVolunteerFormData(data)
       .then(() => toast.success('Uspešna prijava na projekat.'))
       .catch(() => {
         toast.error(
@@ -79,6 +79,7 @@ const VolunteeringForm = ({
                   id="vol-form-phone"
                   className={styles.form__input}
                   placeholder="Phone"
+                  {...register('phone', { required: true })}
                 />
                 <label
                   htmlFor="vol-form-email"
