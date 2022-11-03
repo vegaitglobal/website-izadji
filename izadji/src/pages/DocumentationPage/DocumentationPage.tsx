@@ -8,13 +8,13 @@ import Publications from '../../components/Downloadables/Downloadables';
 import DownloadableProps from '../../utils/DownloadableProps';
 import Downloadables from '../../components/Downloadables/Downloadables';
 
-const GetDocumentation = (publication: any): DownloadableProps => {
+const GetDocumentation = (documentation: any): DownloadableProps => {
   return {      
-        text:publication.attributes.text,
-        title:publication.attributes.title,
-        buttonText:publication.attributes.downloadButton.buttonText,
-        href:publication.attributes.downloadButton.pdfFile.data.attributes.url,
-        download:publication.attributes.downloadButton.pdfFile.data.attributes.hash,
+        text:documentation.attributes.text,
+        title:documentation.attributes.title,
+        buttonText:documentation.attributes.downloadButton.buttonText,
+        href:documentation.attributes.downloadButton.pdfFile.data.attributes.url,
+        download:documentation.attributes.downloadButton.pdfFile.data.attributes.hash,
     };
 };
 
