@@ -1,22 +1,14 @@
-import styles from './Publication.module.scss';
+import styles from './Downloadable.module.scss';
+import DownloadableProps from '../../utils/DownloadableProps';
 
-export type PublicationProps = {
-  imageSrc?: string;
-  text: string;
-  title: string;
-  buttonText: string;
-  href:string;
-  download:string;
-};
-
-const Publication = ({
+const Downloadable = ({
   imageSrc,
   text,
   title,
   buttonText,
   href,
   download
-}: PublicationProps): JSX.Element => {
+}: DownloadableProps): JSX.Element => {
   return (
     <div className={styles.basic__block__holder}>
       <div className={styles.basic__block__row}>
@@ -37,4 +29,4 @@ const Publication = ({
   );
 };
 
-export default Publication;
+export default Downloadable;

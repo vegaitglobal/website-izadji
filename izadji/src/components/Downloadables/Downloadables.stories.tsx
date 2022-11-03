@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
-import Publications from './Publications';
+import Downloadables from './Downloadables';
 
 const projectSlides = [
   {
@@ -33,14 +33,14 @@ const projectSlides = [
 
 export default {
   title: 'Publications',
-  component: Publications,
-} as ComponentMeta<typeof Publications>;
+  component: Downloadables,
+} as ComponentMeta<typeof Downloadables>;
 
-const Default: ComponentStory<typeof Publications> = (args) => (
-  <Publications {...args} />
+const Default: ComponentStory<typeof Downloadables> = (args) => (
+  <Downloadables {...args} />
 );
 
 export const DefaultProjectSlider = Default.bind({});
 DefaultProjectSlider.args = {
-  publications: projectSlides,
+  downloadables: projectSlides,
 };

@@ -11,6 +11,7 @@ import ProjectPage from './pages/ProjectPage/ProjectPage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import DonatePage from './pages/DonatePage/DonatePage';
 import PublicationPage from './pages/PublicationPage/PublicationPage';
+import DocumentationPage from './pages/DocumentationPage/DocumentationPage';
 import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
 import SingleBlogPage from './pages/BlogPage/SingleBlogPage';
 import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
@@ -72,6 +73,14 @@ function App() {
           element={
             <Layout>
               <ProjectPage />
+            </Layout>
+          }
+        />
+         <Route
+          path={routes.documentation}
+          element={
+            <Layout>
+              <DocumentationPage />
             </Layout>
           }
         />
