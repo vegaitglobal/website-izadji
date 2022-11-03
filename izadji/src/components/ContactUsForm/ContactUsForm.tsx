@@ -45,7 +45,7 @@ const ContactUsForm = ({
   // TODO: Review response and error handling (messages)
   const onSubmit = (data: any) => {
     formService
-      .sendEmailData(data)
+      .sendContactUsEmailData(data)
       .then(() => {
         setSubmitSuccessful(true);
         toast.success('Proces kontaktiranja uspešan.');

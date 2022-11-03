@@ -193,6 +193,7 @@
   &:checked ~ .form__checkbox__label {
     &::before {
       background-color: $pink;
+      color: white;
     }
   }
 }
@@ -216,7 +217,7 @@
     }
   }
   @include icon(checked) {
-    color: $white;
+    color: transparent;
     font-size: 14px;
     left: 4px;
     position: absolute;
