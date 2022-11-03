@@ -4,8 +4,9 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import publicationPageService from '../../services/publicationService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
-import Publications from '../../components/Publications/Publications';
+import Downloadable from '../../components/Downloadables/Downloadables';
 import DownloadableProps from '../../utils/DownloadableProps';
+import Downloadables from '../../components/Downloadables/Downloadables';
 
 const GetPublications = (publication: any): DownloadableProps => {
   return {      
@@ -29,10 +30,10 @@ const PublicationPage = () => {
           [],setComponents,
           {
             appendBefore: [
-              <Publications
+              <Downloadables
                 key="publications"
                 title={response.data.data.attributes.title}
-                publications={publicationsResponse.data.data.map(GetPublications)}
+                downloadables={publicationsResponse.data.data.map(GetPublications)}
               />,
             ],
           }

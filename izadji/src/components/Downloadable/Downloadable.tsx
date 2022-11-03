@@ -1,7 +1,7 @@
-import styles from './Publication.module.scss';
+import styles from './Downloadable.module.scss';
 import DownloadableProps from '../../utils/DownloadableProps';
 
-const Publication = ({
+const Downloadable = ({
   imageSrc,
   text,
   title,
@@ -29,4 +29,4 @@ const Publication = ({
   );
 };
 
-export default Publication;
+export default Downloadable;

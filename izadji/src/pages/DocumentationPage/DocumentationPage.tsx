@@ -4,10 +4,11 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import documentationPageService from '../../services/documentationService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
-import Publications from '../../components/Publications/Publications';
+import Publications from '../../components/Downloadables/Downloadables';
 import DownloadableProps from '../../utils/DownloadableProps';
+import Downloadables from '../../components/Downloadables/Downloadables';
 
-const GetPublications = (publication: any): DownloadableProps => {
+const GetDocumentation = (publication: any): DownloadableProps => {
   return {      
         text:publication.attributes.text,
         title:publication.attributes.title,
@@ -22,16 +23,16 @@ const DocumentationPage = () => {
 
   useEffect(() => {
     documentationPageService.getDocumentationPage().then((response) => {
-      documentationPageService.getDocuments().then(publicationsResponse=> {
+      documentationPageService.getDocuments().then(documentationsResponse=> {
         MapComponents(
           response.data.data.attributes.components,
           [],setComponents,
           {
             appendBefore: [
-              <Publications
+              <Downloadables
                 key="publications"
                 title={response.data.data.attributes.title}
-                publications={publicationsResponse.data.data.map(GetPublications)}
+                downloadables={documentationsResponse.data.data.map(GetDocumentation)}
               />,
             ],
           }
