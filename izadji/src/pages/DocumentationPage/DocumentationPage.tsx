@@ -4,7 +4,6 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import documentationPageService from '../../services/documentationService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
-import Publications from '../../components/Downloadables/Downloadables';
 import DownloadableProps from '../../utils/DownloadableProps';
 import Downloadables from '../../components/Downloadables/Downloadables';
 
