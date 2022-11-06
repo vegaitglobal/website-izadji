@@ -17,7 +17,7 @@ const TrendingArticles = ({
   hasMore,
 }: TrendingArticlesProps): JSX.Element => {
   return (
-    <div className={`${styles.feed} ${styles.feed__white}`}>
+    <div className={`${styles.feed} ${styles.feed__light__gray}`}>
       <div className={styles.wrap}>
         {title && (
           <h2 className={`${styles.feed__title} ${styles.section__title}`}>

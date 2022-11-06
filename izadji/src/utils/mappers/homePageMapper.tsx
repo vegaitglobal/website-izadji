@@ -1,13 +1,11 @@
 import { EventProps } from '../../components/Event/Event';
 import EventsSlider from '../../components/EventsSlider/EventsSlider';
+import { ProjectSlideProps } from '../../components/ProjectSlide/ProjectSlide';
+import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
+import projectPagesService from '../../services/projectService';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponents';
 import { MappingFunction } from './sharedMapper';
-import projectPagesService from '../../services/projectService';
-import { ProjectSlideProps } from '../../components/ProjectSlide/ProjectSlide';
-import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
-import DonationComponents from '../enums/donationComponents';
-import Donate from '../../components/Donate/Donate';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
@@ -32,8 +30,9 @@ const getProjectSlides = (projects: any): ProjectSlideProps[] => {
       date: projectBanner.date && convertDate(projectBanner.date, false),
       title: projectBanner.title,
       description: projectBanner.text,
-      link: `/projects-page/${projectData.id}`,
+      link: `/project/${projectData.id}`,
       linkText: projectBanner.linkText,
+      key: projectData.id,
     };
   });
 };

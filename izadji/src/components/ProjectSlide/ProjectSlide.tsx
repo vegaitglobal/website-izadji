@@ -33,7 +33,7 @@ const ProjectSlide = ({
           <h2 className={styles.hero__slider__title}>{title}</h2>
           <p className={styles.hero__slider__text}>{description}</p>
           <Link to={link} className={styles.btn}>
-            {linkText}
+            Saznaj više
           </Link>
         </div>
       </div>

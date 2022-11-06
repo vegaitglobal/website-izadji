@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { routes } from '../../../routes';
 import NavBar, { NavBarProps } from '../../NavBar/NavBar';
 import Icon, { IconProps } from '../Icon/Icon';
 import styles from './Header.module.scss';
@@ -42,7 +43,9 @@ const Header = ({
                   </li>
                 ))}
               </ul>
-              <a className={styles.header__btn}>Doniraj</a>
+              <Link to={routes.donate} className={styles.header__btn}>
+                Doniraj
+              </Link>
             </div>
             <button type="button" className={styles.header__hamburger}>
               <span className={styles.font__ico__menu}></span>

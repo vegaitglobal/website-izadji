@@ -3,6 +3,6 @@ export type DownloadableProps = {
   text: string;
   title: string;
   buttonText: string;
-  href:string;
-  download:string;
+  href: string;
+  download: string;
 };
