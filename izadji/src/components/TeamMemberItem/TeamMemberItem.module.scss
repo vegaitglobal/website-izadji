@@ -75,7 +75,7 @@
   padding: 0 4px;
   border-radius: 3px;
   transition: $transition;
-  @include icon(twitter, before) {
+  @include icon(linkedin, before) {
     font-size: 13px;
     color: $white;
   }
