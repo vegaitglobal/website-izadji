@@ -18,7 +18,6 @@
     "components": {
       "type": "dynamiczone",
       "components": [
-        "shared-components.rich-text-with-image",
         "shared-components.work-program-component",
         "shared-components.rich-text-component",
         "shared-components.donate-section",

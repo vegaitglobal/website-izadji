@@ -21,7 +21,12 @@ const Banner = ({ imageSrc, title, text }: BannerProps): JSX.Element => {
             <button
               type="button"
               className={styles.banner__btn}
-              onClick={slideToContent}
+              onClick={() => {
+                const banners = document.getElementsByClassName('main-content');
+                if (banners.length) {
+                  slideToContent(banners[0]);
+                }
+              }}
             >
               Vidi više
             </button>
