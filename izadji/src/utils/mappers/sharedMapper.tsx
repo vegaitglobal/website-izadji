@@ -82,7 +82,7 @@ const SharedComponentsMapper: MappingFunction = async (component) => {
     case SharedComponents.WORK_PROGRAM_SLIDER: {
       const workPrograms =
         await workProgramService.getWorkProgramPagesWithDeepPopulation();
-      return getWorkProgramSlider(workPrograms.data.data);
+      return getWorkProgramSlider(workPrograms.data.data, 'Program rada');
     }
     case SharedComponents.NEWSLETTER: {
       return (

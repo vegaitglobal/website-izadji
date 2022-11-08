@@ -15,6 +15,7 @@ import DocumentationPage from './pages/DocumentationPage/DocumentationPage';
 import BlogNewsPage from './pages/BlogNewsPage/BlogNewsPage';
 import SingleBlogPage from './pages/BlogPage/SingleBlogPage';
 import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
+import WorkProgramPage from './pages/WorkProgramPage/WorkProgramPage';
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
           path={routes.workProgram}
           element={
             <Layout>
-              <p>Work program</p>
+              <WorkProgramPage />
             </Layout>
           }
         />
@@ -56,7 +57,7 @@ function App() {
           path={routes.blogPage}
           element={
             <Layout>
-              <SingleBlogPage/>
+              <SingleBlogPage />
             </Layout>
           }
         />
@@ -76,7 +77,7 @@ function App() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path={routes.documentation}
           element={
             <Layout>

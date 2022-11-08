@@ -12,11 +12,14 @@ const getWorkProgramSlides = (workPrograms: any): WorkProgrammeCardProps[] => {
   });
 };
 
-export const getWorkProgramSlider = (workPrograms: any): ReactNode => {
+export const getWorkProgramSlider = (
+  workPrograms: any,
+  heading: string
+): ReactNode => {
   return (
     <WorkProgrammeSlider
       key={`work_programmer_slider`}
-      heading="Program rada"
+      heading={heading}
       slides={getWorkProgramSlides(workPrograms)}
     />
   );
