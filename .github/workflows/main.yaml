@@ -31,6 +31,16 @@ jobs:
           files: '["**/docker-compose.website-izadji.yaml"]'
         env:
           TAG_NUMBER: "${{ github.run_number }}"
+          APP_KEYS: "${{ secrets.APP_KEYS }}"
+          API_TOKEN_SALT: "${{ secrets.API_TOKEN_SALT }}"
+          ADMIN_JWT_SECRET: "${{ secrets.ADMIN_JWT_SECRET }}"
+          JWT_SECRET: "${{ secrets.JWT_SECRET }}"
+          DATABASE_USERNAME: "${{ secrets.DATABASE_USERNAME }}"
+          DATABASE_PASSWORD: "${{ secrets.DATABASE_PASSWORD }}"
+          SMTP_CONTACT_EMAIL: "${{ secrets.SMTP_CONTACT_EMAIL }}"
+          SMTP_CONTACT_PASSWORD: "${{ secrets.SMTP_CONTACT_PASSWORD }}"
+          SMTP_APPLICATION_EMAIL: "${{ secrets.SMTP_APPLICATION_EMAIL }}"
+          SMTP_APPLICATION_PASSWORD: "${{ secrets.SMTP_APPLICATION_PASSWORD }}"
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:

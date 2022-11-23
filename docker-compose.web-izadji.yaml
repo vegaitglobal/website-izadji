@@ -5,13 +5,19 @@ services:
     image: codeforacause/website-izadji:web-#{TAG_NUMBER}#
     container_name: website-izadji-web
     ports:
-      - "3073:80"
+      - "28001:3002"
+    environment:
+      PORT: 3002
+      REACT_APP_STRAPI_HOST: http://api:1337
+    restart: unless-stopped
+    depends_on:
+      - api
   
   api:
     image: codeforacause/website-izadji:api-#{TAG_NUMBER}#
     container_name: website-izadji-api
     ports:
-      - "1337:1337"
+      - 28002:1337
     environment:
       HOST: 0.0.0.0
       PORT: 1337
@@ -26,16 +32,22 @@ services:
       DATABASE_USERNAME: #{DATABASE_USERNAME}#
       DATABASE_PASSWORD: #{DATABASE_PASSWORD}#
       DATABASE_SSL: false
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: 465
+      SMTP_CONTACT_EMAIL: #{SMTP_CONTACT_EMAIL}#
+      SMTP_CONTACT_PASSWORD: #{SMTP_CONTACT_PASSWORD}#
+      SMTP_APPLICATION_EMAIL: #{SMTP_APPLICATION_EMAIL}#
+      SMTP_APPLICATION_PASSWORD: #{SMTP_APPLICATION_PASSWORD}#
+      IZADJI_URL: http://api:1337
+    depends_on:
+      - db
+    restart: unless-stopped
   
   db:
-    image: postgres:13.5-alpine
+    image: keinos/sqlite3:3.40.0
     container_name: website-izadji-db
-    ports:
-      - "5432:5432/tcp"
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRESS_USER: #{DATABASE_USERNAME}#
-      POSTGRES_PASSWORD: #{DATABASE_PASSWORD}#
-      POSTGRES_HOST_AUTH_METHOD: trust
+    stdin_open: true
+    tty: true
     volumes:
-      - ".:/app:rw"
+      - ".:/workspace:rw"
+    restart: unless-stopped
