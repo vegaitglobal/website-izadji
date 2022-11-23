@@ -1,0 +1,53 @@
+version: "3.4"
+
+services:
+  web:
+    image: codeforacause/website-izadji:web-#{TAG_NUMBER}#
+    container_name: website-izadji-web
+    ports:
+      - "28001:3002"
+    environment:
+      PORT: 3002
+      REACT_APP_STRAPI_HOST: http://api:1337
+    restart: unless-stopped
+    depends_on:
+      - api
+  
+  api:
+    image: codeforacause/website-izadji:api-#{TAG_NUMBER}#
+    container_name: website-izadji-api
+    ports:
+      - 28002:1337
+    environment:
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: #{APP_KEYS}#
+      API_TOKEN_SALT: #{API_TOKEN_SALT}#
+      ADMIN_JWT_SECRET: #{ADMIN_JWT_SECRET}#
+      JWT_SECRET: #{JWT_SECRET}#
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: #{DATABASE_USERNAME}#
+      DATABASE_PASSWORD: #{DATABASE_PASSWORD}#
+      DATABASE_SSL: false
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: 465
+      SMTP_CONTACT_EMAIL: #{SMTP_CONTACT_EMAIL}#
+      SMTP_CONTACT_PASSWORD: #{SMTP_CONTACT_PASSWORD}#
+      SMTP_APPLICATION_EMAIL: #{SMTP_APPLICATION_EMAIL}#
+      SMTP_APPLICATION_PASSWORD: #{SMTP_APPLICATION_PASSWORD}#
+      IZADJI_URL: http://api:1337
+    depends_on:
+      - db
+    restart: unless-stopped
+  
+  db:
+    image: keinos/sqlite3:3.40.0
+    container_name: website-izadji-db
+    stdin_open: true
+    tty: true
+    volumes:
+      - ".:/workspace:rw"
+    restart: unless-stopped
