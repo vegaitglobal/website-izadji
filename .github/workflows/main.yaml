@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "./backend/docker-compose.website-izadji.yaml"
+          source: "./docker-compose.website-izadji.yaml"
           target: "./Projects/website-izadji/"
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
