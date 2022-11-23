@@ -1,5 +1,5 @@
 ARG LIBRARY=docker.io
-ARG DOCKER_TAG=18.2
+ARG DOCKER_TAG=16.11
 ARG PLATFORM=linux/x86_64
 ARG PORT=3002
 ARG NODE_ENV=development
@@ -19,8 +19,8 @@ ENV PATH /src/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install --silent
 RUN npm install react-scripts@5.0.1 -g --silent
+RUN npm install --silent
 
 # copy app
 COPY . ./
