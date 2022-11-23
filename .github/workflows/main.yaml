@@ -28,7 +28,7 @@ jobs:
         with:
           tokenPrefix: '#{'
           tokenSuffix: '}#'
-          files: '["**/docker-compose.website-izadji.yaml"]'
+          files: '["**docker-compose.website-izadji.yaml"]'
         env:
           TAG_NUMBER: "${{ github.run_number }}"
           APP_KEYS: "${{ secrets.APP_KEYS }}"
@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: "./docker-compose.website-izadji.yaml"
+          source: "docker-compose.website-izadji.yaml"
           target: "./Projects/website-izadji/"
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
