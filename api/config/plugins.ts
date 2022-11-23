@@ -51,6 +51,7 @@ export default ({ env }) => ({
           items: [
             "heading1",
             "heading2",
+            "heading3",
             "|",
             "bold",
             "italic",

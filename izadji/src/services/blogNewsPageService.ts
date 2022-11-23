@@ -8,7 +8,7 @@ const getBlogs = (
   page: number
 ) =>
   axios.get(
-    `/api/blog-pages?filters[work_program][id][$eq]=${workProgrammeId}&populate=deep&pagination[page]=${page}&pagination[pageSize]=${blogsPerPage}&filters[blog_page_tags][title][$containsi]=${searchString}`
+    `/api/blog-pages?filters[work_program][id][$eq]=${workProgrammeId}&populate=deep&pagination[page]=${page}&pagination[pageSize]=${blogsPerPage}&filters[blog_page_tags][title][$contains]=${searchString}`
   );
 
 const blogNewsPageService = {
