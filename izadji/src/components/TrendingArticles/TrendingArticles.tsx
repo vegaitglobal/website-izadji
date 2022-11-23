@@ -1,26 +1,29 @@
-import TrendingArticle from '../TrendingArticle/TrendingArticle';
+import TrendingArticle, {
+  TrendingArticleProps,
+} from '../TrendingArticle/TrendingArticle';
 import styles from './TrendingArticles.module.scss';
 
-export type ProjectSlideProps = {
-  imageSrc: string;
-  date: string;
-  title: string;
+type TrendingArticlesProps = {
+  slides: TrendingArticleProps[];
+  title?: string;
+  loadMoreCallback?: () => void;
+  hasMore?: boolean;
 };
 
-type ProjectSliderProps = {
-  buttonText: string;
-  slides: ProjectSlideProps[];
-};
 const TrendingArticles = ({
   slides,
-  buttonText,
-}: ProjectSliderProps): JSX.Element => {
+  title,
+  loadMoreCallback,
+  hasMore,
+}: TrendingArticlesProps): JSX.Element => {
   return (
-    <div className={`${styles.feed} ${styles.feed__white}`}>
+    <div className={`${styles.feed} ${styles.feed__light__gray}`}>
       <div className={styles.wrap}>
-        <h2 className={`${styles.feed__title} ${styles.section__title}`}>
-          Naslov
-        </h2>
+        {title && (
+          <h2 className={`${styles.feed__title} ${styles.section__title}`}>
+            {title}
+          </h2>
+        )}
         <div className={styles.feed__list}>
           {slides.map((slide) => (
             <TrendingArticle
@@ -28,14 +31,18 @@ const TrendingArticles = ({
               imageSrc={slide.imageSrc}
               date={slide.date}
               title={slide.title}
+              category={slide.category}
+              link={slide.link}
             />
           ))}
         </div>
-        <div className={styles.feed__link__wrap}>
-          <a href="/" className={styles.btn}>
-            {buttonText}
-          </a>
-        </div>
+        {loadMoreCallback && hasMore && (
+          <div className={styles.feed__link__wrap}>
+            <button className={styles.btn} onClick={loadMoreCallback}>
+              Učitaj još
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

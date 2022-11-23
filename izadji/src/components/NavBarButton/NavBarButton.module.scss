@@ -5,12 +5,12 @@
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/utils/mixins';
-@import '../../style/layout/icon-font';
 @import '../../style/layout/buttons';
 
 .nav__link {
   all: unset;
   display: inline-block;
+  cursor: pointer;
 
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid rgba($black, 0.08);

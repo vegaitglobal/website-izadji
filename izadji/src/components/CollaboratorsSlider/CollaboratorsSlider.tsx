@@ -1,34 +1,8 @@
+import { Link } from 'react-router-dom';
 import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import styles from './CollaboratorsSlider.module.scss';
-import CollaboratorImage1 from '../../assets/images/content/08.png';
-import CollaboratorImage2 from '../../assets/images/content/06.png';
-import CollaboratorImage3 from '../../assets/images/content/07.png';
-import CollaboratorImage4 from '../../assets/images/content/09.png';
-import CollaboratorImage5 from '../../assets/images/content/10.png';
-import CollaboratorImage6 from '../../assets/images/content/11.png';
-
-const collaboratorsSlides = [
-  {
-    imageSrc: CollaboratorImage1,
-  },
-  {
-    imageSrc: CollaboratorImage2,
-  },
-  {
-    imageSrc: CollaboratorImage3,
-  },
-  {
-    imageSrc: CollaboratorImage4,
-  },
-  {
-    imageSrc: CollaboratorImage5,
-  },
-  {
-    imageSrc: CollaboratorImage6,
-  },
-];
 
 export type CollaboratorsSlideProps = {
   imageSrc: string;
@@ -54,18 +28,17 @@ const CollaboratorsSlider = ({
         >
           {title}
         </h2>
-        <Swiper
-          slidesPerView={5}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-          className={styles.logo__slider__container}
-        >
-          {collaboratorsSlides.map((i: CollaboratorsSlideProps) => (
+        <Swiper slidesPerView={5} className={styles.logo__slider__container}>
+          {collaborators.map((i: CollaboratorsSlideProps) => (
             <SwiperSlide key={i.imageSrc}>
               <div className={styles.logo__slider__item}>
-                <a href="/" className={styles.logo__slider_inner}>
-                  <img src={i.imageSrc} alt="al"></img>
-                </a>
+                <Link to="/" className={styles.logo__slider__inner}>
+                  <img
+                    className={styles.logo__slider__image}
+                    src={i.imageSrc}
+                    alt="al"
+                  ></img>
+                </Link>
               </div>
             </SwiperSlide>
           ))}

@@ -1,16 +1,20 @@
 // ----------  forms
 // ------------------------------------------------------------------------------
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+
 input,
 textarea {
-	background: $white;
-	border-radius: 0;
-	box-shadow: none;
-	color: $black;
-	height: 25px;
-	padding: 0 10px;
-	&::placeholder {
-		color: $black;
-	}
+  background: $white;
+  border-radius: 0;
+  box-shadow: none;
+  color: $black;
+  height: 25px;
+  padding: 0 10px;
+  &::placeholder {
+    color: $black;
+  }
 }
 
 input[type='text'],
@@ -18,13 +22,13 @@ input[type='email'],
 input[type='tel'],
 input[type='search'],
 input[type='password'] {
-	appearance: caret;
+  appearance: caret;
 }
 
 button,
 input,
 textarea {
-	font-family: inherit;
+  font-family: inherit;
 }
 
 // @supports (-webkit-touch-callout: none) {
@@ -36,136 +40,141 @@ textarea {
 // }
 
 .form {
-	width: 100%;
+  width: 100%;
 }
 
 .form__inner {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	@include media-breakpoint-down(md) {
-		flex-wrap: wrap;
-	}
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include media-breakpoint-down(md) {
+    flex-wrap: wrap;
+  }
 }
 
 .form__col {
-	width: 48.1%;
-	@include media-breakpoint-down(md) {
-		width: 100%;
-	}
+  width: 48.1%;
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
 }
 
 .form__input,
 .form__textarea {
-	color: $black;
-	border: 1px solid #a3a3a3;
-	width: 100%;
-	&:focus {
-		border-color: $pink;
-	}
-	@include placeholder {
-		color: #8b8b8b;
-	}
+  color: $black;
+  border: 1px solid #a3a3a3;
+  width: 100%;
+  &:focus {
+    border-color: $pink;
+  }
+  @include placeholder {
+    color: #8b8b8b;
+  }
+}
+
+.form__error__message {
+  color: $red;
+  margin-top: -20px;
+  margin-bottom: 26px;
 }
 
 .form__input {
-	height: 52px;
-	margin-bottom: 26px;
-	padding: 0 15px;
-	@include media-breakpoint-up(lg) {
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-	@include media-breakpoint-down(md) {
-		height: 44px;
-		margin-bottom: 16px;
-	}
+  height: 52px;
+  padding: 0 15px;
+  margin-bottom: 26px;
+  @include media-breakpoint-up(lg) {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    height: 44px;
+    margin-bottom: 16px;
+  }
 }
 
 .form__textarea {
-	height: 123px;
-	margin-bottom: 21px;
-	padding: 16px 15px;
-	resize: none;
-	@include media-breakpoint-down(md) {
-		margin-bottom: 16px;
-	}
+  height: 123px;
+  margin-bottom: 26px;
+  padding: 16px 15px;
+  resize: none;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 16px;
+  }
 }
 
 .form__actions {
-	text-align: right;
-	width: 100%;
-	@include media-breakpoint-down(sm) {
-		text-align: center;
-	}
+  text-align: right;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
 }
 
 .form__button {
-	min-width: 146px;
+  min-width: 146px;
 }
 
-
 .dropdown {
-	margin-bottom: 24px;
-	max-width: 313px;
-	position: relative;
-	width: 100%;
+  margin-bottom: 24px;
+  max-width: 313px;
+  position: relative;
+  width: 100%;
 }
 
 .dropdown__btn {
-	border: 1px solid #676767;
-	display: inline-block;
-	height: 52px;
-	padding: 0 40px 0 14px;
-	position: relative;
-	text-align: left;
-	width: 100%;
-	@include icon(arrow-bottom, after) {
-		font-size: 10px;
-		position: absolute;
-		right: 20px;
-		top: 50%;
-		transform: translateY(-50%);
-		@include animation {
-			transition: transform $transition;
-		}
-	}
+  border: 1px solid #676767;
+  display: inline-block;
+  height: 52px;
+  padding: 0 40px 0 14px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  @include icon(arrow-bottom, after) {
+    font-size: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include animation {
+      transition: transform $transition;
+    }
+  }
 }
 
 .dropdown__btn____open::after {
-	transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-180deg);
 }
 
 .dropdown__list {
-	background-color: $white;
-	border: 1px solid $black;
-	border-top: 0;
-	display: none;
-	left: 0;
-	max-height: 200px;
-	overflow: auto;
-	padding: 0 15px;
-	position: absolute;
-	top: 100%;
-	width: 100%;
-	z-index: 3;
+  background-color: $white;
+  border: 1px solid $black;
+  border-top: 0;
+  display: none;
+  left: 0;
+  max-height: 200px;
+  overflow: auto;
+  padding: 0 15px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 3;
 }
 
 .dropdown__list____open {
-	display: block;
+  display: block;
 }
 
 .dropdown__item {
-	border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .dropdown__link {
-	padding: 10px 0;
-	text-align: left;
-	width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  width: 100%;
 }
 
 .dropdown__link--selected {
-	color: $pink;
+  color: $pink;
 }

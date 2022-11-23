@@ -5,8 +5,15 @@
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/utils/mixins';
-@import '../../style/layout/icon-font';
 @import '../../style/layout/buttons';
+
+.events {
+  padding: 44px 0 80px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0 50px;
+  }
+}
 
 .swiper-wrapper {
   display: flex;
@@ -77,22 +84,16 @@
   margin-right: 5px;
   padding-top: 2px;
   width: 34px;
-  #slidePrev {
-    @include icon(arrow-left, after) {
-      font-size: 9px;
-      position: relative;
-    }
-  }
 }
 
-#slidePrev {
+#sliderPrevEvents {
   @include icon(arrow-left, after) {
     font-size: 9px;
     position: relative;
   }
 }
 
-#slideNext {
+#sliderNextEvents {
   @include icon(arrow-right, after) {
     font-size: 9px;
     position: relative;
@@ -108,7 +109,7 @@
     padding: 10px;
   }
   @include media-breakpoint-down(sm) {
-    padding: 5px 10px;
+    display: none;
   }
 }
 
@@ -122,9 +123,9 @@
 }
 
 .events__cell__date {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;
@@ -142,9 +143,9 @@
 }
 
 .events__cell__time {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;
@@ -164,9 +165,9 @@
 }
 
 .events__cell__name {
-  border-bottom: 1px solid $black;
-  font-size: 0;
-  padding: 12px fluid(10px, 15px) 11px fluid(10px, 22px);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px fluid(10px, 15px) 11px 0;
   width: 100%;
   @include media-breakpoint-only(md) {
     padding: 10px;

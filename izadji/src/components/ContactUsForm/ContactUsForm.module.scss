@@ -1,0 +1,227 @@
+@import '../../style/utils/variables';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/reset';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/utils/mixins';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+
+.contact__title {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 6px;
+}
+
+.contact__text {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.contact__block__form {
+  width: 57.7%;
+  @include media-breakpoint-only(md) {
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.contact__block {
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0;
+  }
+}
+
+.contact__block_column {
+  width: 57.4%;
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0;
+  }
+}
+
+.contact__block__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 39px 32px 26px;
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 39px 0 26px;
+  }
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
+
+.contact__block__inner_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 39px 32px 26px;
+  width: 100%;
+  @include media-breakpoint-only(md) {
+    padding: 39px 0 26px;
+  }
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
+
+.contact__block__text__holder {
+  padding-bottom: 70px;
+  position: relative;
+  width: 38%;
+  @include media-breakpoint-only(md) {
+    padding-right: 40px;
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 60px;
+    padding-right: 40px;
+    width: 100%;
+  }
+}
+
+.contact__block__text__holder_column {
+  padding-bottom: 24px;
+  position: relative;
+  width: 38%;
+  @include media-breakpoint-only(md) {
+    padding-right: 40px;
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 60px;
+    padding-right: 40px;
+    width: 100%;
+  }
+}
+
+.contact__block__title {
+  margin-bottom: 14px;
+  text-transform: none;
+}
+
+.contact__block__text {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.contact__block__arrow {
+  background: linear-gradient(
+    270deg,
+    $purple 0%,
+    $blue 16.15%,
+    $green 37.5%,
+    $orange 62.5%,
+    $red 100%
+  );
+  bottom: 39px;
+  height: 2px;
+  left: 0;
+  max-width: 285px;
+  position: absolute;
+  width: 100%;
+  @include icon(arrow-right, after) {
+    color: $purple;
+    font-size: 14px;
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @include media-breakpoint-only(md) {
+    bottom: 70px;
+  }
+  @include media-breakpoint-down(sm) {
+    background: linear-gradient(
+      0deg,
+      $purple 0%,
+      $blue 16.15%,
+      $green 37.5%,
+      $orange 62.5%,
+      $red 100%
+    );
+    bottom: 20px;
+    height: auto;
+    left: auto;
+    right: 6px;
+    top: 0;
+    width: 2px;
+    &::after {
+      bottom: 0;
+      left: 0;
+      margin: 0 0 -5px -6px;
+      right: auto;
+      top: auto;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.contact__block__form {
+  width: 57.7%;
+  @include media-breakpoint-only(md) {
+    width: 50%;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.form {
+  width: 100%;
+}
+.form__checkbox {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.form__checkbox__input {
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  &:checked ~ .form__checkbox__label {
+    &::before {
+      background-color: $pink;
+      color: white;
+    }
+  }
+}
+
+.form__checkbox__label {
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 35px;
+  position: relative;
+  &::before {
+    border: 1px solid $pink;
+    border-radius: 3px;
+    content: '';
+    height: 18px;
+    left: 2px;
+    position: absolute;
+    top: 1px;
+    width: 18px;
+    @include animation {
+      transition: background $transition;
+    }
+  }
+  @include icon(checked) {
+    color: transparent;
+    font-size: 14px;
+    left: 4px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+  }
+}

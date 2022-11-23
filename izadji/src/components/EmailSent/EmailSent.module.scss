@@ -1,0 +1,44 @@
+@use 'sass:math';
+@import '../../style/utils/variables';
+@import '../../style/utils/mixins';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/helpers';
+@import '../../style/base/fonts';
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/layout/buttons';
+@import '../../style/layout/forms';
+@import '../../style/layout/icon-font';
+
+.contact__thank__you {
+  padding: 30px 0;
+  width: 100%;
+}
+
+.contact__thank__you__icon {
+  color: $pink;
+  font-size: 80px;
+  line-height: 1;
+}
+
+.contact__thank__you__title {
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 23px;
+}
+
+.contact__thank__you__text {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.contact__thank__you__link {
+  padding-right: 70px;
+}
+
+.contact__thank__you__checked {
+  @include icon(checked-circle) {
+    margin: 0 0 40px 7px;
+  }
+}

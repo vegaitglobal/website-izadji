@@ -1,8 +1,8 @@
 @use 'sass:math';
 @import '../../style/utils/variables';
 @import '../../style/utils/mixins';
-@import '../../style//utils/breakpoints';
-@import '../../style//utils//helpers';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/helpers';
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/base/typography';
@@ -13,8 +13,9 @@
   width: 100%;
 }
 
-.feed__white {
-  background-color: $white;
+.feed__light__gray {
+  background-color: #F8F8F8;
+  ;
 }
 
 .feed__title {

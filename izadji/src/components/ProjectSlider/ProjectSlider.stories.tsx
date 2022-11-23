@@ -3,6 +3,7 @@ import ProjectSlider from './ProjectSlider';
 import ProjectSlideImage1 from '../../assets/images/content/01.jpg';
 import ProjectSlideImage2 from '../../assets/images/content/02.jpg';
 import ProjectSlideImage3 from '../../assets/images/content/21.jpg';
+import { MemoryRouter } from 'react-router';
 
 const projectSlides = [
   {
@@ -40,7 +41,9 @@ export default {
 } as ComponentMeta<typeof ProjectSlider>;
 
 const Default: ComponentStory<typeof ProjectSlider> = (args) => (
-  <ProjectSlider {...args} />
+  <MemoryRouter>
+    <ProjectSlider {...args} />
+  </MemoryRouter>
 );
 
 export const DefaultProjectSlider = Default.bind({});

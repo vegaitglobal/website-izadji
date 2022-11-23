@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -21,7 +21,9 @@
         "page-link-components.documentation-page",
         "page-link-components.about-us",
         "page-link-components.contact-page",
-        "page-link-components.pride-page"
+        "page-link-components.pride-page",
+        "page-link-components.blog-news-page",
+        "page-link-components.homepage"
       ],
       "required": true,
       "min": 1,

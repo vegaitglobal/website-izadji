@@ -1,8 +1,8 @@
 @use 'sass:math';
 @import '../../style/utils/variables';
 @import '../../style/utils/mixins';
-@import '../../style//utils/breakpoints';
-@import '../../style//utils//helpers';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/helpers';
 @import '../../style/base/fonts';
 @import '../../style/base/layout';
 @import '../../style/base/typography';
@@ -62,7 +62,8 @@
 }
 
 .newsletter__white {
-  background-color: $white;
+  background-color:  #F1F1F1;
+  ;
 }
 
 .newsletter__inner {
@@ -126,4 +127,21 @@
 
 .newsletter__btn {
   vertical-align: top;
+}
+
+.div__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.div__row {
+  display: 'flex';
+  align-items: 'start';
+  justify-content: 'center';
+}
+
+.newsletter_form_error_message {
+  font-size: 14px;
+  color: $red;
+  margin-top: 10px;
 }

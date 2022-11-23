@@ -1,0 +1,52 @@
+@import '../../style/base/layout';
+@import '../../style/base/typography';
+@import '../../style/utils/breakpoints';
+@import '../../style/utils/mixins';
+@import '../../style/utils/variables';
+@import '../../style/utils/helpers';
+@import '../../style/layout/buttons';
+
+.text__box {
+  overflow: hidden;
+  padding: 49px 0 26px;
+  width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 20px 0;
+  }
+  img {
+    max-width: 100%;
+  }
+  @include media-breakpoint-only(md) {
+    margin: 0 0 30px 30px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin: 0 0 20px;
+    max-width: none;
+    width: 100%;
+  }
+  figure {
+    &:global(.image) {
+      display: table;
+      clear: both;
+      text-align: center;
+      margin: 0.9em auto;
+      min-width: 50px;
+    }
+    &:global(.image-style-side) {
+      float: right;
+    }
+    margin: 0 0 50px 50px;
+  }
+}
+
+.text__box__blog {
+  margin: 0 auto;
+  max-width: 840px;
+  .rte {
+    p {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
+

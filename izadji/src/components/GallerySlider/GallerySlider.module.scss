@@ -1,7 +1,7 @@
 @import '../../style/base/layout';
 @import '../../style/utils/helpers';
 @import '../../style/utils/mixins';
-@import '../../style/layout/icon-font';
+@import '../../style/utils/reset';
 
 .gallery__slider {
   background: $black;
@@ -20,6 +20,8 @@
   font-size: 19px;
   position: absolute;
   top: 50%;
+  background: none;
+  border: none;
   transform: translateY(-50%);
   &::before {
     @include font-styles;
@@ -39,6 +41,7 @@
     right: auto;
   }
 }
+
 .gallery__slider__btn__next {
   left: calc(50% + 632px);
   &::before {

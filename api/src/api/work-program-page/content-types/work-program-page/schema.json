@@ -21,7 +21,7 @@
         "shared-components.rich-text-component",
         "shared-components.trending-articles",
         "shared-components.newsletter",
-        "shared-components.rich-text-with-image"
+        "shared-components.work-program-component"
       ]
     },
     "banner": {
@@ -32,6 +32,11 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "featuredBlogPage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-page.blog-page"
     }
   }
 }

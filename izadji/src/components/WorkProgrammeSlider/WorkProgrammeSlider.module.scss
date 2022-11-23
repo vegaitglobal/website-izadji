@@ -3,7 +3,6 @@
 @import '../../style/utils/breakpoints';
 @import '../../style/utils/mixins';
 @import '../../style/utils/variables';
-@import '../../style/layout/icon-font';
 @import '../../style/utils/helpers';
 
 .box__slider {
@@ -37,6 +36,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background: none;
+  border: none;
   &::before {
     @include font-styles;
   }
