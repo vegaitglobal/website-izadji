@@ -35,8 +35,6 @@ jobs:
           API_TOKEN_SALT: "${{ secrets.API_TOKEN_SALT }}"
           ADMIN_JWT_SECRET: "${{ secrets.ADMIN_JWT_SECRET }}"
           JWT_SECRET: "${{ secrets.JWT_SECRET }}"
-          DATABASE_USERNAME: "${{ secrets.DATABASE_USERNAME }}"
-          DATABASE_PASSWORD: "${{ secrets.DATABASE_PASSWORD }}"
           SMTP_CONTACT_EMAIL: "${{ secrets.SMTP_CONTACT_EMAIL }}"
           SMTP_CONTACT_PASSWORD: "${{ secrets.SMTP_CONTACT_PASSWORD }}"
           SMTP_APPLICATION_EMAIL: "${{ secrets.SMTP_APPLICATION_EMAIL }}"
