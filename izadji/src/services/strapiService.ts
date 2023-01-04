@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getProjectPages = () => axios.get('/api/projects-pages?populate=deep,10');
+const getProjectPages = () => apiGet('/api/projects-pages?populate=deep,10');
 
 const strapiService = {
   getProjectPages,

@@ -1,15 +1,15 @@
-import axios from 'axios';
 import SubmitEmailData from '../types/submitEmailData';
+import { apiPost } from '../utils/apiHelpers';
 
 // TODO: Put valid endpoint url, once when backend work is finished
 const sendContactUsEmailData = (data: SubmitEmailData) =>
-  axios.post('/api/contact-form-submission', data);
+  apiPost('/api/contact-form-submission', data);
 const sendVolunteerFormData = (data: SubmitEmailData) =>
-  axios.post('/api/volunteer-form-submission', data);
+  apiPost('/api/volunteer-form-submission', data);
 
 // TODO: Put valid endpoint url, once when backend work is finished
 const applyToNewsletter = (email: string) =>
-  axios.post('/api/newsletter-subscriptions', { data: { email: email } });
+  apiPost('/api/newsletter-subscriptions', { data: { email: email } });
 
 const formService = {
   sendContactUsEmailData,

@@ -1,10 +1,10 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
 const getSingleBlogPage = (id: string | undefined) =>
-  axios.get(`/api/blog-pages/${id}?populate=deep`);
+  apiGet(`/api/blog-pages/${id}?populate=deep`);
 
 const singleBlogService = {
-    getSingleBlogPage,
+  getSingleBlogPage,
 };
 
 export default singleBlogService;

@@ -1,11 +1,11 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getPublicationPage = () => axios.get('/api/publication-page?populate=deep');
-const getPublications= () => axios.get('/api/publications?populate=deep');
+const getPublicationPage = () => apiGet('/api/publication-page?populate=deep');
+const getPublications = () => apiGet('/api/publications?populate=deep');
 
 const publicationPageService = {
   getPublicationPage,
-  getPublications
+  getPublications,
 };
 
 export default publicationPageService;

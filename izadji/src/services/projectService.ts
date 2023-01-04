@@ -1,9 +1,9 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getProjectPages = () => axios.get('/api/projects-pages?populate=deep');
+const getProjectPages = () => apiGet('/api/projects-pages?populate=deep');
 
 const getProjectPage = (id: string | undefined) =>
-  axios.get(`/api/projects-pages/${id}?populate=deep`);
+  apiGet(`/api/projects-pages/${id}?populate=deep`);
 
 const projectPagesService = {
   getProjectPages,

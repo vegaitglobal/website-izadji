@@ -8,7 +8,7 @@ services:
       - "28001:3002"
     environment:
       PORT: 3002
-      REACT_APP_STRAPI_HOST: http://api:1337
+      REACT_APP_STRAPI_HOST: https://api.izadji.codeforacause.rs
     restart: unless-stopped
     depends_on:
       - api
@@ -31,7 +31,7 @@ services:
       SMTP_CONTACT_PASSWORD: #{SMTP_CONTACT_PASSWORD}#
       SMTP_APPLICATION_EMAIL: #{SMTP_APPLICATION_EMAIL}#
       SMTP_APPLICATION_PASSWORD: #{SMTP_APPLICATION_PASSWORD}#
-      IZADJI_URL: http://api:1337
+      IZADJI_URL: https://api.izadji.codeforacause.rs
     depends_on:
       - db
     restart: unless-stopped
