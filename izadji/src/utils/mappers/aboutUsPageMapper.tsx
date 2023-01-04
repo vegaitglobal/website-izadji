@@ -5,6 +5,7 @@ import { TeamMemberItemProps } from '../../components/TeamMemberItem/TeamMemberI
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import AboutUsPageComponents from '../enums/aboutUsPageComponents';
 import { MappingFunction } from './sharedMapper';
+import { getApiUrl } from '../urlHelpers';
 
 const getOurTeamMembers = (teamMembers: any): TeamMemberItemProps[] => {
   return teamMembers.map((teamMember: any) => {
@@ -13,7 +14,9 @@ const getOurTeamMembers = (teamMembers: any): TeamMemberItemProps[] => {
       jobTitle: teamMember.attributes.jobTitle,
       bio: teamMember.attributes.biography,
       email: teamMember.attributes.emailField,
-      profileImage: teamMember.attributes.profileImage.data.attributes.url,
+      profileImage: getApiUrl(
+        teamMember.attributes.profileImage.data.attributes.url
+      ),
     };
   });
 };

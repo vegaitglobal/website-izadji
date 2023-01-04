@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getLayout = () => axios.get('/api/layout?populate=deep');
+const getLayout = () => apiGet('/api/layout?populate=deep');
 
 const layoutService = {
   getLayout,

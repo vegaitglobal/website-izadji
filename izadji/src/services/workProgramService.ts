@@ -1,15 +1,15 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
 const getWorkProgramPagesWithDeepPopulation = () =>
-  axios.get('/api/work-program-pages?populate=deep');
+  apiGet('/api/work-program-pages?populate=deep');
 
 const getWorkProgramPages = () =>
-  axios.get(
+  apiGet(
     '/api/work-program-pages?populate[0]=featuredBlogPage&populate[1]=featuredBlogPage.blogBanner&populate[2]=featuredBlogPage.blogBanner.image'
   );
 
 const getWorkProgramPage = (id: number) =>
-  axios.get(`/api/work-program-pages/${id}?populate=deep`);
+  apiGet(`/api/work-program-pages/${id}?populate=deep`);
 
 const workProgramService = {
   getWorkProgramPagesWithDeepPopulation,

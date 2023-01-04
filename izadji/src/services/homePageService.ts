@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getHomePage = () => axios.get('/api/homepage?populate=deep');
+const getHomePage = () => apiGet('/api/homepage?populate=deep');
 
 const homePageService = {
   getHomePage,

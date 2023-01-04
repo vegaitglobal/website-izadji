@@ -1,13 +1,13 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getBlogNewsPage = () => axios.get('/api/blog-news-page?populate=deep');
+const getBlogNewsPage = () => apiGet('/api/blog-news-page?populate=deep');
 const getBlogs = (
   workProgrammeId: number,
   searchString: string,
   blogsPerPage: number,
   page: number
 ) =>
-  axios.get(
+  apiGet(
     `/api/blog-pages?filters[work_program][id][$eq]=${workProgrammeId}&populate=deep&pagination[page]=${page}&pagination[pageSize]=${blogsPerPage}&filters[blog_page_tags][title][$containsi]=${searchString}`
   );
 

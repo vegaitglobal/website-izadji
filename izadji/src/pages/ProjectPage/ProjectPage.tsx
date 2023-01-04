@@ -4,6 +4,7 @@ import projectPagesService from '../../services/projectService';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
 import Banner from '../../components/Banner/Banner';
 import ProjectPageMapper from '../../utils/mappers/projectPageMapper';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const ProjectPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -22,7 +23,7 @@ const ProjectPage = () => {
               key="project_page_banner"
               title={bannerData.title}
               text={bannerData.text}
-              imageSrc={bannerData.image.data.attributes.url}
+              imageSrc={getApiUrl(bannerData.image.data.attributes.url)}
             />,
           ],
         }

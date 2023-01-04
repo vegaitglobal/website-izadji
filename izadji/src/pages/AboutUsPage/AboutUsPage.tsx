@@ -3,6 +3,7 @@ import Banner from '../../components/Banner/Banner';
 import aboutUsPageService from '../../services/aboutUsPageService';
 import AboutUsPageMapper from '../../utils/mappers/aboutUsPageMapper';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const AboutUsPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -20,7 +21,7 @@ const AboutUsPage = () => {
               key="abous_us_page_banner"
               title={bannerData.title}
               text={bannerData.text}
-              imageSrc={bannerData.image.data.attributes.url}
+              imageSrc={getApiUrl(bannerData.image.data.attributes.url)}
             />,
           ],
         }
