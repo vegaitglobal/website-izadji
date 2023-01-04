@@ -12,13 +12,14 @@ import { Dispatch, ReactNode, SetStateAction } from 'react';
 import RichTextComponent from '../../components/RichTextComponent/RichTextComponent';
 import workProgramService from '../../services/workProgramService';
 import DonateSection from '../../components/DonateSection/DonateSection';
+import { getApiUrl } from '../urlHelpers';
 
 const getGallerySlides = (imagesData: any): GallerySlideProps[] => {
   return imagesData.map((imageData: any) => {
     return {
-      imageSrc: imageData.attributes.url,
-      largeImageSrc: imageData.attributes.url,
-      thumbnailImageSrc: imageData.attributes.url,
+      imageSrc: getApiUrl(imageData.attributes.url),
+      largeImageSrc: getApiUrl(imageData.attributes.url),
+      thumbnailImageSrc: getApiUrl(imageData.attributes.url),
       altText: imageData.attributes.alternativeText,
     };
   });
@@ -32,7 +33,7 @@ const getTrendingArticlesSlides = (
     const workProgramme =
       trendingArticle.attributes.work_program.data.attributes.banner.title;
     return {
-      imageSrc: blogBanner.image.data.attributes.url,
+      imageSrc: getApiUrl(blogBanner.image.data.attributes.url),
       date: blogBanner.date,
       title: blogBanner.title,
       category: workProgramme,
@@ -46,7 +47,7 @@ const getCollaboratorsSlides = (
 ): CollaboratorsSlideProps[] => {
   return collaborators.map((collaboratorData: any) => {
     return {
-      imageSrc: collaboratorData.attributes.url,
+      imageSrc: getApiUrl(collaboratorData.attributes.url),
     };
   });
 };

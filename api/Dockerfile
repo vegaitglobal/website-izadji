@@ -22,7 +22,7 @@ COPY yarn.lock ./
 RUN yarn install --silent
 
 # build application
-RUN npm run build
+RUN yarn run build
 
 # copy app
 COPY . ./

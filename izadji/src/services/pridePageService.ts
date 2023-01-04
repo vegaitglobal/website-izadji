@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getPridePage = () => axios.get('/api/pride-page?populate=deep');
+const getPridePage = () => apiGet('/api/pride-page?populate=deep');
 
 const pridePageService = {
   getPridePage,

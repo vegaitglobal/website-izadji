@@ -1,6 +1,6 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getContactUsPage = () => axios.get('/api/contact-page?populate=deep');
+const getContactUsPage = () => apiGet('/api/contact-page?populate=deep');
 
 const contactUsPageService = {
   getContactUsPage,

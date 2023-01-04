@@ -1,11 +1,12 @@
-import axios from 'axios';
+import { apiGet } from '../utils/apiHelpers';
 
-const getDocumentationPage = () => axios.get('/api/documentation-page?populate=deep');
-const getDocuments= () => axios.get('/api/documents?populate=deep');
+const getDocumentationPage = () =>
+  apiGet('/api/documentation-page?populate=deep');
+const getDocuments = () => apiGet('/api/documents?populate=deep');
 
 const documentationPageService = {
   getDocumentationPage,
-  getDocuments
+  getDocuments,
 };
 
 export default documentationPageService;
