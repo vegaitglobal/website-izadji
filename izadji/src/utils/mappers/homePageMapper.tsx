@@ -6,6 +6,7 @@ import projectPagesService from '../../services/projectService';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponents';
 import { MappingFunction } from './sharedMapper';
+import { getApiUrl } from '../urlHelpers';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
@@ -26,7 +27,7 @@ const getProjectSlides = (projects: any): ProjectSlideProps[] => {
   return projects.map((projectData: any) => {
     const projectBanner = projectData.attributes.banner;
     return {
-      imageSrc: projectBanner.image.data.attributes.url,
+      imageSrc: getApiUrl(projectBanner.image.data.attributes.url),
       date: projectBanner.date && convertDate(projectBanner.date, false),
       title: projectBanner.title,
       description: projectBanner.text,

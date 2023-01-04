@@ -10,7 +10,14 @@ const RichTextComponent = ({ content, narrow = true }: any): JSX.Element => {
     >
       <div className={styles.wrap}>
         <div className={styles.rte}>
-          <>{parse(content)}</>
+          <>
+            {parse(
+              content.replace(
+                /\/uploads/,
+                `${process.env.REACT_APP_STRAPI_HOST}/uploads`
+              )
+            )}
+          </>
         </div>
       </div>
     </div>

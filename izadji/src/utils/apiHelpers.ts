@@ -1,10 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { getApiUrl } from './urlHelpers';
 
 export const apiGet = <T = any, R = AxiosResponse<T>, D = any>(
   url: string,
   config?: AxiosRequestConfig<D>
 ): Promise<R> => {
-  return axios.get(process.env.REACT_APP_STRAPI_HOST + url, config);
+  return axios.get(getApiUrl(url), config);
 };
 
 export const apiPost = <T = any, R = AxiosResponse<T>, D = any>(
@@ -12,5 +13,5 @@ export const apiPost = <T = any, R = AxiosResponse<T>, D = any>(
   data?: D,
   config?: AxiosRequestConfig<D>
 ): Promise<R> => {
-  return axios.post(process.env.REACT_APP_STRAPI_HOST + url, data, config);
+  return axios.post(getApiUrl(url), data, config);
 };

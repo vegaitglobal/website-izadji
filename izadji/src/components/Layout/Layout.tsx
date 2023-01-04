@@ -3,6 +3,7 @@ import layoutService from '../../services/layoutService';
 import Footer, { FooterProps } from '../shared/Footer/Footer';
 import Header, { HeaderProps } from '../shared/Header/Header';
 import { getRouteForPageLink } from '../../routes';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const Layout = ({ children }: any): JSX.Element => {
   const [headerData, setHeaderData] = useState<HeaderProps | undefined>();
@@ -22,13 +23,13 @@ const Layout = ({ children }: any): JSX.Element => {
           href: getRouteForPageLink(navBarItem),
         })),
       },
-      logoSrc: dao.logo.data.attributes.url,
+      logoSrc: getApiUrl(dao.logo.data.attributes.url),
     });
   };
 
   const setupFooterData = (dao: any) => {
     setFooterData({
-      iconSrc: dao.logo.data.attributes.url,
+      iconSrc: getApiUrl(dao.logo.data.attributes.url),
       emails: [dao.firstEmail, dao.secondEmail],
       copyText: dao.designedBy,
       navItems: dao.siteMap.map((mapItem: any) => ({

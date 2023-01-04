@@ -10,6 +10,7 @@ import { routes } from '../../routes';
 import BlogNewsBanner, {
   BlogNewsBannerProps,
 } from '../../components/BlogNewsBanner/BlogNewsBanner';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const BlogNewsPage = () => {
   const [articlesPerPage, setArticlesPerPage] = useState<number>(4);
@@ -39,9 +40,10 @@ const BlogNewsPage = () => {
         const newArticles = blogsResponse.data.data.map((b: any) => ({
           title: b.attributes.title,
           date: b.attributes.blogBanner.date,
-          imageSrc:
+          imageSrc: getApiUrl(
             b.attributes.blogBanner.image.data.attributes.formats?.small?.url ??
-            b.attributes.blogBanner.image.data.attributes.url,
+              b.attributes.blogBanner.image.data.attributes.url
+          ),
           category: b.attributes.work_program.data.attributes.title,
           link: routes.blogPage.replace(':id', b.id),
         }));

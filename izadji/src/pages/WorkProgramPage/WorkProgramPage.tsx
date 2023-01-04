@@ -5,6 +5,7 @@ import Banner from '../../components/Banner/Banner';
 import workProgramService from '../../services/workProgramService';
 import { useParams } from 'react-router';
 import WorkProgramPageMapper from '../../utils/mappers/workProgramPageMapper';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 type WorkProgramPageProps = {
   id: string;
@@ -31,7 +32,7 @@ const WorkProgramPage = () => {
               key="work_program_banner"
               title={bannerData.title}
               text={bannerData.text}
-              imageSrc={bannerData.image.data.attributes.url}
+              imageSrc={getApiUrl(bannerData.image.data.attributes.url)}
             />,
           ],
         }

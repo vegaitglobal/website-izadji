@@ -6,6 +6,7 @@ import pridePageService from '../../services/pridePageService';
 import HomePageMapper from '../../utils/mappers/homePageMapper';
 import { MapComponents } from '../../utils/mappers/sharedMapper';
 import Banner from '../../components/Banner/Banner';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const PridePage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -23,7 +24,7 @@ const PridePage = () => {
               key="pride_banner"
               title={bannerData.title}
               text={bannerData.text}
-              imageSrc={bannerData.image.data.attributes.url}
+              imageSrc={getApiUrl(bannerData.image.data.attributes.url)}
             />,
           ],
         }

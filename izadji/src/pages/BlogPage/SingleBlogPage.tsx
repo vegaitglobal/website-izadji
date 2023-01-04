@@ -6,6 +6,7 @@ import SingleNewsBanner from '../../components/SingleNewsBanner/SingleNewsBanner
 import Breadcrumbs from '../../components/Breadcrumbs/Beadcrumbs';
 import { routes } from '../../routes';
 import SingleBlogPageMapper from '../../utils/mappers/singleBlogPageMapper';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 const SingleBlogPage = () => {
   const [components, setComponents] = useState<ReactNode[]>([]);
@@ -36,7 +37,7 @@ const SingleBlogPage = () => {
             <SingleNewsBanner
               key="blog_page_banner"
               title={bannerData.title}
-              imageSrc={bannerData.image.data.attributes.url}
+              imageSrc={getApiUrl(bannerData.image.data.attributes.url)}
               author={bannerData.author}
               category={
                 response.data.data.attributes.work_program.data.attributes.title
