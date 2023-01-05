@@ -11,21 +11,21 @@ FROM --platform=${PLATFORM} ${LIBRARY}/node:${DOCKER_TAG}
 ENV NODE_ENV=${NODE_ENV}
 
 # set working directory
-WORKDIR /src
+WORKDIR /app
 
-# add `/src/node_modules/.bin` to $PATH
-ENV PATH /src/node_modules/.bin:$PATH
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --silent
 
-# build application
-RUN yarn run build
-
 # copy app
 COPY . ./
+
+# build application
+RUN yarn run build
 
 EXPOSE ${PORT}
 CMD [ "yarn", "start" ]
