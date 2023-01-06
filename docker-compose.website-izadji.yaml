@@ -32,15 +32,7 @@ services:
       SMTP_APPLICATION_EMAIL: #{SMTP_APPLICATION_EMAIL}#
       SMTP_APPLICATION_PASSWORD: #{SMTP_APPLICATION_PASSWORD}#
       IZADJI_URL: https://api.izadji.codeforacause.rs
-    depends_on:
-      - db
-    restart: unless-stopped
-  
-  db:
-    image: keinos/sqlite3:3.40.0
-    container_name: website-izadji-db
-    stdin_open: true
-    tty: true
+      DATABASE_FILENAME: "../data.db/data.db"
     volumes:
-      - ".:/workspace:rw"
+      - "./data.db/:/data.db/:rw"
     restart: unless-stopped
