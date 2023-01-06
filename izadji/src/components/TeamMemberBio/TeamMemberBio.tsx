@@ -1,4 +1,3 @@
-import ReactMarkdown from 'react-markdown';
 import RichTextComponent from '../RichTextComponent/RichTextComponent';
 import styles from './TeamMemberBio.module.scss';
 

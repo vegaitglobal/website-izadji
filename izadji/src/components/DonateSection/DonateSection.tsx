@@ -1,6 +1,6 @@
-import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import styles from '../Newsletter/Newsletter.module.scss';
+import parse from 'html-react-parser';
 
 export type DonateSectionProps = {
   title: string;
@@ -19,12 +19,8 @@ const DonateSection = ({
     <section className={`${styles.newsletter} ${styles.newsletter__white}`}>
       <div className={styles.wrap}>
         <div className={styles.newsletter__inner}>
-          <h2 className={`${styles.newsletter__heading}`}>
-            <ReactMarkdown>{title}</ReactMarkdown>
-          </h2>
-          <p className={`${styles.newsletter__title}`}>
-            <ReactMarkdown>{content}</ReactMarkdown>
-          </p>
+          <h2 className={`${styles.newsletter__heading}`}>{parse(title)}</h2>
+          <p className={`${styles.newsletter__title}`}>{parse(content)}</p>
           <Link to={buttonHref} className={styles.btn}>
             {buttonText}
           </Link>
