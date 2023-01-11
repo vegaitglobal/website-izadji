@@ -1,8 +1,6 @@
 import dayjs from 'dayjs';
 
 const monthSwitch = (monthNumber: string) => {
-  console.log(monthNumber);
-
   switch (monthNumber) {
     case '01': {
       return 'JANUAR';

@@ -21,7 +21,7 @@ const DonateSection = ({
         <div className={styles.newsletter__inner}>
           <h2 className={`${styles.newsletter__heading}`}>{parse(title)}</h2>
           <p className={`${styles.newsletter__title}`}>{parse(content)}</p>
-          <Link to={buttonHref} className={styles.btn}>
+          <Link to="/donate" className={styles.btn}>
             {buttonText}
           </Link>
         </div>

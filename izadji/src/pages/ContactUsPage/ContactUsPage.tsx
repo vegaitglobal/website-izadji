@@ -16,7 +16,6 @@ const ContactUsPage = () => {
 
   useEffect(() => {
     contactUsPageService.getContactUsPage().then((response) => {
-      console.log(response);
       const responseData = response.data.data.attributes;
       setContactUsFormData({
         buttonLabel: responseData.buttonText,

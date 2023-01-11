@@ -46,6 +46,19 @@
   @include media-breakpoint-down(md) {
     display: none;
   }
+
+  a:last-child {
+    .header__top__link {
+      border-right: none;
+      padding: 0 0 0 14px;
+      @include media-breakpoint-only(md) {
+        padding-left: 30px;
+      }
+      @include media-breakpoint-down(sm) {
+        padding: 0;
+      }
+    }
+  }
 }
 
 .header__top__link {
@@ -57,16 +70,6 @@
   border-right: 2px solid $black;
   padding-right: 14px;
   transition: color $transition;
-  &:last-child {
-    border-right: none;
-    padding: 0 0 0 14px;
-    @include media-breakpoint-only(md) {
-      padding-left: 30px;
-    }
-    @include media-breakpoint-down(sm) {
-      padding: 0;
-    }
-  }
   // TODO: Check if this is correct icon once the code is merged
   @include icon(mail) {
     margin-right: 5px;
