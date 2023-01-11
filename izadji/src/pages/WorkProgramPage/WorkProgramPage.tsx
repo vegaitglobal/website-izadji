@@ -1,9 +1,8 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { MapComponents } from '../../utils/mappers/sharedMapper';
-import ProjectPageMapper from '../../utils/mappers/projectPageMapper';
+import { useParams } from 'react-router';
 import Banner from '../../components/Banner/Banner';
 import workProgramService from '../../services/workProgramService';
-import { useParams } from 'react-router';
+import { MapComponents } from '../../utils/mappers/sharedMapper';
 import WorkProgramPageMapper from '../../utils/mappers/workProgramPageMapper';
 import { getApiUrl } from '../../utils/urlHelpers';
 

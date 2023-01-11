@@ -1,11 +1,8 @@
-import { EventProps } from '../../components/Event/Event';
-import EventsSlider from '../../components/EventsSlider/EventsSlider';
 import Team from '../../components/Team/Team';
 import { TeamMemberItemProps } from '../../components/TeamMemberItem/TeamMemberItem';
-import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import AboutUsPageComponents from '../enums/aboutUsPageComponents';
-import { MappingFunction } from './sharedMapper';
 import { getApiUrl } from '../urlHelpers';
+import { MappingFunction } from './sharedMapper';
 
 const getOurTeamMembers = (teamMembers: any): TeamMemberItemProps[] => {
   return teamMembers.map((teamMember: any) => {

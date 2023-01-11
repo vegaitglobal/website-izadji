@@ -1,5 +1,6 @@
 import styles from './Downloadable.module.scss';
 import DownloadableProps from '../../utils/DownloadableProps';
+import RichTextComponent from '../RichTextComponent/RichTextComponent';
 
 const Downloadable = ({
   imageSrc,
@@ -7,14 +8,14 @@ const Downloadable = ({
   title,
   buttonText,
   href,
-  download
+  download,
 }: DownloadableProps): JSX.Element => {
   return (
     <div className={styles.basic__block__holder}>
       <div className={styles.basic__block__row}>
         <div className={styles.basic__block__text}>
           <h3 className={styles.basic__block__head}>{title}</h3>
-          <p className={styles.basic__block__par}>{text}</p>
+          <RichTextComponent content={text} narrow={false} />
           <a
             href={href}
             download={download}
@@ -23,7 +24,9 @@ const Downloadable = ({
             {buttonText}
           </a>
         </div>
-        {imageSrc && <img src={imageSrc} className={styles.basic__block__image} alt="" />}
+        {imageSrc && (
+          <img src={imageSrc} className={styles.basic__block__image} alt="" />
+        )}
       </div>
     </div>
   );

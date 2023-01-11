@@ -1,11 +1,10 @@
-import Team from '../../components/Team/Team';
-import { MappingFunction } from './sharedMapper';
-import SharedComponents from '../enums/sharedComponents';
-import workProgramService from '../../services/workProgramService';
-import { getWorkProgramSlider } from './workProgramMapper';
 import { matchPath } from 'react-router';
-import { routes } from '../../routes';
 import RichTextComponent from '../../components/RichTextComponent/RichTextComponent';
+import { routes } from '../../routes';
+import workProgramService from '../../services/workProgramService';
+import SharedComponents from '../enums/sharedComponents';
+import { MappingFunction } from './sharedMapper';
+import { getWorkProgramSlider } from './workProgramMapper';
 
 const WorkProgramPageMapper: MappingFunction = async (component) => {
   switch (component['__component']) {

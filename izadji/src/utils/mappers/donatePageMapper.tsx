@@ -18,7 +18,7 @@ const DonatePageMapper: MappingFunction = (component) => {
             paymentReferenceNumber: p.attributes.paymentReferenceNumber,
             paymentReceiver: p.attributes.paymentReceiver,
             paymentAccountNumber: p.attributes.paymentAccountNumber,
-            projectPageId: p.attributes.project_page.data.id,
+            projectPageId: p.attributes.id,
           }))}
         />
       );

@@ -37,7 +37,12 @@ const Header = ({
                     key={icon.iconClass}
                     className={styles.header__social__item}
                   >
-                    <a className={styles.header__social__link} href={icon.url}>
+                    <a
+                      className={styles.header__social__link}
+                      href={icon.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Icon iconClass={icon.iconClass} altText={icon.altText} />
                     </a>
                   </li>
