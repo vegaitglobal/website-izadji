@@ -32,4 +32,5 @@ services:
       - ./api/.env
     volumes:
       - "./data.db/:/data.db/:rw"
+      - "./uploads:/app/public/uploads/:rw"
     restart: unless-stopped

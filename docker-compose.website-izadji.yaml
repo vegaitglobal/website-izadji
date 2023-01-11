@@ -35,4 +35,5 @@ services:
       DATABASE_FILENAME: "../data.db/data.db"
     volumes:
       - "./data.db/:/data.db/:rw"
+      - "./uploads:/app/public/uploads/:rw"
     restart: unless-stopped
