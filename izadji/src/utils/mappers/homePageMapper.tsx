@@ -11,7 +11,7 @@ import { getApiUrl } from '../urlHelpers';
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
     const [startHours, startMinutes] = eventData.timeStart.split(':');
-    const [endHours, endMinutes] = eventData.timeStart.split(':');
+    const [endHours, endMinutes] = eventData.timeEnd.split(':');
     return {
       date: convertDate(eventData.date, true),
       weekDay: convertWeekDay(eventData.date),

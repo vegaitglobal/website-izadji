@@ -5,6 +5,7 @@ import DonationProject, {
   DonationProjectProps,
 } from '../DonationProject/DonationProject';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 export type DonateProps = {
   title: string;
@@ -17,6 +18,7 @@ const Donate = ({
   text,
   donationProjects,
 }: DonateProps): JSX.Element => {
+  const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState(donationProjects[0]);
   const customDropdownInstance = customDropdown(styles);
 
@@ -55,7 +57,14 @@ const Donate = ({
               ))}
             </ul>
           </div>
-          <button className={styles.btn}>Vidi informacije</button>
+          <button
+            onClick={() => {
+              navigate(`/project/${selectedProject.projectPageId}`);
+            }}
+            className={styles.btn}
+          >
+            Vidi informacije
+          </button>
         </div>
       </div>
       <DonationProject {...selectedProject} />
