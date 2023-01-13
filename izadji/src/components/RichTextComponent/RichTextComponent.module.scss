@@ -37,6 +37,12 @@
     }
     margin: 0 0 50px 50px;
   }
+  .rte {
+    p {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
 }
 
 .text__box__blog {
@@ -47,6 +53,22 @@
       font-size: 20px;
       line-height: 26px;
     }
+  }
+  img {
+    max-width: 100%;
+  }
+  figure {
+    &:global(.image) {
+      display: table;
+      clear: both;
+      text-align: center;
+      margin: 0.9em auto;
+      min-width: 50px;
+    }
+    &:global(.image-style-side) {
+      float: right;
+    }
+    margin: 0 0 50px 50px;
   }
 }
 

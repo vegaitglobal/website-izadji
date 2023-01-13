@@ -13,7 +13,7 @@ const RichTextComponent = ({ content, narrow = true }: any): JSX.Element => {
           <>
             {parse(
               content.replace(
-                /\/uploads/,
+                /\/uploads/g,
                 `${process.env.REACT_APP_STRAPI_HOST}/uploads`
               )
             )}
