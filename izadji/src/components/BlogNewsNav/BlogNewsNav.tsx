@@ -5,6 +5,7 @@ import customDropdown from '../../utils/customDropdown';
 import workProgramService from '../../services/workProgramService';
 import { BlogNewsBannerProps } from '../BlogNewsBanner/BlogNewsBanner';
 import { routes } from '../../routes';
+import { getApiUrl } from '../../utils/urlHelpers';
 
 export type WorkProgrammeInfo = {
   title: string;
@@ -36,9 +37,10 @@ const BlogNewsNav = ({ onFilterChange }: BlogNewsNavProps) => {
           featuredBlogPage:
             wp.attributes.featuredBlogPage.data != null
               ? {
-                  imageSrc:
+                  imageSrc: getApiUrl(
                     wp.attributes.featuredBlogPage.data.attributes.blogBanner
-                      .image.data.attributes.url,
+                      .image.data.attributes.url
+                  ),
                   title: wp.attributes.featuredBlogPage.data.attributes.title,
                   category: wp.attributes.title,
                   text: wp.attributes.featuredBlogPage.data.attributes
