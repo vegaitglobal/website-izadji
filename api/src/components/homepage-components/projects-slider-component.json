@@ -1,7 +1,8 @@
 {
   "collectionName": "components_homepage_components_projects_slider_components",
   "info": {
-    "displayName": "Projects slider component"
+    "displayName": "Projects slider component",
+    "description": ""
   },
   "options": {},
   "attributes": {
