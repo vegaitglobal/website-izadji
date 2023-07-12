@@ -8,6 +8,7 @@ export type ProjectSlideProps = {
   description: string;
   link: string;
   linkText: string;
+  featureImage: string;
 };
 
 const ProjectSlide = ({
@@ -17,13 +18,14 @@ const ProjectSlide = ({
   description,
   link,
   linkText,
+  featureImage,
 }: ProjectSlideProps): JSX.Element => {
   return (
     <div className={`${styles.hero__slider__item}`}>
       <div className={styles.hero__slider__inner}>
         <div
           className={`${styles.has__cover} ${styles.hero__slider__image}`}
-          style={{ backgroundImage: `url(${imageSrc})` }}
+          style={{ backgroundImage: `url(${featureImage})` }}
           role="presentation"
         ></div>
         <div className={styles.hero__slider__text__holder}>

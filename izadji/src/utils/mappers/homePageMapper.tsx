@@ -5,8 +5,8 @@ import ProjectSlider from '../../components/ProjectSlider/ProjectSlider';
 import projectPagesService from '../../services/projectService';
 import { convertDate, convertWeekDay } from '../dateTimeConversion';
 import HomePageComponents from '../enums/homePageComponents';
-import { MappingFunction } from './sharedMapper';
 import { getApiUrl } from '../urlHelpers';
+import { MappingFunction } from './sharedMapper';
 
 const getEventTableSlides = (events: any): EventProps[] => {
   return events.map((eventData: any) => {
@@ -34,6 +34,7 @@ const getProjectSlides = (projects: any): ProjectSlideProps[] => {
       link: `/project/${projectData.id}`,
       linkText: projectBanner.linkText,
       key: projectData.id,
+      featureImage: getApiUrl(projectBanner.featureImage.data.attributes.url),
     };
   });
 };

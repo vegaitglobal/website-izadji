@@ -14,6 +14,7 @@ const projectSlides = [
       "Savetovalište Grupe 'IZAĐI' raspisuje poziv za volontere i volonterke! U okviru našeg savetovališta, pruža se besplatna savetodavna i psihoterapijska podrška LGBTIQ+ osobama i članovima/cama njihovih....",
     linkText: 'Saznaj više',
     link: '/projekat1',
+    featureImage: ProjectSlideImage1,
   },
   {
     imageSrc: ProjectSlideImage2,
@@ -23,6 +24,7 @@ const projectSlides = [
       'Savetovalište G pruža se besplatna savetodavna i psihoterapijska podrška LGBTIQ+ osobama i članovima/cama njihovih....',
     linkText: 'Saznaj više',
     link: '/projekat2',
+    featureImage: ProjectSlideImage1,
   },
   {
     imageSrc: ProjectSlideImage3,
@@ -32,6 +34,7 @@ const projectSlides = [
       "Savetovalište Grupe 'IZAĐI'onterke! U okviru našeg savetovališta, pruža se besplatna savetodavna i psihoterapijska podrška LGBTIQ+ osobama i članovima/cama njihovih....",
     linkText: 'Saznaj više',
     link: '/projekat3',
+    featureImage: ProjectSlideImage1,
   },
 ];
 
