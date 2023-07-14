@@ -2,8 +2,8 @@ import { FieldValues, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import formService from '../../services/formService';
 import Toast from '../shared/Toast/Toast';
-import styles from './Newsletter.module.scss';
 import parse from 'html-react-parser';
+import styles from './Newsletter.module.scss';
 
 export type NavBarButtonProps = {
   title: string;
@@ -32,7 +32,7 @@ const Newsletter = ({ title, buttonText }: NavBarButtonProps): JSX.Element => {
     <section className={`${styles.newsletter} ${styles.newsletter__white}`}>
       <div className={styles.wrap}>
         <div className={styles.newsletter__inner}>
-          <p className={`${styles.newsletter__title}`}>{parse(title)}</p>
+          <div className={`${styles.newsletter__title}`}>{parse(title)}</div>
           <form
             className={`${styles.newsletter__form} ${styles.form}`}
             onSubmit={handleSubmit(onSubmit)}
