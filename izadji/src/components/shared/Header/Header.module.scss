@@ -209,12 +209,11 @@
   flex-direction: row;
 
   @include media-breakpoint-only(md) {
-    width: 20%;
     justify-content: space-between;
   }
   @include media-breakpoint-down(sm) {
-    width: 35%;
     justify-content: space-between;
+    margin-left: 15px;
   }
 }
 
@@ -223,11 +222,13 @@
   margin-left: 10px;
   flex-direction: column;
   align-self: center;
+  margin-right: 40px;
 
   @include media-breakpoint-only(md) {
     display: flex;
   }
   @include media-breakpoint-down(sm) {
+    margin-right: 30px;
     display: flex;
   }
 }
