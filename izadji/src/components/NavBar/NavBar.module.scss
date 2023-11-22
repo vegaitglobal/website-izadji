@@ -12,22 +12,19 @@
   @include media-breakpoint-down(md) {
     background-color: $white;
     bottom: 0;
-    display: none;
     left: 0;
     overflow: auto;
-    padding: 20px;
-    position: fixed;
     right: 0;
-    top: 82px;
-  }
-  @include media-breakpoint-down(sm) {
-    top: 120px;
   }
 }
 
 .nav__list {
   display: flex;
   flex-direction: row;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
 }
 
 .nav__open {

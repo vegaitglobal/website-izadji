@@ -16,18 +16,30 @@
 
   @include media-breakpoint-only(md) {
     height: 82px;
-    padding: 15px 0;
   }
   @include media-breakpoint-down(sm) {
-    height: 120px;
-    padding-top: 57px;
+    height: 91px;
+  }
+}
+
+.mobile__menu {
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
   }
 }
 
 .header__wrap {
   @include media-breakpoint-down(md) {
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
   }
 }
 
@@ -36,9 +48,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+
   @include media-breakpoint-down(md) {
     justify-content: flex-end;
     order: 2;
+    display: none;
   }
 }
 
@@ -80,6 +94,11 @@
     font-size: 14px;
     padding-right: 0;
     border-right: none;
+    display: flex;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
   }
 }
 
@@ -96,14 +115,14 @@
 .header__social {
   font-size: 0;
   padding-top: 7px;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     border-bottom: 1px solid rgba($black, 0.08);
     display: flex;
+    justify-content: space-around;
     left: 0;
     padding: 10px 20px 5px;
-    position: absolute;
-    top: 0;
     width: 100%;
+    margin-top: 50px;
   }
 }
 
@@ -111,12 +130,7 @@
   display: inline-block;
   margin-left: 20px;
   @include media-breakpoint-only(md) {
-    margin-left: 25px;
-  }
-  @include media-breakpoint-down(sm) {
     margin-left: 0;
-    text-align: center;
-    width: 100%;
   }
 }
 
@@ -141,48 +155,38 @@
   &:hover {
     background-color: $pink;
   }
+}
+
+.header__btn__small {
+  display: none;
+
   @include media-breakpoint-down(md) {
-    display: none;
+    display: flex;
+    background-color: $black;
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 25px;
+    transition: background-color $transition;
   }
-}
-
-.header__btn__touch {
-  @include media-breakpoint-down(md) {
-    display: inline-block;
-  }
-  @include media-breakpoint-down(sm) {
-    margin: 0;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-.header__hamburger {
-  font-size: 32px;
-  .font-ico-menu {
-    bottom: -4px;
-    position: relative;
-  }
-  @include media-breakpoint-up(lg) {
-    display: none;
-  }
-}
-
-.header__hamburger__active .font__ico__menu::before {
-  content: font-char(ico-close);
 }
 
 .header__container {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 1234px;
   padding: 0 20px;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
+
   @include media-breakpoint-down(md) {
-    width: auto;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: 5px;
+    justify-content: space-between;
   }
 }
 
@@ -194,52 +198,84 @@
   max-width: 100%;
 }
 
-.nav {
+.nav__bar {
   @include media-breakpoint-down(md) {
-    background-color: $white;
-    bottom: 0;
     display: none;
-    left: 0;
-    overflow: auto;
-    padding: 20px;
-    position: fixed;
-    right: 0;
-    top: 82px;
-  }
-  @include media-breakpoint-down(sm) {
-    top: 120px;
   }
 }
 
-.nav__open {
-  @include media-breakpoint-down(md) {
-    display: block;
-  }
-}
+.hamburger__logo {
+  display: flex;
+  flex-direction: row;
 
-.nav__top {
-  display: none;
-  @include media-breakpoint-down(md) {
-    align-items: center;
-    border-bottom: 1px solid rgba($black, 0.08);
-    display: flex;
+  @include media-breakpoint-only(md) {
+    width: 20%;
     justify-content: space-between;
-    padding-bottom: 20px;
   }
   @include media-breakpoint-down(sm) {
-    flex-wrap: wrap;
+    width: 35%;
+    justify-content: space-between;
   }
 }
 
-.header__emails__touch {
-  align-items: flex-start;
+.hamburger__btn {
+  display: none;
+  margin-left: 10px;
+  flex-direction: column;
+  align-self: center;
+
+  @include media-breakpoint-only(md) {
+    display: flex;
+  }
+  @include media-breakpoint-down(sm) {
+    display: flex;
+  }
+}
+
+.hamburger__line {
+  width: 25px;
+  height: 2px;
+  background-color: #333;
+  margin: 2px 0;
+}
+
+.cross {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: -10px;
+}
+
+.cross::before,
+.cross::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cross::before {
+  transform: rotate(45deg);
+}
+
+.cross::after {
+  transform: rotate(-45deg);
+}
+
+.mobile__emails {
+  margin-left: 50px;
+  height: 50px;
   display: flex;
   flex-direction: column;
-  @include media-breakpoint-only(md) {
-    flex-direction: row;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 15px;
-    width: 100%;
-  }
+  justify-content: space-around;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba($black, 0.08);
+  width: 100%;
+  margin-top: 30px;
 }
