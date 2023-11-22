@@ -20,6 +20,50 @@ const Header = ({
 }: HeaderProps): JSX.Element => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const Socials = () => {
+    return (
+      <ul className={styles.header__social}>
+        {social.map((icon: IconProps & { url: string }) => (
+          <li key={icon.iconClass} className={styles.header__social__item}>
+            <a
+              className={styles.header__social__link}
+              href={icon.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon iconClass={icon.iconClass} altText={icon.altText} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const DonateBtn = ({ btnStyles }: { btnStyles: string }) => {
+    return (
+      <Link to={routes.donate} className={btnStyles}>
+        Doniraj
+      </Link>
+    );
+  };
+
+  const NavBarBtns = () => {
+    return <NavBar buttons={navBar.buttons} />;
+  };
+
+  const EmailLinks = ({ wrapperStyles }: { wrapperStyles: string }) => {
+    return (
+      <div className={wrapperStyles}>
+        <a href={`mailto:${emails[0]}`}>
+          <span className={styles.header__top__link}>{emails[0]}</span>
+        </a>
+        <a href={`mailto:${emails[1]}`}>
+          <span className={styles.header__top__link}>{emails[1]}</span>
+        </a>
+      </div>
+    );
+  };
+
   return (
     <div>
       <header
@@ -27,35 +71,11 @@ const Header = ({
       >
         <div className={`${styles.wrap} ${styles.header__wrap}`}>
           <div className={styles.header__top}>
-            <div className={styles.header__emails}>
-              <a href={`mailto:${emails[0]}`}>
-                <span className={styles.header__top__link}>{emails[0]}</span>
-              </a>
-              <a href={`mailto:${emails[1]}`}>
-                <span className={styles.header__top__link}>{emails[1]}</span>
-              </a>
-            </div>
+            <EmailLinks wrapperStyles={styles.header__emails} />
+
             <div className={styles.header__actions}>
-              <ul className={styles.header__social}>
-                {social.map((icon: IconProps & { url: string }) => (
-                  <li
-                    key={icon.iconClass}
-                    className={styles.header__social__item}
-                  >
-                    <a
-                      className={styles.header__social__link}
-                      href={icon.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon iconClass={icon.iconClass} altText={icon.altText} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <Link to={routes.donate} className={styles.header__btn}>
-                Doniraj
-              </Link>
+              <Socials />
+              <DonateBtn btnStyles={styles.header__btn} />
             </div>
           </div>
         </div>
@@ -85,47 +105,22 @@ const Header = ({
                 />
               </Link>
             ) : (
-              <div className={styles.mobile__emails}>
-                <a href={`mailto:${emails[0]}`}>
-                  <span className={styles.header__top__link}>{emails[0]}</span>
-                </a>
-                <a href={`mailto:${emails[1]}`}>
-                  <span className={styles.header__top__link}>{emails[1]}</span>
-                </a>
-              </div>
+              <EmailLinks wrapperStyles={styles.mobile__emails} />
             )}
           </div>
           {!isMobileMenuOpen && (
-            <Link to={routes.donate} className={styles.header__btn__small}>
-              Doniraj
-            </Link>
+            <DonateBtn btnStyles={styles.header__btn__small} />
           )}
 
           <div className={styles.nav__bar}>
-            <NavBar buttons={navBar.buttons}></NavBar>
+            <NavBarBtns />
           </div>
         </div>
         {isMobileMenuOpen && (
           <div>
             <div className={styles.divider} />
-            <NavBar buttons={navBar.buttons}></NavBar>
-            <ul className={styles.header__social}>
-              {social.map((icon: IconProps & { url: string }) => (
-                <li
-                  key={icon.iconClass}
-                  className={styles.header__social__item}
-                >
-                  <a
-                    className={styles.header__social__link}
-                    href={icon.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Icon iconClass={icon.iconClass} altText={icon.altText} />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <NavBarBtns />
+            <Socials />
           </div>
         )}
       </header>
