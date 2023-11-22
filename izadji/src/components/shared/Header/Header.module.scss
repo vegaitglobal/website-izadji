@@ -118,7 +118,7 @@
   @include media-breakpoint-down(md) {
     border-bottom: 1px solid rgba($black, 0.08);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     left: 0;
     padding: 10px 20px 5px;
     width: 100%;
