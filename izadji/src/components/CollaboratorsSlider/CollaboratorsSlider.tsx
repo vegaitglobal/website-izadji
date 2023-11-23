@@ -3,6 +3,7 @@ import 'swiper/css/scrollbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import styles from './CollaboratorsSlider.module.scss';
+import { useEffect, useState } from 'react';
 
 export type CollaboratorsSlideProps = {
   imageSrc: string;
@@ -17,6 +18,26 @@ const CollaboratorsSlider = ({
   collaborators,
   title,
 }: ColaboratorsSliderProps): JSX.Element => {
+  const [slidesPerView, setSlidesPerView] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(5);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <section
       className={styles.logo__slider}
@@ -28,7 +49,10 @@ const CollaboratorsSlider = ({
         >
           {title}
         </h2>
-        <Swiper slidesPerView={5} className={styles.logo__slider__container}>
+        <Swiper
+          slidesPerView={slidesPerView}
+          className={styles.logo__slider__container}
+        >
           {collaborators.map((i: CollaboratorsSlideProps) => (
             <SwiperSlide key={i.imageSrc}>
               <div className={styles.logo__slider__item}>
