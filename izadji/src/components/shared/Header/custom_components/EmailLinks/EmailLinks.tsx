@@ -1,10 +1,10 @@
 import styles from './EmailLinks.module.scss';
 
-export type HeaderProps = {
+export type EmailLinksProps = {
   emails: string[];
 };
 
-const EmailLinks = ({ emails }: HeaderProps): JSX.Element => {
+const EmailLinks = ({ emails }: EmailLinksProps): JSX.Element => {
   return (
     <div>
       <a href={`mailto:${emails[0]}`}>

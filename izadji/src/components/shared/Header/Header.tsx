@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { routes } from '../../../routes';
 import NavBar, { NavBarProps } from '../../NavBar/NavBar';
 import Icon, { IconProps } from '../Icon/Icon';
 import styles from './Header.module.scss';
 import { useState } from 'react';
 import EmailLinks from './custom_components/EmailLinks/EmailLinks';
+import DonateButton from './custom_components/DonateButton/DonateButton';
 
 export type HeaderProps = {
   emails: string[];
@@ -44,18 +44,6 @@ const Header = ({
     );
   };
 
-  const DonateBtn = ({ btnStyles }: { btnStyles: string }) => {
-    return (
-      <Link to={routes.donate} className={btnStyles}>
-        Doniraj
-      </Link>
-    );
-  };
-
-  const NavBarBtns = () => {
-    return <NavBar buttons={navBar.buttons} onLinkClick={handleLinkClick} />;
-  };
-
   return (
     <div>
       <header
@@ -67,7 +55,7 @@ const Header = ({
 
             <div className={styles.header__actions}>
               <Socials />
-              <DonateBtn btnStyles={styles.header__btn} />
+              <DonateButton btnStyle={styles.header__btn} />
             </div>
           </div>
         </div>
@@ -101,17 +89,17 @@ const Header = ({
             )}
           </div>
           {!isMobileMenuOpen && (
-            <DonateBtn btnStyles={styles.header__btn__small} />
+            <DonateButton btnStyle={styles.header__btn__small} />
           )}
 
           <div className={styles.nav__bar}>
-            <NavBarBtns />
+            <NavBar buttons={navBar.buttons} onLinkClick={handleLinkClick} />
           </div>
         </div>
         {isMobileMenuOpen && (
           <div>
             <div className={styles.divider} />
-            <NavBarBtns />
+            <NavBar buttons={navBar.buttons} onLinkClick={handleLinkClick} />
             <Socials />
           </div>
         )}
