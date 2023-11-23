@@ -20,6 +20,7 @@ const Downloadable = ({
             href={href}
             download={download}
             className={`${styles.btn} ${styles.btn__centered} ${styles.btn__large}`}
+            target="blank"
           >
             {buttonText}
           </a>
