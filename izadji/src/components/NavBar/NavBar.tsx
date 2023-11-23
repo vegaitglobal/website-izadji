@@ -3,15 +3,16 @@ import NavBarButton, { NavBarButtonProps } from '../NavBarButton/NavBarButton';
 
 export type NavBarProps = {
   buttons: NavBarButtonProps[];
+  onLinkClick?: () => void;
 };
 
-const NavBar = ({ buttons }: NavBarProps): JSX.Element => (
+const NavBar = ({ buttons, onLinkClick }: NavBarProps): JSX.Element => (
   <div>
     <nav className={styles.nav}>
       <ul className={styles.nav__list} role="menubar">
         {buttons.map((button: NavBarButtonProps) => (
           <li className={styles.nav__item} key={button.title} role="menuitem">
-            <NavBarButton {...button}></NavBarButton>
+            <NavBarButton {...button} onLinkClick={onLinkClick}></NavBarButton>
           </li>
         ))}
       </ul>

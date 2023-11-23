@@ -20,6 +20,10 @@ const Header = ({
 }: HeaderProps): JSX.Element => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   const Socials = () => {
     return (
       <ul className={styles.header__social}>
@@ -48,7 +52,7 @@ const Header = ({
   };
 
   const NavBarBtns = () => {
-    return <NavBar buttons={navBar.buttons} />;
+    return <NavBar buttons={navBar.buttons} onLinkClick={handleLinkClick} />;
   };
 
   const EmailLinks = ({ wrapperStyles }: { wrapperStyles: string }) => {
