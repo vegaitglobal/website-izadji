@@ -78,7 +78,7 @@ const VolunteeringForm = ({
                   type="tel"
                   id="vol-form-phone"
                   className={styles.form__input}
-                  placeholder="Phone"
+                  placeholder="Mobilni telefon"
                   {...register('phone', { required: true })}
                 />
                 <label
