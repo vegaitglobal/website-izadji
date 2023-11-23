@@ -1,0 +1,36 @@
+@import '../../../../../style/utils/breakpoints';
+@import '../../../../../style/layout/buttons';
+@import '../../../../../style/utils/variables';
+
+.header__top__link {
+  color: $black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding-right: 14px;
+  transition: color $transition;
+  &.firstLink {
+    border-right: 2px solid $black;
+    margin-right: 10px;
+    @include media-breakpoint-down(md) {
+      border-right: 0px;
+    }
+  }
+  // TODO: Check if this is correct icon once the code is merged
+  @include icon(mail) {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 14px;
+    padding-right: 0;
+    border-right: none;
+    display: flex;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+  }
+}

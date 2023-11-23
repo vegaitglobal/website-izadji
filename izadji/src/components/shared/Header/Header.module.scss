@@ -56,52 +56,6 @@
   }
 }
 
-.header__emails {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
-
-  a:last-child {
-    .header__top__link {
-      border-right: none;
-      padding: 0 0 0 14px;
-      @include media-breakpoint-only(md) {
-        padding-left: 30px;
-      }
-      @include media-breakpoint-down(sm) {
-        padding: 0;
-      }
-    }
-  }
-}
-
-.header__top__link {
-  color: $black;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  border-right: 2px solid $black;
-  padding-right: 14px;
-  transition: color $transition;
-  // TODO: Check if this is correct icon once the code is merged
-  @include icon(mail) {
-    margin-right: 5px;
-    position: relative;
-    top: 1px;
-  }
-  @include media-breakpoint-down(md) {
-    font-size: 14px;
-    padding-right: 0;
-    border-right: none;
-    display: flex;
-  }
-
-  @include media-breakpoint-down(sm) {
-    display: flex;
-  }
-}
-
 .header__actions {
   align-items: center;
   display: flex;
@@ -179,7 +133,6 @@
   margin: 0 auto;
   max-width: 1234px;
   padding: 0 20px;
-
   @include media-breakpoint-down(md) {
     justify-content: space-between;
   }
@@ -212,16 +165,16 @@
 
   @include media-breakpoint-only(md) {
     justify-content: space-between;
+    margin-left: 10px;
   }
   @include media-breakpoint-down(sm) {
     justify-content: space-between;
-    margin-left: 15px;
+    margin-left: 10px;
   }
 }
 
 .hamburger__btn {
   display: none;
-  margin-left: 10px;
   flex-direction: column;
   align-self: center;
   margin-right: 40px;
@@ -246,7 +199,7 @@
   position: relative;
   width: 25px;
   height: 25px;
-  margin-left: -10px;
+  margin-right: 20px;
 }
 
 .cross::before,
@@ -256,8 +209,9 @@
   width: 100%;
   height: 3px;
   background-color: black;
+  align-self: center;
+  display: flex;
   top: 50%;
-  transform: translateY(-50%);
 }
 
 .cross::before {

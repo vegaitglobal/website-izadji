@@ -4,6 +4,7 @@ import NavBar, { NavBarProps } from '../../NavBar/NavBar';
 import Icon, { IconProps } from '../Icon/Icon';
 import styles from './Header.module.scss';
 import { useState } from 'react';
+import EmailLinks from './custom_components/EmailLinks/EmailLinks';
 
 export type HeaderProps = {
   emails: string[];
@@ -55,19 +56,6 @@ const Header = ({
     return <NavBar buttons={navBar.buttons} onLinkClick={handleLinkClick} />;
   };
 
-  const EmailLinks = ({ wrapperStyles }: { wrapperStyles: string }) => {
-    return (
-      <div className={wrapperStyles}>
-        <a href={`mailto:${emails[0]}`}>
-          <span className={styles.header__top__link}>{emails[0]}</span>
-        </a>
-        <a href={`mailto:${emails[1]}`}>
-          <span className={styles.header__top__link}>{emails[1]}</span>
-        </a>
-      </div>
-    );
-  };
-
   return (
     <div>
       <header
@@ -75,7 +63,7 @@ const Header = ({
       >
         <div className={`${styles.wrap} ${styles.header__wrap}`}>
           <div className={styles.header__top}>
-            <EmailLinks wrapperStyles={styles.header__emails} />
+            <EmailLinks emails={emails} />
 
             <div className={styles.header__actions}>
               <Socials />
@@ -109,7 +97,7 @@ const Header = ({
                 />
               </Link>
             ) : (
-              <EmailLinks wrapperStyles={styles.mobile__emails} />
+              <EmailLinks emails={emails} />
             )}
           </div>
           {!isMobileMenuOpen && (
