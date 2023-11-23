@@ -11,13 +11,7 @@
   all: unset;
   display: inline-block;
   cursor: pointer;
-
-  @include media-breakpoint-down(md) {
-    border-bottom: 1px solid rgba($black, 0.08);
-    width: 100%;
-  }
   color: $black;
-
   font-size: 14px;
   font-weight: 700;
   padding: 29px 12px 30px;
@@ -53,7 +47,7 @@
     opacity: 1;
   }
   @include media-breakpoint-down(md) {
-    padding: 20px 10px;
-    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
   }
 }
